@@ -18,3 +18,4 @@ El publico al que apunta son personas amantes a la comida rapida 🍔, con varie
 ### Integrantes del grupo
 
 - Mi nombre es **Angie Barajas Cantor**, tengo 23 años, soy estudiante de ingeniería electrónica, me gusta programar y divertirme 🎈
+- Mi nombre es **Juan Andres Valencia**, tengo 18 años, me gusta la tecnologia y estar constantemente aprendiendo cosas nuevas
