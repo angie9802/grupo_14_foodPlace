@@ -1,7 +1,7 @@
-#Bienvenido a  FoodPlace  :tw-1f44b:
+#Bienvenido a  FoodPlace  👋
 La idea de éste negocio es abarcar dentro de un marketplace  distintos productos  de comida rápida de locales que aun no esten vinculados a la red,  para que los usuarios puedan hacer sus pedidos a domicilio teniendo  variedad de opciones en un solo sitio.  Además, FoodPlace permite acabar el modelo tradicional de pedidos por llamada, ofreciendo así una experiencia de compra comoda para el cliente desde nuestro sitio web.
 
-###Referencias
+####Referencias
 
 - [Rappi](https://www.rappi.com.co/restaurantes "link title") : Se eligió por las fuentes, colores, y  nos basamos en su diseño de "restaurantes" para hacer nuestro Menú
 - [RobinFood](https://www.robinfood.com/pedir "link title") : Se eligió por el estilo la opción de pedidos, y nos basamos en ella para hacer nuestro Detalle del producto.
@@ -11,6 +11,6 @@ La idea de éste negocio es abarcar dentro de un marketplace  distintos producto
 
 Tambien nos basamos en páginas no relacionadas con comida (como Falabella]( https://www.falabella.com.co/falabella-co  "link title")), y ejemplos de internet para desarrollar el Login, Register y Carrito de compras
 
-###Público
+####Público
 
-El publico al que apunta son personas amantes a la comida rapida :tw-1f354:, con variedad en las edades  :tw-1f476: :tw-1f475: que deseen disfrutar de su comida en casa.
+El publico al que apunta son personas amantes a la comida rapida 🍔, con variedad en las edades  👵👶 que deseen disfrutar de su comida en casa.
