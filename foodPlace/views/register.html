@@ -5,8 +5,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
+    <link rel="stylesheet" href="/css/register.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap" rel="stylesheet">  
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+rel="stylesheet" />
 </head>
 <body>
+    <main>
+        <form action="/" class="registro" method="GET">
+        <div class="register">
+            <h1 class="title">Register</h1>
+            <div class="fullname">
+            <p>Full name:</p>
+            <input type="text" required>
+            </div>
+            <div class="email">
+                <p>E-mail:</p>
+                <input type="email" required>
+            </div>
+            <div class="teladress">
+                <div class="telephone">
+                    <p>Telephone:</p>
+                    <input type= "number" required >
+                </div>
+                <div class="adress">
+                    <p>Adress:</p>
+                    <input type ="text" required>
+                </div>
+            </div>
+            <div class="password">
+                <p>Password:</p>
+                <input type="password" minlength="5" required>
+            </div>
+            <div class="confirmpassword">
+                <p>Confirm password:</p>
+                <input type="password" minlength="5" required>
+            </div>
+            <div class="botonok">
+                <button type="submit">OK!</button>
+            </div>
+            <p class="or">Or</p>
+            <div class="continuarf">
+            <button type="button">Continue with Facebook <i class="fab fa-facebook"></i></button>
+            </div>
+            <div class="continuarg">
+                <button type="button">Continue with Google <i class="fab fa-google"></i></button>
+            </div>
+
+        </div>
+    </form>
+    </main>
     
 </body>
 </html>

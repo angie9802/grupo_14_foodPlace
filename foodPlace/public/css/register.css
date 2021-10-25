@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    
+}
+html {
+    font-size: 62.5%;
+}
+body{
+    font-size: 1.6rem;
+}
+main {
+    border: black 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100vw;
+    height: 100vh;
+    background-image: url("/img/407.jpg");
+    background-size:contain;
+}
+main .register{
+    border: 1px solid black;
+    text-align: center;
+    height: 80vh;
+    width: 25vw;
+    min-width: 310px;
+    max-width: 600px;
+    border-radius: 5px;
+    box-shadow: 6px 9px 15px -3px rgba(0,0,0,0.75);
+    padding: 20px;
+    background-color: #FFFFFF;
+}
+
+main .fullname {
+    margin: 0 20px;
+    
+}
+
+main input {
+    text-align: center;
+}
+main .fullname input {
+    width: 90%;
+    height: 35px;
+    border-radius: 10px;
+
+}
+main .email {
+    margin: 0 20px;
+}
+main .email input{
+    width: 90%;
+    height: 35px;
+    border-radius: 10px;
+    
+}
+main .teladress{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main .telephone {
+    width: 35% ;
+}
+main .telephone input{
+    width: 85%;
+    height: 35px;
+    border-radius: 10px;
+}
+main .adress{
+    width: 50%;
+}
+main .adress input{
+    width: 90%;
+    height: 35px;
+    border-radius: 10px;
+}
+main .password {
+    margin: 0 20px;
+}
+
+main .password input{
+    width: 90%;
+    height: 35px;
+    border-radius: 10px;
+}
+main .confirmpassword {
+    margin:0 20px;
+
+}
+main .confirmpassword input{
+    width: 90%;
+    height: 35px;
+    border-radius: 10px;
+}
+
+main .botonok {
+    margin-top: 20px ;
+}
+main .botonok button {
+    width:40%;
+    border-radius: 10px;
+    background-color:#5E1EBE ;
+    cursor: pointer;
+    transition: all 450ms;
+    color: white;
+}
+
+main .botonok button:hover {
+    background-color: #5811c4b9;
+}
+main .or {
+    margin-top: 15px;
+}
+
+main .continuarf {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 15px;
+}
+main .continuarf button { 
+    width: 90%;
+    border-radius: 7px;
+    cursor: pointer;
+    background-color: cornsilk;
+    transition: all 450ms;
+}
+main .continuarf button:hover {
+    background-color:rgba(13, 13, 226, 0.452) ;
+}
+main .continuarg {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 15px;
+}
+main .continuarg button {
+    width: 90%;
+    border-radius: 7px;
+    cursor: pointer;
+    background-color: cornsilk;
+    transition: all 450ms;
+}
+
+main .continuarg button:hover {
+    background-color:rgba(13, 13, 226, 0.452) ;
+}
