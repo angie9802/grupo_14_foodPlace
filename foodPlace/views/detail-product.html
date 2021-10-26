@@ -1,185 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Detail product</title>
-    <link rel="stylesheet" href="/css/detail-product.css">
-</head>
-<body>
-    
-  <div class="detail-product-box">
-    <header>
-      
-    </header>
 
-    <main>
-      <!--Single Product-->
-      <section class="detail-product-single">
-        <article class="product-single-product">
-          <img src='/img/detail-hamburguer3.jpg' />
-          <article class="single-product-quantity">
-            <div class="single-decrease-quantity">
-              <h2> - </h2>
-            </div>
-            <p>1</p>
-            <div class="single-increase-quantity">
-              <h2> + </h2>
-            </div>
-          </article>
-        </article>
+    <link rel="stylesheet" href="/css/detail-product.css" />
+    <link rel="stylesheet" href="/css/styles-home.css" />
+  </head>
+  <body>
+    <div class="detail-product-box">
+      <header>
+        <nav class="nav-bar">
+          <img class="logo" src="./img/logo.png" alt="logo" />
+          <a href="#">Menu</a>
+          <div class="search">
+            <button><i class="fas fa-search"></i></button>
+            <input
+              type="text"
+              name="search-bar"
+              placeholder="Search..."
+              class="search-input"
+            />
+          </div>
 
-        <article class="product-single-description">
-          <h1>Burguer doble carne</h1>
-          <p>
-            Hamburguesa personal con queso americano, salsa 
-            artesanal, doble carne y vegetales.
-          </p>
-          <h2>$25.000</h2>
-          <button>Add to Cart</button>
-        </article>
-      </section>
+          <div class="container">
+            <button>Register</button>
+            <button>Log in</button>
+          </div>
+          <i class="fas fa-shopping-cart"></i>
+          <i class="fas fa-user"></i>
+        </nav>
+        <nav class="nav-cell">
+          <input type="checkbox" id="btn-menu" />
+          <label for="btn-menu" class="burger-menu"
+            ><i class="fas fa-bars fa-lg"></i
+          ></label>
+          <ul class="list">
+            <li><a href="#">Menu</a></li>
+            <li><a href="">Register</a></li>
+            <li><a href="">Log In</a></li>
+            <li><a href="">Log Out</a></li>
+          </ul>
+          <div class="search">
+            <button><i class="fas fa-search"></i></button>
+            <input
+              type="text"
+              name="search-bar"
+              placeholder="Search..."
+              class="search-input"
+            />
+          </div>
+          <i class="fas fa-shopping-cart"></i>
+        </nav>
+      </header>
 
-      <section class="detail-product-others">
-        <article class="product-others-title">
-          <h1>Explore More Food</h1>
-        </article>
-
-        <section class="product-other-products">
-          <article class="other-products-single">
-            <img src='/img/detail-hamburguer2.jpg' />
-            <div class="other-products-single-text">
-              <h1>Pork Burguer</h1>
-              <p>
-                150gr de carne, 50gr de tocineta, cebolla confitada
-              </p>
-              <h2>$ 16.000</h2>
-            </div>
-            <div class="other-products-single-btn">
-              <button>+</button>
-            </div>
-          </article>
-
-          <article class="other-products-single">
-            <img src='/img/detail-hamburguer.jpg' />
-            <div class="other-products-single-text">
-              <h1>Pork Burguer</h1>
-              <p>
-                150gr de carne, 50gr de tocineta, cebolla confitada
-              </p>
-              <h2>$ 20.000</h2>
-            </div>
-            <div class="other-products-single-btn">
-              <button>+</button>
-            </div>
-          </article>
-          
-          <article class="other-products-single">
-            <img src='/img/detail-hamburguer2.jpg' />
-            <div class="other-products-single-text">
-              <h1>Pork Burguer</h1>
-              <p>
-                150gr de carne, 50gr de tocineta, cebolla confitada
-              </p>
-              <h2>$ 16.000</h2>
-            </div>
-            <div class="other-products-single-btn">
-              <button>+</button>
-            </div>
+      <main>
+        <!--Single Product-->
+        <section class="detail-product-single">
+          <article class="product-single-product">
+            <img src="/img/detail-hamburguer3.jpg" />
+            <article class="single-product-quantity">
+              <div class="single-decrease-quantity">
+                <h2>-</h2>
+              </div>
+              <p>1</p>
+              <div class="single-increase-quantity">
+                <h2>+</h2>
+              </div>
+            </article>
           </article>
 
-          <article class="other-products-single">
-            <img src='/img/detail-hamburguer.jpg' />
-            <div class="other-products-single-text">
-              <h1>Pork Burguer</h1>
-              <p>
-                150gr de carne, 50gr de tocineta, cebolla confitada
-              </p>
-              <h2>$ 20.000</h2>
-            </div>
-            <div class="other-products-single-btn">
-              <button>+</button>
-            </div>
-          </article>
-
-          <article class="other-products-single">
-            <img src='/img/detail-hamburguer2.jpg' />
-            <div class="other-products-single-text">
-              <h1>Pork Burguer</h1>
-              <p>
-                150gr de carne, 50gr de tocineta, cebolla confitada
-              </p>
-              <h2>$ 16.000</h2>
-            </div>
-            <div class="other-products-single-btn">
-              <button>+</button>
-            </div>
-          </article>
-
-          <article class="other-products-single">
-            <img src='/img/detail-hamburguer.jpg' />
-            <div class="other-products-single-text">
-              <h1>Pork Burguer</h1>
-              <p>
-                150gr de carne, 50gr de tocineta, cebolla confitada
-              </p>
-              <h2>$ 20.000</h2>
-            </div>
-            <div class="other-products-single-btn">
-              <button>+</button>
-            </div>
-          </article>
-
-          <article class="other-products-single">
-            <img src='/img/detail-pizza.jpg' />
-            <div class="other-products-single-text">
-              <h1>Vegetarian Pizza</h1>
-              <p>
-                10gr de queso, vegetales, salsa de tomate
-              </p>
-              <h2>$ 30.000</h2>
-            </div>
-            <div class="other-products-single-btn">
-              <button>+</button>
-            </div>
-          </article>
-
-          <article class="other-products-single">
-            <img src='/img/detail-hamburguer.jpg' />
-            <div class="other-products-single-text">
-              <h1>Pork Burguer</h1>
-              <p>
-                150gr de carne, 50gr de tocineta, cebolla confitada
-              </p>
-              <h2>$ 20.000</h2>
-            </div>
-            <div class="other-products-single-btn">
-              <button>+</button>
-            </div>
-          </article>
-
-          <article class="other-products-single">
-            <img src='/img/detail-pizza.jpg' />
-            <div class="other-products-single-text">
-              <h1>Vegetarian Pizza</h1>
-              <p>
-                10gr de queso, vegetales, salsa de tomate
-              </p>
-              <h2>$ 30.000</h2>
-            </div>
-            <div class="other-products-single-btn">
-              <button>+</button>
-            </div>
+          <article class="product-single-description">
+            <h1>Burguer doble carne</h1>
+            <p>
+              Hamburguesa personal con queso americano, salsa artesanal, doble
+              carne y vegetales.
+            </p>
+            <h2>$25.000</h2>
+            <button>Add to Cart</button>
           </article>
         </section>
-      </section>
-    </main>
 
-    <footer>
+        <section class="detail-product-others">
+          <article class="product-others-title">
+            <h1>Explore More Food</h1>
+          </article>
 
-    </footer>
-  </div>
+          <section class="product-other-products">
+            <article class="other-products-single">
+              <img src="/img/detail-hamburguer2.jpg" />
+              <div class="other-products-single-text">
+                <h1>Pork Burguer</h1>
+                <p>150gr de carne, 50gr de tocineta, cebolla confitada</p>
+                <h2>$ 16.000</h2>
+              </div>
+              <div class="other-products-single-btn">
+                <button>+</button>
+              </div>
+            </article>
 
-</body>
+            <article class="other-products-single">
+              <img src="/img/detail-hamburguer.jpg" />
+              <div class="other-products-single-text">
+                <h1>Pork Burguer</h1>
+                <p>150gr de carne, 50gr de tocineta, cebolla confitada</p>
+                <h2>$ 20.000</h2>
+              </div>
+              <div class="other-products-single-btn">
+                <button>+</button>
+              </div>
+            </article>
+
+            <article class="other-products-single">
+              <img src="/img/detail-hamburguer2.jpg" />
+              <div class="other-products-single-text">
+                <h1>Pork Burguer</h1>
+                <p>150gr de carne, 50gr de tocineta, cebolla confitada</p>
+                <h2>$ 16.000</h2>
+              </div>
+              <div class="other-products-single-btn">
+                <button>+</button>
+              </div>
+            </article>
+
+            <article class="other-products-single">
+              <img src="/img/detail-hamburguer.jpg" />
+              <div class="other-products-single-text">
+                <h1>Pork Burguer</h1>
+                <p>150gr de carne, 50gr de tocineta, cebolla confitada</p>
+                <h2>$ 20.000</h2>
+              </div>
+              <div class="other-products-single-btn">
+                <button>+</button>
+              </div>
+            </article>
+
+            <article class="other-products-single">
+              <img src="/img/detail-hamburguer2.jpg" />
+              <div class="other-products-single-text">
+                <h1>Pork Burguer</h1>
+                <p>150gr de carne, 50gr de tocineta, cebolla confitada</p>
+                <h2>$ 16.000</h2>
+              </div>
+              <div class="other-products-single-btn">
+                <button>+</button>
+              </div>
+            </article>
+
+            <article class="other-products-single">
+              <img src="/img/detail-hamburguer.jpg" />
+              <div class="other-products-single-text">
+                <h1>Pork Burguer</h1>
+                <p>150gr de carne, 50gr de tocineta, cebolla confitada</p>
+                <h2>$ 20.000</h2>
+              </div>
+              <div class="other-products-single-btn">
+                <button>+</button>
+              </div>
+            </article>
+
+            <article class="other-products-single">
+              <img src="/img/detail-pizza.jpg" />
+              <div class="other-products-single-text">
+                <h1>Vegetarian Pizza</h1>
+                <p>10gr de queso, vegetales, salsa de tomate</p>
+                <h2>$ 30.000</h2>
+              </div>
+              <div class="other-products-single-btn">
+                <button>+</button>
+              </div>
+            </article>
+
+            <article class="other-products-single">
+              <img src="/img/detail-hamburguer.jpg" />
+              <div class="other-products-single-text">
+                <h1>Pork Burguer</h1>
+                <p>150gr de carne, 50gr de tocineta, cebolla confitada</p>
+                <h2>$ 20.000</h2>
+              </div>
+              <div class="other-products-single-btn">
+                <button>+</button>
+              </div>
+            </article>
+
+            <article class="other-products-single">
+              <img src="/img/detail-pizza.jpg" />
+              <div class="other-products-single-text">
+                <h1>Vegetarian Pizza</h1>
+                <p>10gr de queso, vegetales, salsa de tomate</p>
+                <h2>$ 30.000</h2>
+              </div>
+              <div class="other-products-single-btn">
+                <button>+</button>
+              </div>
+            </article>
+          </section>
+        </section>
+      </main>
+
+      <footer>
+        <div>
+          <ul class="footer-right">
+            <li><a href="#">Contact Us</a></li>
+            <li>|</li>
+            <li><a href="#">About Us</a></li>
+          </ul>
+          <ul class="footer-left">
+            <li>
+              <a href="#"><i class="fab fa-facebook-square"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fab fa-instagram-square"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fab fa-whatsapp-square"></i></a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+  </body>
 </html>
