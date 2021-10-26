@@ -101,7 +101,7 @@ header .fa-shopping-cart, .fa-user, .fa-bars{
    font-size: 100%;
    margin: 0 5px;
 }
-/*-------------------------------------------Menu-----------------------------------------*/
+/*-------------------------------------------home-----------------------------------------*/
 .m-home{
    position: absolute;
     bottom:50px;
@@ -117,7 +117,7 @@ main .welcome-style{
    padding:50px 20px 20px 20px ;
    color: white;
 }
-main .carousel-style i{
+main .carousel-style .carousel-inside i{
    display:none;
    font-size: 40px;
 
@@ -129,123 +129,39 @@ main .welcome-style p{
   max-width: 70%;
   
 }
-main .carousel-style{
+main .carousel-style {
    width: 100vw;
    margin: 0;
    background-color: #F1F1F1 ;
    display: flex;
-   justify-content: center;
    align-items:center;
    padding: 20px 0;
    height: 40%;
-   
+}
+main .carousel-inside{
+   width: 100%; 
+   display: flex;
+   justify-content: space-evenly;
+   overflow-x: hidden;
+   align-items:center;
 }
 
-main .carousel-style article{
-   max-width: 157px;
+main .carousel-style .carousel-inside article{
+   max-width: 170px;
+   min-width: 165px;
    margin:0 20px;
   
 }
-main .carousel-style img{
+main .carousel-style .carousel-inside img{
    width: 100%;
    align-self: center;
    
 }
 
-#img-2{
-   display:none;
-}
-#img-3{
-   display:none;
-}
-#img-4{
-   display:none;
-}
 
-/*-------------------------------------------Menu-----------------------------------------*/
-/*-------------------------------------------Cart-----------------------------------------*/
-.m-cart{
-   width:100%;
-   padding: 20px 10px;
-}
-main .container-ext{
-   width:99%;
-   margin:auto;
-   margin-top:1.5%;
-   border: 1px solid #4B4747;
-   background-color: #4B4747;
-   border-radius: 10px;
-   padding: 25px 3px 3px 3px;
-   max-height: 350px;
-   overflow-y:scroll
-}
-main .container-ext::-webkit-scrollbar{
-   width: 7px;
-}
-main .container-ext::-webkit-scrollbar-thumb{
-   border-radius: 20px;
-   border: 1.5px solid  #4B4747;
-   background-color: #FFFFFF; ;
-}
 
-main .container-int{
-   width:100%;
-   border: 1px solid #FFFFFF;
-   background-color: #FFFFFF;
-   border-radius: 10px;
-   padding:5px;
-   
-}
-main .container-int article{
-   width:100%;
-   padding:5px;
-   border-bottom:1px solid #4B4747;
-   display:flex;
-   justify-content: space-between;
-   align-items: center;
-}
-main .container-int article img{
-   width:35%
-}
+/*-------------------------------------------home-----------------------------------------*/
 
-main .container-int article div li{
-   margin:  5px 10px;
-}
-main .container-int article .fa-trash-alt{
-   margin: 0 15px;
-}
-#description{
-   font-size: 12px
-}
-#price{
-   color:green;
-   font-weight: bold;
-}
-#cantity{
-   max-width: 75px;
-  
-}
-#subtotal{
-   font-size: 12px;
-   font-weight: bold;
-   margin: 0 10px;
-}
-main .out-cart{
-   display: flex;
-   margin:auto;
-   width:99%;
-   justify-content:space-between;
-   padding: 10px 0
-}    
-main .out-cart button{
-   width: 90px;
-   border: 1px solid #5E1EBE;
-   border-radius:5px;
-   background-color:#5E1EBE;
-   color: #ffffff;
-}                           
-
-/*-------------------------------------------Cart-----------------------------------------*/
 footer{
    width: 100vw;
    height: 50px;
@@ -302,9 +218,7 @@ footer{
       margin: 0 20px;
       font-size: 25px
    }
-   #img-2{
-      display:flex;
-   }
+
  }
 @media (min-width: 768px) {
    header .nav-cell{
@@ -349,14 +263,14 @@ footer{
       flex-direction: column;
       margin: 0 15px;
    }
- /*-------------------------------------------Menu-----------------------------------------*/
+ /*-------------------------------------------home-----------------------------------------*/
    main .welcome-style h1{
       font-size: 50px;
    }
    main .welcome-style p{
       max-width: 50%;  
    }
-/*-------------------------------------------Menu-----------------------------------------*/
+/*-------------------------------------------home-----------------------------------------*/
    main .container-int article div{
       margin: 0;
    }   
@@ -367,26 +281,22 @@ footer{
    main .container-int  article ul li{
       margin: 0 25px
    }
-   #img-3{
-      display:flex;
-   }
+ 
   
 }
   
 
 
 @media (min-width: 1200px) {
-/*-------------------------------------------Menu-----------------------------------------*/
-   main .carousel-style i{
+/*-------------------------------------------home-----------------------------------------*/
+   main .carousel-style .carousel-inside i{
       display:block;
       font-size: 40px;
    }
-   main .carousel-style{
+   main .carousel-style .carousel-inside{
       justify-content: space-between;
    }
 
-   #img-4{
-      display:flex;
-   }
-/*-------------------------------------------Menu-----------------------------------------*/  
+
+/*-------------------------------------------home-----------------------------------------*/  
 }
