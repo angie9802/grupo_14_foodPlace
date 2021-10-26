@@ -9,3 +9,5 @@
 - Posponer las tareas o la asignación de estas
 9. Dejar de hacer
 - Dejar para el final la creación de las ramas del repositorio
+- 
+![image](https://user-images.githubusercontent.com/37554378/138805906-351ea40b-c82c-4c7a-a51d-03f7e380f69c.png)
