@@ -24,7 +24,7 @@ main {
 main .register{
     border: 1px solid black;
     text-align: center;
-    min-height: 600px;
+    min-height: 490px;
     max-height: 850px;
     width: 25vw;
     min-width: 310px;

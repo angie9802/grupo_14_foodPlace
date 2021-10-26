@@ -29,7 +29,7 @@ main {
 main .login{
     border: 1px solid black;
     text-align: center;
-    min-height: 500px;
+    min-height: 490px;
     max-height: 650px;
     width: 30vw;
     min-width: 310px;
