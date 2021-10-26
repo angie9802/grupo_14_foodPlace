@@ -63,6 +63,10 @@ main .password p {
     font-size: 1.2rem;
     margin-bottom: 20px;
 }
+main .remember {
+    margin-bottom: 10px;
+    
+}
 main .botonlogin button{
     width: 70%;
     height: 30px;
