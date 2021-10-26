@@ -117,7 +117,7 @@ main .welcome-style{
    padding:50px 20px 20px 20px ;
    color: white;
 }
-main .carousel-style .carousel-inside i{
+main .carousel-style i{
    display:none;
    font-size: 40px;
 
@@ -137,22 +137,18 @@ main .carousel-style {
    align-items:center;
    padding: 20px 0;
    height: 40%;
-}
-main .carousel-inside{
-   width: 100%; 
-   display: flex;
-   justify-content: space-evenly;
    overflow-x: hidden;
-   align-items:center;
+   justify-content: space-evenly;
 }
 
-main .carousel-style .carousel-inside article{
+
+main .carousel-style article{
    max-width: 170px;
    min-width: 165px;
    margin:0 20px;
   
 }
-main .carousel-style .carousel-inside img{
+main .carousel-style img{
    width: 100%;
    align-self: center;
    
@@ -289,11 +285,11 @@ footer{
 
 @media (min-width: 1200px) {
 /*-------------------------------------------home-----------------------------------------*/
-   main .carousel-style .carousel-inside i{
+   main .carousel-style i{
       display:block;
       font-size: 40px;
    }
-   main .carousel-style .carousel-inside{
+   main .carousel-style{
       justify-content: space-between;
    }
 
