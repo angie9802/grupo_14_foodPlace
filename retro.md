@@ -1,4 +1,5 @@
 # Retrospectiva
-![image](https://user-images.githubusercontent.com/37554378/138806850-599fc701-6880-468a-8082-d8c3335d03b5.png)
+![image](https://user-images.githubusercontent.com/37554378/138806917-7e13f615-8a68-4169-abc7-d72e033d8ba5.png)
+
 
 
