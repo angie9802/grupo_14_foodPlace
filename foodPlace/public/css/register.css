@@ -116,28 +116,15 @@ main .or {
     margin-top: 15px;
 }
 
-main .continuarf {
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 15px;
-}
-main .continuarf button { 
-    width: 90%;
-    border-radius: 7px;
-    cursor: pointer;
-    background-color: cornsilk;
-    transition: all 450ms;
-}
-main .continuarf button:hover {
-    background-color:rgba(13, 13, 226, 0.452) ;
-}
+
 main .continuarg {
     margin-left: 20px;
     margin-right: 20px;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 main .continuarg button {
     width: 90%;
+    height: 35px;
     border-radius: 7px;
     cursor: pointer;
     background-color: cornsilk;

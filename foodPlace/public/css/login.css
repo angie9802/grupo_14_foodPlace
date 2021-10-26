@@ -84,25 +84,7 @@ main .or{
     font-size: 1.2rem;
     margin-bottom: 5px;
 }
-main .continuarf button{
-    width: 70%;
-    height: 35px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    font-size: 1.3rem;
-    cursor: pointer;
-    background-color: cornsilk;
-    transition: all 500ms;
-}
-main .continuarf button:hover {
-    background-color: #9150f1;
 
-}
-
-main .continuarf i{
-    
-    font-size: 1.5rem;
-}
 main .continuarg button {
     width: 70%;
     height: 35px;
