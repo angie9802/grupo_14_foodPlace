@@ -31,12 +31,16 @@ header .nav-cell, .nav-bar{
    justify-content:space-between;
    width: 100%;
    height: 60px;
-   background-color: #7B7373;
-   opacity:95%;
+   background-color: #FFFFFF ;
+   opacity:98%;
    align-items: center;
    padding: 0px 40px;
-  
+   color: #6A696E;
+   box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
 }
+header .nav-bar a{
+   color: #6A696E;
+} 
 header .nav-bar{
    display:none;
 }
@@ -90,19 +94,19 @@ header .search input, .search button {
 header .search input{
    width: 70%;
 }
-header .fa-shopping-cart, .fa-user{
-   background: rgba(255, 255, 255, 0.9);
+header .fa-shopping-cart, .fa-user, .fa-bars{
+   background: #f1f1f1e6;
    border-radius: 50%;
    padding: 10px;
    font-size: 100%;
-   margin: 0 10px;
+   margin: 0 5px;
 }
 /*-------------------------------------------Menu-----------------------------------------*/
 .m-home{
    position: absolute;
     bottom:50px;
     top:0px;
-    z-index:-1
+    z-index:-1;
  }
 main .welcome-style{
    background-image: url(../img/fast-food.jpg);
@@ -128,20 +132,34 @@ main .welcome-style p{
 main .carousel-style{
    width: 100vw;
    margin: 0;
-   background-color: white;
+   background-color: #F1F1F1 ;
    display: flex;
    justify-content: center;
    align-items:center;
    padding: 20px 0;
    height: 40%;
+   
 }
+
 main .carousel-style article{
-   margin:20px 50px 0 50px;
-   max-width: 35%;
+   max-width: 157px;
+   margin:0 20px;
+  
 }
 main .carousel-style img{
    width: 100%;
    align-self: center;
+   
+}
+
+#img-2{
+   display:none;
+}
+#img-3{
+   display:none;
+}
+#img-4{
+   display:none;
 }
 
 /*-------------------------------------------Menu-----------------------------------------*/
@@ -152,18 +170,28 @@ main .carousel-style img{
 }
 main .container-ext{
    width:99%;
-   margin:0 auto;
+   margin:auto;
+   margin-top:1.5%;
    border: 1px solid #4B4747;
    background-color: #4B4747;
    border-radius: 10px;
-   padding: 20px 3px 3px 3px;
+   padding: 25px 3px 3px 3px;
    max-height: 350px;
    overflow-y:scroll
 }
+main .container-ext::-webkit-scrollbar{
+   width: 7px;
+}
+main .container-ext::-webkit-scrollbar-thumb{
+   border-radius: 20px;
+   border: 1.5px solid  #4B4747;
+   background-color: #FFFFFF; ;
+}
+
 main .container-int{
    width:100%;
-   border: 1px solid #F1F1F1;
-   background-color: #F1F1F1;
+   border: 1px solid #FFFFFF;
+   background-color: #FFFFFF;
    border-radius: 10px;
    padding:5px;
    
@@ -194,23 +222,36 @@ main .container-int article .fa-trash-alt{
    font-weight: bold;
 }
 #cantity{
-   background-color: #4B4747;
    max-width: 75px;
-  border:1px solid #4B4747;
+  
 }
 #subtotal{
    font-size: 12px;
    font-weight: bold;
-   margin: 10px;
+   margin: 0 10px;
 }
-                           
+main .out-cart{
+   display: flex;
+   margin:auto;
+   width:99%;
+   justify-content:space-between;
+   padding: 10px 0
+}    
+main .out-cart button{
+   width: 90px;
+   border: 1px solid #5E1EBE;
+   border-radius:5px;
+   background-color:#5E1EBE;
+   color: #ffffff;
+}                           
 
 /*-------------------------------------------Cart-----------------------------------------*/
 footer{
    width: 100vw;
    height: 50px;
-   background-color: #7B7373;
+   background-color: #FFFFFF;
    padding: 10px 20px;
+   box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
     
  }
 .f-home{
@@ -234,18 +275,20 @@ footer{
    margin: 0px 5px
  }
  footer div .footer-right li, div li a{
-   color: white;
+   color:  #6A696E ;
    font-size: 12px;
  }
  footer div .footer-left i{
-   color: black;
-   background: rgba(255, 255, 255, 0.9);
+   color: #6A696E;
+   background: #f1f1f1e6;
    border-radius: 50%;
    padding: 5px;
    font-size: 20px;
    margin: 0px 5px;
  }
  @media (min-width: 480px) {
+   
+
    main .container-int article div li{
       margin:  10px 10px;
    }
@@ -259,6 +302,9 @@ footer{
       margin: 0 20px;
       font-size: 25px
    }
+   #img-2{
+      display:flex;
+   }
  }
 @media (min-width: 768px) {
    header .nav-cell{
@@ -270,7 +316,6 @@ footer{
    }
    header .nav-bar a{
       font-size: bold;
-      color:white;
       margin: 0 15px;
    } 
    header .container button{
@@ -278,8 +323,8 @@ footer{
       border-radius: 30px;
       font-size: 14px;
       margin: 2px 0;
-      color: white;
-      border: 2px solid white;
+      color: #21B16C ;
+      border: 2px solid #21B16C ;
       background-color: transparent;
       align-self: center;
    }
@@ -312,7 +357,23 @@ footer{
       max-width: 50%;  
    }
 /*-------------------------------------------Menu-----------------------------------------*/
+   main .container-int article div{
+      margin: 0;
+   }   
+   main .container-int article div ul{
+      display: flex;
+      align-items:center;
+   }
+   main .container-int  article ul li{
+      margin: 0 25px
+   }
+   #img-3{
+      display:flex;
+   }
+  
 }
+  
+
 
 @media (min-width: 1200px) {
 /*-------------------------------------------Menu-----------------------------------------*/
@@ -320,9 +381,12 @@ footer{
       display:block;
       font-size: 40px;
    }
-   main .carousel-style article{
-      margin:0 20px;
-      max-width: 15%;
+   main .carousel-style{
+      justify-content: space-between;
+   }
+
+   #img-4{
+      display:flex;
    }
 /*-------------------------------------------Menu-----------------------------------------*/  
 }
