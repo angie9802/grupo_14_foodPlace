@@ -20,3 +20,6 @@ El publico al que apunta son personas amantes a la comida rapida 🍔, con varie
 - Mi nombre es **Angie Barajas Cantor**, tengo 23 años, soy estudiante de ingeniería electrónica, me gusta programar y divertirme 🎈
 - Mi nombre es **Juan Andres Valencia**, tengo 18 años, me gusta la tecnologia y estar constantemente aprendiendo cosas nuevas.
 - Mi nombre es **Jorge Iván Aguilar**, tengo 22 años, soy ingeniero industrial, me gustaria trabajar en el sector de tecnologia y estoy aprendiendo a programar
+
+### Task board - Trello
+https://trello.com/b/RKFkHsel/sprint-2
