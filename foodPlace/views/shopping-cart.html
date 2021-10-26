@@ -4,9 +4,106 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+rel="stylesheet" />
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/styles-cart.css">
     <title>Shopping cart</title>
 </head>
 <body>
-    
+    <header>
+        <nav class="nav-bar">
+                <img class="logo" src="./img/logo.png" alt="logo">
+                <a href="#">Menu</a>
+                <div class="search">
+                    <button><i class="fas fa-search"></i></button>
+                    <input type="text" name="search-bar" placeholder="Search..." class="search-input">     
+                </div>
+
+                <div class="container">
+                        <button>Register</button>
+                        <button>Log in</button>
+                </div>
+                <i class="fas fa-shopping-cart"></i>
+                <i class="fas fa-user"></i>
+        </nav>
+        <nav class="nav-cell">
+            <input type="checkbox" id="btn-menu">
+            <label for="btn-menu" class="burger-menu"><i class="fas fa-bars fa-lg"></i></label>
+            <ul class="list">
+                <li><a href="#">Menu</a></li>
+                <li><a href="">Register</a></li>
+                <li><a href="">Log In</a></li>
+                <li><a href="">Log Out</a></li>
+            </ul>
+            <div class="search">
+                <button><i class="fas fa-search"></i></button>
+                <input type="text" name="search-bar" placeholder="Search..." class="search-input">     
+            </div>
+            <i class="fas fa-shopping-cart"></i>
+        </nav>
+    </header>
+    <main class="m-cart">
+        <section class="container-ext">
+            <section class="container-int">
+                <article>
+                    <img src="./img/1.jpg" alt="food1">
+                    <div>
+                        <ul>
+                            <li id="description">Crispi french fries</li>
+                            <li id="price">$50.000 COP</li>
+                            <li id="cantity"><input type="number" id="quantity" name="quantity" min="1" max="5"></li>
+                            <li id="subtotal">SubTotal: $50.000 COP</li>
+                        </ul>
+                    </div>
+                    <i class="fas fa-trash-alt"></i>
+                </article>
+                <article>
+                    <img src="./img/2.jpg" alt="food2">
+                    <div>
+                        <ul>
+                            <li id="description">Super hot dog</li>
+                            <li id="price">$50.000 COP</li>
+                            <li id="cantity"><input type="number" id="quantity" name="quantity" min="1" max="5"></li>
+                            <li id="subtotal">SubTotal: $50.000 COP</li>
+                        </ul>
+                    </div>
+                    <i class="fas fa-trash-alt"></i>
+                </article>
+                <article>
+                    <img src="./img/3.jpg" alt="food2">
+                    <div>
+                        <ul>
+                            <li id="description">Mojito coctel</li>
+                            <li id="price">$50.000 COP</li>
+                            <li id="cantity"><input type="number" id="quantity" name="quantity" min="1" max="5"></li>
+                            <li id="subtotal">SubTotal: $50.000 COP</li>
+                        </ul>
+                    </div>
+                    <i class="fas fa-trash-alt"></i>
+                </article>
+                
+            </section> 
+        </section>
+        <div class="out-cart">
+            <button><i class="fas fa-caret-left"></i> Buy</button>
+            <p id="subtotal">Total: $150.000 COP</p>
+            <button>Pay <i class="fas fa-caret-right"></i></button>
+        </div>
+    </main>
+    <footer class="f-cart">
+        <div>
+            <ul class="footer-right">
+                <li> <a href="#">Contact Us</a></li>
+                <li>|</li>
+                <li> <a href="#">About Us</a></li>
+            </ul>
+            <ul class="footer-left">
+                <li> <a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                <li> <a href="#"><i class="fab fa-instagram-square"></i></a></li>
+                <li> <a href="#"><i class="fab fa-whatsapp-square"></i></a></li>
+            </ul>
+        </div>
+    </footer>
 </body>
 </html>

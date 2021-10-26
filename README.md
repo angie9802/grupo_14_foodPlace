@@ -11,3 +11,15 @@ La idea de éste negocio es abarcar dentro de un marketplace  distintos producto
 
 Tambien nos basamos en páginas no relacionadas con comida (como [Falabella]( https://www.falabella.com.co/falabella-co  "link title")), y ejemplos de internet para desarrollar el Login, Register y Carrito de compras
 
+### Público
+
+El publico al que apunta son personas amantes a la comida rapida 🍔, con variedad en las edades  👵👶 que deseen disfrutar de su comida en casa.
+
+### Integrantes del grupo
+
+- Mi nombre es **Angie Barajas Cantor**, tengo 23 años, soy estudiante de ingeniería electrónica, me gusta programar y divertirme 🎈
+- Mi nombre es **Juan Andres Valencia**, tengo 18 años, me gusta la tecnologia y estar constantemente aprendiendo cosas nuevas.
+- Mi nombre es **Jorge Iván Aguilar**, tengo 22 años, soy ingeniero industrial, me gustaria trabajar en el sector de tecnologia y estoy aprendiendo a programar
+
+### Task board - Trello
+https://trello.com/b/RKFkHsel/sprint-2

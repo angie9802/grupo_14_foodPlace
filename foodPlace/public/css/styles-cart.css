@@ -1,0 +1,90 @@
+@import url("styles-home.css");
+/*-------------------------------------------Cart-----------------------------------------*/
+.m-cart{
+    width:100%;
+    padding: 20px 10px;
+ }
+ main .container-ext{
+    width:99%;
+    margin:auto;
+    margin-top:1.5%;
+    border: 1px solid #4B4747;
+    background-color: #4B4747;
+    border-radius: 10px;
+    padding: 25px 3px 3px 3px;
+    max-height: 350px;
+    overflow-y:scroll
+ }
+ main .container-ext::-webkit-scrollbar{
+    width: 7px;
+ }
+ main .container-ext::-webkit-scrollbar-thumb{
+    border-radius: 20px;
+    border: 1.5px solid  #4B4747;
+    background-color: #FFFFFF; ;
+ }
+ 
+ main .container-int{
+    width:100%;
+    border: 1px solid #FFFFFF;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding:5px;
+    
+ }
+ main .container-int article{
+    width:100%;
+    padding:5px;
+    border-bottom:1px solid #4B4747;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+ }
+ main .container-int article div, .container-int article div ul{
+    width:100%;
+    justify-content: space-evenly;
+ }
+
+ main .container-int article img{
+    width:35%
+ }
+ 
+ main .container-int article div li{
+    margin:  5px 10px;
+ }
+ main .container-int article .fa-trash-alt{
+    margin: 0 15px;
+ }
+ #description{
+    font-size: 12px
+ }
+ #price{
+    color:green;
+    font-weight: bold;
+ }
+ #cantity{
+    max-width: 75px;
+   
+ }
+ #subtotal{
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0 10px;
+ }
+ main .out-cart{
+    display: flex;
+    margin:auto;
+    width:99%;
+    justify-content:space-between;
+    padding: 10px 0
+ }    
+ main .out-cart button{
+    width: 90px;
+    border: 1px solid #5E1EBE;
+    border-radius:5px;
+    background-color:#5E1EBE;
+    color: #ffffff;
+ }                           
+ 
+
+ /*-------------------------------------------Cart-----------------------------------------*/
