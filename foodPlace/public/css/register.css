@@ -34,7 +34,14 @@ main .register{
     padding: 20px;
     background-color: #FFFFFF;
 }
-
+main .backhome {
+    margin-top: 5px;
+}
+main .backhome i{
+    text-decoration: none;
+    font-size: 1.8rem;
+    color: black;
+}
 main .fullname {
     margin: 0 20px;
     
@@ -114,7 +121,7 @@ main .botonok button:hover {
     background-color: #5811c4b9;
 }
 main .or {
-    margin-top: 15px;
+    margin-top: 5px;
 }
 
 

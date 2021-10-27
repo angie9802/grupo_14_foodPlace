@@ -85,6 +85,14 @@ main .botonlogin p{
     font-size: 1.2rem;
     margin-bottom: 10px;
 }
+main .backhome {
+    margin-top: 5px;
+}
+main .backhome i{
+    text-decoration: none;
+    font-size: 1.8rem;
+    color: black;
+}
 main .or{
     font-size: 1.2rem;
     margin-bottom: 5px;
