@@ -1,12 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
     <title>Menu</title>
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="/css/menu.css" />
+    <link rel="stylesheet" href="/css/styles-home.css" />
+  </head>
+  <body>
+    <div class="menu-box">
+      <header>
+        <nav class="nav-bar">
+          <img class="logo" src="./img/logo.png" alt="logo" />
+          <a href="#">Menu</a>
+          <div class="search">
+            <button><i class="fas fa-search"></i></button>
+            <input
+              type="text"
+              name="search-bar"
+              placeholder="Search..."
+              class="search-input"
+            />
+          </div>
+
+          <div class="container">
+            <button>Register</button>
+            <button>Log in</button>
+          </div>
+          <i class="fas fa-shopping-cart"></i>
+          <i class="fas fa-user"></i>
+        </nav>
+        <nav class="nav-cell">
+          <input type="checkbox" id="btn-menu" />
+          <label for="btn-menu" class="burger-menu"
+            ><i class="fas fa-bars fa-lg"></i
+          ></label>
+          <ul class="list">
+            <li><a href="#">Menu</a></li>
+            <li><a href="">Register</a></li>
+            <li><a href="">Log In</a></li>
+            <li><a href="">Log Out</a></li>
+          </ul>
+          <div class="search">
+            <button><i class="fas fa-search"></i></button>
+            <input
+              type="text"
+              name="search-bar"
+              placeholder="Search..."
+              class="search-input"
+            />
+          </div>
+          <i class="fas fa-shopping-cart"></i>
+        </nav>
+      </header>
+
+      <main>
+        <section class="box-products-categories">
+          <article class="box-products-categories-title">
+            <h1>Main Categories</h1>
+          </article>
+
+
+          <article class="box-products-categories-content">
+            <div class="categories-content-single-product">
+              <img src="/img/detail-hamburguer.jpg" />
+              <p>Hamburguer</p>
+            </div>
+
+            <div class="categories-content-single-product">
+              <img src="/img/asiaticfood.jpg" />
+              <p>Asiatic</p>
+            </div>
+
+            <div class="categories-content-single-product">
+              <img src="/img/chicken.jpg" />
+              <p>Chicken</p>
+            </div>
+
+            <div class="categories-content-single-product">
+              <img src="/img/coffee.jpg" />
+              <p>Coffee</p>
+            </div>
+
+            <div class="categories-content-single-product">
+              <img src="/img/crepes.jpg" />
+              <p>Crepes</p>
+            </div>
+
+            <div class="categories-content-single-product">
+              <img src="/img/foodchinese.jpg" />
+              <p>Chinese</p>
+            </div>
+
+            <div class="categories-content-single-product">
+              <img src="/img/icecream.jpg" />
+              <p>Ice Cream</p>
+            </div>
+
+            <div class="categories-content-single-product">
+              <img src="/img/pasta.jpg" />
+              <p>Pasta</p>
+            </div>
+
+            <div class="categories-content-single-product">
+              <img src="/img/sandwich.jpg" />
+              <p>Sandwich</p>
+            </div>
+
+            <div class="categories-content-single-product">
+              <img src="/img/vegan.jpg" />
+              <p>Vegan</p>
+            </div>
+          </article>
+        </section>
+
+        <section class="box-products-banner">
+          <!--Img background-->
+        </section>
+
+        <section class="box-products-bestsellers">
+          <article class="box-products-bestsellers-title">
+            <h1>Best Sellers</h1>
+          </article>
+
+          <article class="box-products-bestsellers-content">
+            <div class="bestsellers-content-single-product">
+              <img src="/img/chicken.jpg" />
+              <h2>Roast Chicken</h2>
+              <p>Time 20min</p>
+            </div>
+
+            <div class="bestsellers-content-single-product">
+              <img src="/img/icecream.jpg" />
+              <h2>Ice Cream</h2>
+              <p>Time 10min</p>
+            </div>
+
+            <div class="bestsellers-content-single-product">
+              <img src="/img/sandwich.jpg" />
+              <h2>Sandwich</h2>
+              <p>Time 15min</p>
+            </div>
+
+            <div class="bestsellers-content-single-product">
+              <img src="/img/crepes.jpg" />
+              <h2>Fruit crepes</h2>
+              <p>Time 10min</p>
+            </div>
+
+            <div class="bestsellers-content-single-product">
+              <img src="/img/vegan.jpg" />
+              <h2>Vegetal Omelet</h2>
+              <p>Time 25min</p>
+            </div>
+          </article>
+        </section>
+      </main>
+
+      <footer>
+        <div>
+          <ul class="footer-right">
+            <li><a href="#">Contact Us</a></li>
+            <li>|</li>
+            <li><a href="#">About Us</a></li>
+          </ul>
+          <ul class="footer-left">
+            <li>
+              <a href="#"><i class="fab fa-facebook-square"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fab fa-instagram-square"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fab fa-whatsapp-square"></i></a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+  </body>
 </html>

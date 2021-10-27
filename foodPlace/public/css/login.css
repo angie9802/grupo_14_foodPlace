@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    ;
+    font-family: 'Poppins', sans-serif;
+    
+}
+html {
+    font-size: 62.5%;
+}
+body{
+    font-size: 1.6rem;
+    background-color: #F1F1F1 ;
+    ;
+}
+main {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100vw;
+    height: 100vh;
+    ;
+    background-image: url("/img/407.jpg");
+    background-size:contain;
+}
+main .login{
+    border: 1px solid black;
+    text-align: center;
+    height: 70vh;
+    width: 30vw;
+    min-width: 310px;
+    max-width: 600px;
+    border-radius: 5px;
+    box-shadow: 6px 9px 15px -3px rgba(0,0,0,0.75);
+    background-color: #FFFFFF
+}
+main .title {
+    margin-top: 40px;
+}
+main .subtitle {
+    margin: 10px 0;
+    
+}
+main .username input {
+    width: 70%;
+    height: 30px;
+    border-radius: 8px;
+    margin-top:15px ;
+    margin-bottom: 20px;
+    text-align: center;
+}
+main .password input {
+    width: 70%;
+    height: 30px;
+    border-radius: 8px;
+    margin-bottom: 0;
+    text-align: center;
+}
+main .password p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+main .remember {
+    margin-bottom: 10px;
+    
+}
+main .botonlogin button{
+    width: 70%;
+    height: 30px;
+    border-radius: 8px;
+    background-color:  #5E1EBE ;
+    margin-bottom: 0;
+    cursor: pointer;
+    color: white;
+    transition: all 450ms;
+}
+main .botonlogin button:hover{
+    background-color:#5811c4b9 ;
+}
+main .botonlogin p{
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+main .or{
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+main .continuarg button {
+    width: 70%;
+    height: 35px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    background-color: cornsilk;
+    transition: all 500ms;
+}
+main .continuarg i{
+    font-size: 1.5rem;
+    
+}
+main .continuarg button:hover {
+    background-color: #9150f1;
+}

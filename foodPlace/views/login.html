@@ -5,8 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap" rel="stylesheet">  
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+rel="stylesheet" />
 </head>
 <body>
-    
+    <main>
+        <form action="/" class="iniciosesion" method="GET">
+        <div class="login">
+            <h1 class="title">Login</h1>
+            <h3 class="subtitle">Sign in to your account</h3>
+            <div class="username">
+                <input type="text" placeholder="Username" required >
+            </div>
+            <div class="password">
+                <input type="password" minlength="5" name="password" placeholder="Password">
+                <p><label for="password"> Do you forget your password? <a href="#">Click here</a></label></p>
+            </div>
+            <div class="remember">
+                <label for="rememberme">Remember me</label>
+                <input type="checkbox" name="rememberme" id ="rememberme" value="rememberme">
+            </div>
+            <div class="botonlogin">
+                <button type="submit">Login</button>
+                <p>if you don't have an account, <a href="register">Register now</a></p>
+            </div>
+            <p class="or">Or</p>
+            <div class="continuarg">
+                <button type="button">Continue with Google <i class="fab fa-google"></i></button>
+            </div>
+        </div>
+    </form>
+    </main>
 </body>
 </html>

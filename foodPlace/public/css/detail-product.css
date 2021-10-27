@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.detail-product-box{
+  width: 100%;
+  background-color: #F1F1F1;
+  min-height: 100vh;
+}
+
+.detail-product-box, button {
+  font-family: 'Poppins', sans-serif;
+}
+
+.detail-product-box h1{
+  color: #2E2C36;
+}
+
+.detail-product-box p {
+  color: #6A696E;
+}
+
+/*Header*/
+
+
+/*Main*/
+main {
+  margin-top: 20px;
+}
+
+
+/*Product Detail*/
+main .detail-product-single {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  gap: 10px;
+  background-color: #FFFFFF;
+  padding: 30px;
+}
+
+
+/*Product image box*/
+main .product-single-product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main .product-single-product img {
+  width: 80%;
+  max-width: 700px;
+  border-radius: 3px;
+  -webkit-box-shadow: 10px 10px 21px -8px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 21px -8px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 21px -8px rgba(0,0,0,0.75);
+}
+
+main .single-product-quantity{
+  display: flex;
+  align-items: flex-end;
+  margin-top: 20px;
+  gap: 12px;
+}
+
+main .single-product-quantity div{
+  display: flex;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+  background-color: #5E1EBE;
+}
+
+/*Product Description box*/
+main .product-single-description {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-evenly;
+  padding: 0px 30px;
+  max-width: 400px;
+}
+
+main .product-single-description p{
+
+}
+
+main .product-single-description h2{
+  font-size: 20px
+}
+
+main .product-single-description button{
+  width: 140px;
+  padding: 13px;
+  background-color: #5E1EBE;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+
+/*Other products*/
+
+main .detail-product-others{
+  margin-top: 60px;
+  background-color: #FFFFFF;;
+}
+
+main .product-others-title{
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+main .product-others-title h1{
+  font-size: 25px;
+}
+
+main .product-other-products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 15px;
+  margin-top: 30px;
+  padding: 20px;
+  width: 100%;
+}
+
+
+/*Single card */
+main .product-other-products .other-products-single{
+  display: flex;
+  width: auto;
+  max-width: 600px;
+  max-height: 300px;
+  padding: 15px;
+}
+
+main .product-other-products .other-products-single img{
+  width: 230px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+main .product-other-products .other-products-single-text{
+  padding: 0px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.other-products-single-text h1{
+  font-size: 18px;
+  font-weight: 400
+}
+
+.other-products-single-text h2{
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.other-products-single-text p{
+  font-size: 14px;
+}
+
+.other-products-single-btn{
+  
+}
+
+.other-products-single-btn button{
+  width: 40px;
+  height: 40px;
+  background-color: #5E1EBE;
+  color: white;
+  font-size: 25px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+/*Footer*/
+footer {
+  max-width: 100%;
+}
+
+/*Main Media queries*/
+@media screen and (max-width: 1400px){
+  main .product-other-products{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  main .detail-product-single{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main .product-other-products{
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  main .product-single-description{
+    align-items: center;
+    text-align: center;
+    gap: 5px;
+  }
+
+}
+
+@media screen and (max-width: 600px){
+  main .product-other-products .other-products-single{
+    padding: 5px;
+  }
+
+  main .product-other-products .other-products-single img {
+    width: 40%;
+  }
+}
+
+
+
+
+
+
+/*Footer*/
