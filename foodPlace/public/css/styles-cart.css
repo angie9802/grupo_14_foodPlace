@@ -55,18 +55,18 @@
  main .container-int article .fa-trash-alt{
     margin: 0 15px;
  }
- #description{
+ .description{
     font-size: 12px
  }
- #price{
+ .price{
     color:green;
     font-weight: bold;
  }
- #cantity{
+ .cantity{
     max-width: 75px;
    
  }
- #subtotal{
+ .subtotal{
     font-size: 12px;
     font-weight: bold;
     margin: 0 10px;
