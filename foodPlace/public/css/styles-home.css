@@ -116,6 +116,9 @@ main .welcome-style{
    height: 60%;
    padding:50px 20px 20px 20px ;
    color: white;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
 }
 main .carousel-style i{
    display:none;
