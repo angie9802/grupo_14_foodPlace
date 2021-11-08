@@ -188,6 +188,11 @@ main .product-other-products .other-products-single-text{
   cursor: pointer;
 }
 
+/*Footer*/
+footer {
+  max-width: 100%;
+}
+
 /*Main Media queries*/
 @media screen and (max-width: 1400px){
   main .product-other-products{
