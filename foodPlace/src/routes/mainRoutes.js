@@ -8,5 +8,6 @@ router.get('/login', mainController.login)
 router.get('/register', mainController.register)
 router.get('/detail-product', mainController.detailProduct)
 router.get('/shopping-cart', mainController.shoppingCart)
+router.get('/edit-product', mainController.editProduct)
 
 module.exports = router
