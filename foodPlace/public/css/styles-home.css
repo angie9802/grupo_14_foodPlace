@@ -1,9 +1,4 @@
-.m-home{
-   position: absolute;
-    bottom:50px;
-    top:0px;
-    z-index:-1;
- }
+
 main .welcome-style{
    background-image: url(../img/fast-food.jpg);
    background-repeat:repeat-y;
