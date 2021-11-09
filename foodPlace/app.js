@@ -13,7 +13,7 @@ app.use("/login", mainRouter);
 app.use("/register", mainRouter);
 app.use("/detail-product", mainRouter);
 app.use("/shopping-cart", mainRouter);
-
+app.use("/create-product",mainRouter);
 
 
 app.use(express.static(path.resolve(__dirname, "./public")));

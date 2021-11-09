@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Product</title>
+    <link rel="stylesheet" href="/css/form-product.css" />
+    <link rel="stylesheet" href="/css/header-footer.css" />
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="edit-product-box">
+      <header><%- include('./partials/header')%></header>
+      <main>
+        <section>
+          <form>
+            <div class="edit-form-element">
+              <label for="product-name">Product Name:</label>
+              <input type="text"/>
+            </div>
+
+            <div class="edit-form-element">
+              <label for="product-description">Description:</label>
+              <textarea rows="10" cols="50"></textarea>
+            </div>
+
+            <div class="edit-form-element">
+              <label for="product-image">Product Image</label>
+              <input  id="product-image" type="file"/>
+            </div>
+
+            <div class="edit-form-element">
+              <label for="product-category">Category</label>
+              <select id="product-category">
+                <option value="hamburguer">Hamburguer</option>
+                <option value="vegan">Vegan</option>
+                <option value="chinese">Chinese</option>
+                <option value="icecream">Ice Cream</option>
+                <option value="drinks">Drinks</option>
+              </select>
+            </div>
+
+            <div class="edit-form-element">
+              <label for="product-price">Price:</label>
+              <input id="product-price" type="number"/>
+            </div>
+
+            <div class="edit-form-element">
+              <label for="product-delay">Product Delay Time:</label>
+              <input id="product-delay" type="text"/>
+            </div>
+
+            <button type="submit">Create</button>
+          </form>
+        </section>
+      </main>
+
+      <footer>
+        <%- include('./partials/footer')%>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -23,7 +23,12 @@ const controller = {
   shoppingCart: (req, res) => {
     res.render(path.resolve(__dirname, pathViews('shopping-cart')))  
   },
-  
+  editProduct: (req, res) => {
+    res.render(path.resolve(__dirname, pathViews('edit-product')))  
+  },
+  createProduct: (req,res) => {
+    res.render(path.resolve(__dirname,pathViews('create-product')))
+  }
 }
 
 module.exports = controller
