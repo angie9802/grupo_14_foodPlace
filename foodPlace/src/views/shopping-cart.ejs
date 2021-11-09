@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-rel="stylesheet" />
+    <%- include('./partials/head.ejs')  %> 
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/styles-cart.css">
     <title>Shopping cart</title>
@@ -91,19 +87,8 @@ rel="stylesheet" />
             <button>Pay <i class="fas fa-caret-right"></i></button>
         </div>
     </main>
-    <footer class="f-cart">
-        <div>
-            <ul class="footer-right">
-                <li> <a href="#">Contact Us</a></li>
-                <li>|</li>
-                <li> <a href="#">About Us</a></li>
-            </ul>
-            <ul class="footer-left">
-                <li> <a href="#"><i class="fab fa-facebook-square"></i></a></li>
-                <li> <a href="#"><i class="fab fa-instagram-square"></i></a></li>
-                <li> <a href="#"><i class="fab fa-whatsapp-square"></i></a></li>
-            </ul>
-        </div>
+    <footer class="f-home">
+    <%- include('./partials/footer.ejs') %>
     </footer>
 </body>
 </html>
