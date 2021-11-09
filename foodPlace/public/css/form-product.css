@@ -1,8 +1,8 @@
 .edit-product-box {
   width: 100%; 
   height: 100%;
+  min-height: 100vh;
   font-family: 'Poppins', sans-serif;
-  padding-bottom: 50px;
 }
 
 /*Main*/
@@ -28,11 +28,11 @@ main section form {
 /*Form submit btn*/
 main section form button {
   width: 100%;
-  padding: 8px 5px;
+  padding: 12px 5px;
   background-color: #5E1EBE;
   color: white;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   margin-top: 25px;
   cursor: pointer;
   transition: all 450ms;
@@ -54,13 +54,14 @@ main section form button:hover {
   font-size: 19px;
 }
 .edit-form-element input, textarea, select{
-  border-radius: 8px;
-  padding: 5px;
+  border-radius: 2px;
+  border: 1px solid black;
+  outline: none;
+  padding: 10px;
+  font-size: 15px;
 }
 .edit-form-element input {
-    width: 100%;
-    height: 30px;
-   
+  width: 100%;
 }
 
 .edit-form-element textarea{
@@ -80,4 +81,18 @@ main section form button:hover {
 
 #product-image{
   border-radius: 0;
+}
+
+/*Footer*/
+footer {
+  max-width: 100%;
+  position: absolute;
+  bottom: -10px;
+}
+
+@media screen and (max-height: 950px){
+
+  footer {
+    position: relative;
+  }
 }
