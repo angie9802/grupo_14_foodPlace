@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "first_name": "Lilah",
+    "last_name": "Geoghegan",
+    "email": "lgeoghegan0@pcworld.com",
+    "password": "6SmrdS7WgILU",
+    "category": "user",
+    "image": "user_1.jpg"
+  },
+  {
+    "id": 2,
+    "first_name": "Cornell",
+    "last_name": "Alelsandrovich",
+    "email": "calelsandrovich1@posterous.com",
+    "password": "7MneSSY",
+    "category": "user",
+    "image": "user_2.jpg"
+  },
+  {
+    "id": 3,
+    "first_name": "Conant",
+    "last_name": "Heddan",
+    "email": "cheddan2@prlog.org",
+    "password": "Ylia4kAmAtZn",
+    "category": "user",
+    "image": "user_3.jpg"
+  },
+  {
+    "id": 4,
+    "first_name": "Rozelle",
+    "last_name": "Hawkslee",
+    "email": "rhawkslee3@trellian.com",
+    "password": "9OhRdWTU",
+    "category": "user",
+    "image": "user_4.jpg"
+  },
+  {
+    "id": 5,
+    "first_name": "Hannah",
+    "last_name": "Najafian",
+    "email": "hnajafian4@mapy.cz",
+    "password": "rrSK39Q22vd",
+    "category": "user",
+    "image": "user_5.jpg"
+  },
+  {
+    "id": 6,
+    "first_name": "Krishnah",
+    "last_name": "Rylett",
+    "email": "krylett5@phpbb.com",
+    "password": "MuWXWzQi8O",
+    "category": "user",
+    "image": "user_6.jpg"
+  },
+  {
+    "id": 7,
+    "first_name": "Fleur",
+    "last_name": "Braznell",
+    "email": "fbraznell6@pagesperso-orange.fr",
+    "password": "gf49kXIQyViw",
+    "category": "user",
+    "image": "user_7.jpg"
+  },
+  {
+    "id": 8,
+    "first_name": "Alfons",
+    "last_name": "Lummasana",
+    "email": "alummasana7@earthlink.net",
+    "password": "6HRcNeh",
+    "category": "user",
+    "image": "user_8.jpg"
+  },
+  {
+    "id": 9,
+    "first_name": "Diego",
+    "last_name": "Dennis",
+    "email": "ddennis8@ebay.com",
+    "password": "sRNzzOQ8x",
+    "category": "user",
+    "image": "user_9.jpg"
+  },
+  {
+    "id": 10,
+    "first_name": "Alfy",
+    "last_name": "Beneteau",
+    "email": "abeneteau9@cmu.edu",
+    "password": "CmPQmy",
+    "category": "user",
+    "image": "user_10.jpg"
+  }
+]

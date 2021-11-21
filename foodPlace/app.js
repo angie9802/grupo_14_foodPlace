@@ -5,6 +5,8 @@ const mainRouter = require("./src/routes/mainRoutes");
 const port = process.env.PORT || 3000;
 
 app.set("view engine", "ejs");
+app.use(express.urlencoded({ extended: false}));
+app.use(express.json())
 
 //Routes
 app.use("/", mainRouter);
@@ -18,4 +20,4 @@ app.use("/create-product",mainRouter);
 
 app.use(express.static(path.resolve(__dirname, "./public")));
 
-app.listen(port, () => console.log("Running server in port " + port));
+app.listen(port, () => console.log("server running on port " + port));
