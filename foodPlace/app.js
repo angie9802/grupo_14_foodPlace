@@ -1,21 +1,18 @@
 const express = require("express");
-const path = require("path");
 const app = express();
-const mainRouter = require("./src/routes/mainRoutes");
+const path = require("path");
 const port = process.env.PORT || 3000;
 
-app.set("view engine", "ejs");
-
-//Routes
-app.use("/", mainRouter);
-app.use("/menu", mainRouter);
-app.use("/login", mainRouter);
-app.use("/register", mainRouter);
-app.use("/detail-product", mainRouter);
-app.use("/shopping-cart", mainRouter);
-
-
-
 app.use(express.static(path.resolve(__dirname, "./public")));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json())
 
-app.listen(port, () => console.log("Running server in port " + port));
+app.set('view engine', 'ejs');
+
+const mainRouter = require('./src/routes/main');
+const productsRouter = require('./src/routes/products')
+
+app.use('/', mainRouter)
+app.use('/products', productsRouter)
+
+app.listen(port, () => console.log("server running on port " + port));

@@ -17,9 +17,6 @@ header {
   width: 100%;
 }
 /*Main*/
-main {
-  margin-top: 30px;
-}
 
 /*Products Categories*/
 main .box-products-categories {
@@ -64,8 +61,7 @@ main .categories-content-single-product img {
   border-radius: 50%;
 }
 
-main .categories-content-single-product p {
-}
+
 
 /*Banner*/
 
