@@ -18,25 +18,25 @@
       <header><%- include('./partials/header')%></header>
       <main>
         <section>
-          <form>
+          <form method="post" action='/products'>
             <div class="edit-form-element">
               <label for="product-name">Product Name:</label>
-              <input type="text"/>
+              <input type="text" id='product-name' name='name' required />
             </div>
 
             <div class="edit-form-element">
               <label for="product-description">Description:</label>
-              <textarea rows="10" cols="50"></textarea>
+              <textarea rows="10" cols="50" id='product-description' name='description' required ></textarea>
             </div>
 
             <div class="edit-form-element">
               <label for="product-image">Product Image</label>
-              <input  id="product-image" type="file"/>
+              <input type="file" id='product-image' name='image' required />
             </div>
 
             <div class="edit-form-element">
               <label for="product-category">Category</label>
-              <select id="product-category">
+              <select id='product-category' name='category' required>
                 <option value="hamburguer">Hamburguer</option>
                 <option value="vegan">Vegan</option>
                 <option value="chinese">Chinese</option>
@@ -47,12 +47,12 @@
 
             <div class="edit-form-element">
               <label for="product-price">Price:</label>
-              <input id="product-price" type="number"/>
+              <input id="product-price" type="number" name='price' required />
             </div>
 
             <div class="edit-form-element">
               <label for="product-delay">Product Delay Time:</label>
-              <input id="product-delay" type="text"/>
+              <input id="product-delay" type="text" name='time' required />
             </div>
 
             <button type="submit">Create</button>
@@ -60,7 +60,7 @@
         </section>
       </main>
 
-      <footer class="f-edit">
+      <footer>
         <%- include('./partials/footer')%>
       </footer>
     </div>
