@@ -159,25 +159,20 @@ main .product-other-products .other-products-single-text{
   justify-content: center;
 }
 
-.other-products-single-text h1{
+main .other-products-single-text h1{
   font-size: 18px;
   font-weight: 400
 }
 
-.other-products-single-text h2{
+main .other-products-single-text h2{
   font-size: 15px;
   font-weight: 900;
 }
 
-.other-products-single-text p{
+main .other-products-single-text p{
   font-size: 14px;
 }
-
-.other-products-single-btn{
-  
-}
-
-.other-products-single-btn button{
+main .other-products-single-btn button{
   width: 40px;
   height: 40px;
   background-color: #5E1EBE;
@@ -186,6 +181,28 @@ main .product-other-products .other-products-single-text{
   border-radius: 50%;
   border: none;
   cursor: pointer;
+}
+
+main .single-btn{
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+main .single-btn a button, .single-btn form button{
+  color:  #5E1EBE;
+  border: solid 2px  #5E1EBE;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 15px;
+  width: 95px;
+  margin: 2px;
+  background-color: #FFFFFF;
+  padding:2px
+}
+main .announce{
+  margin-left:50px;
+  font-weight: bold;
 }
 
 /*Footer*/

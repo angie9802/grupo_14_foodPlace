@@ -1,6 +1,5 @@
 const fs = require('fs')
 const path = require('path')
-const multer = require('multer')
 const productsFilePath = path.resolve(__dirname, '../data/products.json')
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'))
 const pathView = require('../utils/pathViews')
@@ -11,14 +10,19 @@ const controller = {
   
   //Show all products
   index: (req, res) => {
-    
+    res.render(path.resolve(__dirname, pathView('products')), { products })
   },
 
   //Detail Product
   detail: (req, res) => {
-    
+    let id = req.params.id;
+    let product = products.find(item=>{
+      return item.id == id
+    })
+    console.log(product)
+    res.render(path.resolve(__dirname, pathView('detail')),{ product , products })
   },
-
+  
   //Create a new product
   create: (req, res) => {
     
