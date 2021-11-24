@@ -11,14 +11,19 @@ const controller = {
   
   //Show all products
   index: (req, res) => {
-    
+    res.render(path.resolve(__dirname, pathView('products')), { products })
   },
 
   //Detail Product
   detail: (req, res) => {
-    
+    let id = req.params.id;
+    let product = products.find(item=>{
+      return item.id == id
+    })
+    console.log(product)
+    res.render(path.resolve(__dirname, pathView('detail')),{ product , products })
   },
-
+  
   //Create a new product
   create: (req, res) => {
 

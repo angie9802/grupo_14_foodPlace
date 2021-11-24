@@ -1,182 +1,184 @@
 [
     {
         "id": 1,
-        "name": "Hot dog",
+        "name": "Hot dog 1",
         "price": 19500,
         "productTime": 10,
         "category": "Af9nCgRU",
         "description": "donec semper sapien a libero nam dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis ut at dolor quis odio consequat varius integer ac",
-        "image": "product_1.jpg"
+        "image": "hot-dog.jpg"
     },
     {
         "id": 2,
-        "name": "Hot dog",
+        "name": "Hot dog 2 ",
         "price": 38847,
         "productTime": 96,
         "category": "qHE5Las3D",
-        "description": "pulvinar nulla pede ullamcorper augue a suscipit nulla elit ac nulla sed vel enim sit amet nunc viverra dapibus nulla suscipit ligula in lacus curabitur at ipsum ac tellus semper interdum mauris ullamcorper purus sit amet nulla quisque",
-        "image": "product_2.jpg"
+        "description": "pulvinar nulla pede ullamcorper augue a suscipit nulla elit ac nulla sed vel enim sit amet nunc viverra dapibus nulla suscipit ligula in lacus curabitur at ipsum ",
+        "image": "hot-dog.jpg"
     },
     {
         "id": 3,
-        "name": "sandwich",
+        "name": "sandwich 1",
         "price": 13751,
         "productTime": 9,
         "category": "9EhJ0xqk",
         "description": "curae mauris viverra diam vitae quam suspendisse potenti nullam porttitor lacus",
-        "image": "product_3.jpg"
+        "image": "sandwich.jpg"
     },
     {
         "id": 4,
-        "name": "Hamburguer",
+        "name": "Hamburguer 1",
         "price": 51747,
         "productTime": 98,
         "category": "VzRUYn",
-        "description": "nulla suspendisse potenti cras in purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus",
-        "image": "product_4.jpg"
+        "description": "nulla suspendisse potenti cras in purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus",
+        "image": "detail-hamburguer.jpg"
     },
     {
         "id": 5,
-        "name": "Hot dog",
+        "name": "Hot dog 3",
         "price": 44473,
         "productTime": 59,
         "category": "66VoxQDvy",
         "description": "nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy",
-        "image": "product_5.jpg"
+        "image": "hot-dog.jpg"
     },
     {
         "id": 6,
-        "name": "chicken",
+        "name": "chicken 1",
         "price": 13352,
         "productTime": 80,
         "category": "tsnddxxWTF",
-        "description": "varius ut blandit non interdum in ante vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae duis faucibus accumsan odio curabitur convallis duis consequat dui nec nisi volutpat eleifend donec ut dolor morbi vel lectus in",
-        "image": "product_6.jpg"
+        "description": "varius ut blandit non interdum in ante vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae duis faucibus accumsan odio curabitur convallis duis",
+        "image": "chicken.jpg"
     },
     {
         "id": 7,
-        "name": "pasta",
+        "name": "pasta 1",
         "price": 6906,
         "productTime": 17,
         "category": "apCLc8dW3",
         "description": "odio curabitur convallis duis consequat dui nec nisi volutpat eleifend donec ut dolor morbi vel lectus in quam fringilla rhoncus mauris enim leo rhoncus sed vestibulum sit",
-        "image": "product_7.jpg"
+        "image": "pasta.jpg"
     },
     {
         "id": 8,
-        "name": "pasta",
+        "name": "pasta 2",
         "price": 43949,
         "productTime": 56,
         "category": "8hh484Uq9P7j",
         "description": "at turpis donec posuere metus vitae ipsum aliquam non mauris morbi non lectus aliquam sit amet diam in",
-        "image": "product_8.jpg"
+        "image": "pasta.jpg"
     },
     {
         "id": 9,
-        "name": "chicken",
+        "name": "chicken 2",
         "price": 3632,
         "productTime": 21,
         "category": "HZPyzfPKkGPs",
         "description": "pellentesque ultrices phasellus id sapien in sapien iaculis congue vivamus metus arcu adipiscing molestie",
-        "image": "product_9.jpg"
+        "image": "chicken.jpg"
     },
     {
         "id": 10,
-        "name": "Coffee",
+        "name": "Coffee 1",
         "price": 32192,
         "productTime": 65,
         "category": "jhyW2TsFqx5x",
         "description": "enim sit amet nunc viverra dapibus nulla suscipit ligula in lacus curabitur at ipsum ac tellus semper interdum mauris",
-        "image": "product_10.jpg"
+        "image": "coffee.jpg"
     },
     {
         "id": 11,
-        "name": "pasta",
+        "name": "pasta 3",
         "price": 24908,
         "productTime": 27,
         "category": "QfTmmqmsG",
         "description": "justo lacinia eget tincidunt eget tempus vel pede morbi porttitor lorem id ligula suspendisse ornare consequat lectus in est risus auctor",
-        "image": "product_11.jpg"
+        "image": "pasta.jpg"
     },
     {
         "id": 12,
-        "name": "sandwich",
+        "name": "sandwich 2",
         "price": 42267,
         "productTime": 5,
         "category": "CpCn3RZzn",
-        "description": "lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst",
-        "image": "product_12.jpg"
+        "description": "lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat ",
+        "image": "sandwich.jpg"
     },
     {
         "id": 13,
-        "name": "Coffee",
+        "name": "Coffee 2",
         "price": 17265,
         "productTime": 6,
         "category": "UC6foMIJ",
-        "description": "nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis",
-        "image": "product_13.jpg"
+        "description": "nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse ",
+        "image": "coffee.jpg"
     },
     {
         "id": 14,
-        "name": "Coffee",
+        "name": "Coffee 3",
         "price": 24867,
         "productTime": 19,
         "category": "fxBHeQ",
         "description": "id nisl venenatis lacinia aenean sit amet justo morbi ut odio cras",
-        "image": "product_14.jpg"
+        "image": "coffee.jpg"
     },
     {
         "id": 15,
-        "name": "sandwich",
+        "name": "sandwich 3",
         "price": 3174,
         "productTime": 36,
         "category": "HzsFEq",
         "description": "eu orci mauris lacinia sapien quis libero nullam sit amet turpis elementum ligula vehicula consequat morbi a ipsum integer a nibh",
-        "image": "product_15.jpg"
+        "image": "sandwich.jpg"
     },
     {
         "id": 16,
-        "name": "Coffee",
+        "name": "Coffee 4",
         "price": 64250,
         "productTime": 5,
         "category": "Fl5kzGS",
         "description": "rutrum neque aenean auctor gravida sem praesent id massa id nisl venenatis lacinia aenean sit amet justo morbi ut odio cras mi pede malesuada in imperdiet et commodo vulputate justo in blandit",
-        "image": "product_16.jpg"
+        "image": "coffee.jpg"
     },
     {
         "id": 17,
-        "name": "Hot dog",
+        "name": "Hot dog 4",
         "price": 21750,
         "productTime": 32,
         "category": "LkfDPFWtXA",
         "description": "non velit donec diam neque vestibulum eget vulputate ut ultrices vel augue vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec",
-        "image": "product_17.jpg"
+        "image": "hot-dog.jpg"
     },
     {
         "id": 18,
-        "name": "Coffee",
+        "name": "Coffee 5",
         "price": 19790,
         "productTime": 10,
         "category": "uM2sknJ",
         "description": "amet consectetuer adipiscing elit proin risus praesent lectus vestibulum quam sapien varius",
-        "image": "product_18.jpg"
+        "image": "coffee.jpg"
     },
     {
         "id": 19,
-        "name": "sandwich",
+        "name": "sandwich 4",
         "price": 68981,
         "productTime": 93,
         "category": "LyHG1O",
         "description": "morbi ut odio cras mi pede malesuada in imperdiet et commodo vulputate justo in blandit ultrices enim lorem ipsum dolor sit amet consectetuer adipiscing elit proin interdum mauris",
-        "image": "product_19.jpg"
+        "image": "sandwich.jpg"
     },
     {
         "id": 20,
-        "name": "Coffee",
+        "name": "Coffee 6",
         "price": 14208,
         "productTime": 25,
         "category": "CxggCwaOhKp",
         "description": "ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio",
-        "image": "product_20.jpg"
+        "image": "coffee.jpg"
+
     }
+    
 ]
