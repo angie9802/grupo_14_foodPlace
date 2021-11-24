@@ -18,7 +18,7 @@
       <header><%- include('./partials/header')%></header>
       <main>
         <section>
-          <form method="post" action='/products'>
+          <form method="post" action='/products' enctype="multipart/form-data">
             <div class="edit-form-element">
               <label for="product-name">Product Name:</label>
               <input type="text" id='product-name' name='name' required />
@@ -31,7 +31,7 @@
 
             <div class="edit-form-element">
               <label for="product-image">Product Image</label>
-              <input type="file" id='product-image' name='image' required />
+              <input type="file" name='image' id='product-image' required />
             </div>
 
             <div class="edit-form-element">
