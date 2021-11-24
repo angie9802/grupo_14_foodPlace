@@ -1,9 +1,15 @@
 const fs = require('fs')
 const path = require('path')
+<<<<<<< HEAD
 const productsFilePath = path.resolve(__dirname, '../data/products.json')
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'))
+=======
+const multer = require('multer')
+>>>>>>> 5f15258f04272830c29761bcc73d4e36b16f62a0
 const pathView = require('../utils/pathViews')
 const maxId = require('../utils/maxId')
+const productsFilePath = path.resolve(__dirname, '../data/products.json')
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'))
 
 
 const controller = {
@@ -25,9 +31,12 @@ const controller = {
   
   //Create a new product
   create: (req, res) => {
+
+    console.log(req.file)
     
     let product = {
       id: maxId(products),
+      image: req.file.filename,
       ...req.body
     }
 

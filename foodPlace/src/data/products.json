@@ -177,7 +177,11 @@
         "productTime": 25,
         "category": "CxggCwaOhKp",
         "description": "ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio",
+<<<<<<< HEAD
         "image": "coffee.jpg"
+=======
+        "image": "product_20.jpg"
+>>>>>>> 5f15258f04272830c29761bcc73d4e36b16f62a0
     }
     
 ]
