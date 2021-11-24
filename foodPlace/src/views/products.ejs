@@ -68,11 +68,25 @@
             </div>
           </article>
         </section>
-
-        <section class="box-products-banner">
-          <!--Img background-->
-        </section>
-
+         <!--------->
+         <article class="box-products-categories-title">
+          <h1>Products</h1>
+        </article>
+         <section class="section-products">
+            <% products.forEach(product => {%> 
+            <article class="container-product"> 
+              <a href="/products/detail/<%= product.id %> ">
+                <img src="/img/products/<%= product.image %> " alt="">
+                <div class="detail-product">
+                  <h4><%= product.name %> </h4>
+                  <p>$<%= new Intl.NumberFormat("de-DE").format(product.price)%></p>
+                </div>
+              </a>
+            </article>
+            <% }) %> 
+         </section>
+      
+        <!----------->
         <section class="box-products-bestsellers">
           <article class="box-products-bestsellers-title">
             <h1>Best Sellers</h1>
