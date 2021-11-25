@@ -13,10 +13,14 @@ router.get('/', products.index)
 router.post('/', uploadFile.single('image'), products.create)
 
 //Get one product(detail)
-router.get('/detail/:id', products.detail); 
+router.get('/:id', products.detail); 
 //Edit one product
 
+router.get('/edit/:id', products.edit)
+router.put('/:id',products.update)
 //Delete one product
+
+router.delete('/:id',products.delete)
 
 
 module.exports = router

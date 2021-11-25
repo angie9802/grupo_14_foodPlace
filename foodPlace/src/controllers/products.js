@@ -41,15 +41,41 @@ const controller = {
     fs.writeFileSync(productsFilePath, jsonProducts)
     
   },
+  edit: (req,res)=> {
+    let id = req.params.id;
+		let product = products.find(item =>{
+			return item.id == id
+		})
+		res.render(path.resolve(__dirname, pathView('edit-product')),{product})
+    },
   
   //Update a product
   update: (req, res) => {
-    
+    let id = req.params.id
+		let product = products.find(item =>{
+			return item.id == id
+		})
+		product.name = req.body.name;
+		product.price = req.body.price;
+		product.discount = req.body.discount;
+		product.category = req.body.category;
+		product.description = req.body.description;
+		
+		let jsonProducts = JSON.stringify(products,null,4);
+		fs.writeFileSync(productsFilePath,jsonProducts);
+		
+		res.redirect('/')
+	
   },
   
   //Delete a product
   delete: (req, res) => {
-    
+    let id = req.params.id;
+		products.splice(id-1,id)
+		let jsonProducts = JSON.stringify(products,null,4);
+		fs.writeFileSync(productsFilePath,jsonProducts);
+		
+    res.redirect('/')
   }
 }
 

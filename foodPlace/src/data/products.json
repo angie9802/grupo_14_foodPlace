@@ -36,51 +36,6 @@
         "image": "detail-hamburguer.jpg"
     },
     {
-        "id": 5,
-        "name": "Hot dog 3",
-        "price": 44473,
-        "productTime": 59,
-        "category": "66VoxQDvy",
-        "description": "nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy",
-        "image": "hot-dog.jpg"
-    },
-    {
-        "id": 6,
-        "name": "chicken 1",
-        "price": 13352,
-        "productTime": 80,
-        "category": "tsnddxxWTF",
-        "description": "varius ut blandit non interdum in ante vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae duis faucibus accumsan odio curabitur convallis duis",
-        "image": "chicken.jpg"
-    },
-    {
-        "id": 7,
-        "name": "pasta 1",
-        "price": 6906,
-        "productTime": 17,
-        "category": "apCLc8dW3",
-        "description": "odio curabitur convallis duis consequat dui nec nisi volutpat eleifend donec ut dolor morbi vel lectus in quam fringilla rhoncus mauris enim leo rhoncus sed vestibulum sit",
-        "image": "pasta.jpg"
-    },
-    {
-        "id": 8,
-        "name": "pasta 2",
-        "price": 43949,
-        "productTime": 56,
-        "category": "8hh484Uq9P7j",
-        "description": "at turpis donec posuere metus vitae ipsum aliquam non mauris morbi non lectus aliquam sit amet diam in",
-        "image": "pasta.jpg"
-    },
-    {
-        "id": 9,
-        "name": "chicken 2",
-        "price": 3632,
-        "productTime": 21,
-        "category": "HZPyzfPKkGPs",
-        "description": "pellentesque ultrices phasellus id sapien in sapien iaculis congue vivamus metus arcu adipiscing molestie",
-        "image": "chicken.jpg"
-    },
-    {
         "id": 10,
         "name": "Coffee 1",
         "price": 32192,
@@ -136,12 +91,12 @@
     },
     {
         "id": 16,
-        "name": "Coffee 4",
-        "price": 64250,
         "productTime": 5,
-        "category": "Fl5kzGS",
-        "description": "rutrum neque aenean auctor gravida sem praesent id massa id nisl venenatis lacinia aenean sit amet justo morbi ut odio cras mi pede malesuada in imperdiet et commodo vulputate justo in blandit",
-        "image": "coffee.jpg"
+        "image": "coffee.jpg",
+        "name": "dfgdgfd",
+        "price": "32324",
+        "category": "hamburguer",
+        "description": " zdfgfdgdfgdfgd"
     },
     {
         "id": 17,
@@ -178,7 +133,5 @@
         "category": "CxggCwaOhKp",
         "description": "ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio",
         "image": "coffee.jpg"
-
     }
-    
 ]

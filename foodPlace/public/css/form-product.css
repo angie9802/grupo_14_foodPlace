@@ -9,6 +9,9 @@
 main {
   margin: 50px 0;
 }
+main .selector-edit {
+  text-align: center;
+}
 main h2{
   display: block;
 }
