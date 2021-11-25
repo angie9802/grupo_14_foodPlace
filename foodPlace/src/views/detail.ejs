@@ -3,7 +3,7 @@
   <head>
     <%- include('./partials/head.ejs')  %> 
     <title>Detail product</title>
-
+    <link rel="stylesheet" href="/css/normalize.css" />
     <link rel="stylesheet" href="/css/detail-product.css" />
     <link rel="stylesheet" href="/css/header-footer.css" />
   </head>
@@ -37,7 +37,7 @@
             <div class="single-btn">
               <a href="#"> <button>Add to Cart</button></a>
               <a href="/products/edit/<%= product.id %>"><button>Edit</button></a>
-              <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST"  style="display: inline-flex">
+              <form action="/products/<%= product.id %>?_method=DELETE" method="POST"  style="display: inline-flex">
                 <button type="submit" >Delete</button>
               </form>
             </div>

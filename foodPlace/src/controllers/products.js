@@ -1,6 +1,5 @@
 const fs = require('fs')
 const path = require('path')
-const multer = require('multer')
 const pathView = require('../utils/pathViews')
 const maxId = require('../utils/maxId')
 const productsFilePath = path.resolve(__dirname, '../data/products.json')
@@ -11,7 +10,7 @@ const controller = {
   
   //Show all products
   index: (req, res) => {
-    res.render(path.resolve(__dirname, pathView('products')), { products })
+    res.render(path.resolve(__dirname, pathView('products')),{ products })
   },
 
   //Detail Product
@@ -23,9 +22,14 @@ const controller = {
     console.log(product)
     res.render(path.resolve(__dirname, pathView('detail')),{ product , products })
   },
-  
-  //Create a new product
+
+  //Create - Form to create products
   create: (req, res) => {
+    res.render(path.resolve(__dirname, pathView('create-product')))
+  },
+
+  //Create - Method to store
+  store: (req, res) => {
 
     console.log(req.file)
     
@@ -39,17 +43,44 @@ const controller = {
     
     let jsonProducts = JSON.stringify(products,null,4)
     fs.writeFileSync(productsFilePath, jsonProducts)
-    
+
+    res.render(path.resolve(__dirname, pathView('products')),{ products })
   },
+  edit: (req,res)=> {
+    let id = req.params.id;
+		let product = products.find(item =>{
+			return item.id == id
+		})
+		res.render(path.resolve(__dirname, pathView('edit-product')),{product})
+    },
   
   //Update a product
   update: (req, res) => {
-    
+    let id = req.params.id
+		let product = products.find(item =>{
+			return item.id == id
+		})
+		product.name = req.body.name;
+		product.price = req.body.price;
+		product.discount = req.body.discount;
+		product.category = req.body.category;
+		product.description = req.body.description;
+		
+		let jsonProducts = JSON.stringify(products,null,4);
+		fs.writeFileSync(productsFilePath,jsonProducts);
+		
+		res.redirect('/products')
+	
   },
   
   //Delete a product
   delete: (req, res) => {
-    
+    let id = req.params.id
+    const newDb = products.filter(item => item.id != id);
+    let jsonProducts = JSON.stringify(newDb,null,4)
+    fs.writeFileSync(productsFilePath, jsonProducts,{encoding: "utf-8"})
+		
+    res.redirect('/products')
   }
 }
 

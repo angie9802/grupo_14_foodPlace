@@ -12,14 +12,19 @@ const uploadFile = require('../utils/multerConfig')
 router.get('/', products.index)
 
 //Create one product
-router.post('/', uploadFile.single('image'), products.create)
+router.get('/create', products.create)
+router.post('/', uploadFile.single('image'), products.store)
 
 //Get one product(detail)
-router.get('/detail/:id', products.detail); 
+router.get('/:id', products.detail); 
 //Edit one product
-router.get('/edit-product', mainController.editProduct)
 
+
+router.get('/edit/:id', products.edit)
+router.put('/:id',products.update)
 //Delete one product
+
+router.delete('/:id',products.delete)
 
 
 module.exports = router
