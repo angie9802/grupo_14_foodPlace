@@ -3,6 +3,7 @@
   <head>
     <%- include('./partials/head.ejs')  %> 
     <title>Menu</title>
+    <link rel="stylesheet" href="/css/normalize.css" />
     <link rel="stylesheet" href="/css/menu.css" />
     <link rel="stylesheet" href="/css/header-footer.css" />
   </head>
@@ -73,7 +74,7 @@
           <h1>Products</h1>
         </article>
          <section class="section-products">
-            <% products.forEach(product => {%> 
+            <% newProducts.forEach(product => {%> 
             <article class="container-product"> 
               <a href="/products/<%= product.id %> ">
                 <img src="/img/products/<%= product.image %> " alt="">

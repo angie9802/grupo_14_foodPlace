@@ -10,7 +10,8 @@ const controller = {
   
   //Show all products
   index: (req, res) => {
-    res.render(path.resolve(__dirname, pathView('products')),{ products })
+    const newProducts = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'))
+    res.render(path.resolve(__dirname, pathView('products')),{ newProducts })
   },
 
   //Detail Product
@@ -19,7 +20,6 @@ const controller = {
     let product = products.find(item=>{
       return item.id == id
     })
-    console.log(product)
     res.render(path.resolve(__dirname, pathView('detail')),{ product , products })
   },
 
@@ -38,11 +38,12 @@ const controller = {
     }
 
     products.push(product)
+    const newProducts = products
     
-    let jsonProducts = JSON.stringify(products,null,4)
+    let jsonProducts = JSON.stringify(newProducts,null,4)
     fs.writeFileSync(productsFilePath, jsonProducts)
 
-    res.render(path.resolve(__dirname, pathView('products')),{ products })
+    res.render(path.resolve(__dirname, pathView('products')),{ newProducts })
   },
   edit: (req,res)=> {
     let id = req.params.id;
@@ -73,8 +74,9 @@ const controller = {
   
   //Delete a product
   delete: (req, res) => {
+    const newProducts = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'))
     let id = req.params.id
-    const newDb = products.filter(item => item.id != id);
+    const newDb = newProducts.filter(item => item.id != id);
     let jsonProducts = JSON.stringify(newDb,null,4)
     fs.writeFileSync(productsFilePath, jsonProducts,{encoding: "utf-8"})
 		
