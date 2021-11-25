@@ -200,6 +200,16 @@ main .single-btn a button, .single-btn form button{
   background-color: #FFFFFF;
   padding:2px
 }
+main .product-single-description h1{
+  font-size: 30px;
+}
+main .product-single-description p{
+  text-align: justify;
+}
+main .other-products-single-text p{
+  text-align: justify;
+  font-size: 13px
+}
 main .announce{
   margin-left:50px;
   font-weight: bold;

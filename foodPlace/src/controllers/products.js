@@ -30,8 +30,6 @@ const controller = {
 
   //Create - Method to store
   store: (req, res) => {
-
-    console.log(req.file)
     
     let product = {
       id: maxId(products),
