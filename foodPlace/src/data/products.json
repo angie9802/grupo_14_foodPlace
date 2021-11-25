@@ -9,42 +9,6 @@
         "image": "hot-dog.jpg"
     },
     {
-        "id": 3,
-        "name": "sandwich 1",
-        "price": 13751,
-        "productTime": 9,
-        "category": "9EhJ0xqk",
-        "description": "curae mauris viverra diam vitae quam suspendisse potenti nullam porttitor lacus",
-        "image": "sandwich.jpg"
-    },
-    {
-        "id": 4,
-        "name": "Hamburguer 1",
-        "price": 51747,
-        "productTime": 98,
-        "category": "VzRUYn",
-        "description": "nulla suspendisse potenti cras in purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus",
-        "image": "detail-hamburguer.jpg"
-    },
-    {
-        "id": 10,
-        "name": "Coffee 1",
-        "price": 32192,
-        "productTime": 65,
-        "category": "jhyW2TsFqx5x",
-        "description": "enim sit amet nunc viverra dapibus nulla suscipit ligula in lacus curabitur at ipsum ac tellus semper interdum mauris",
-        "image": "coffee.jpg"
-    },
-    {
-        "id": 11,
-        "name": "pasta 3",
-        "price": 24908,
-        "productTime": 27,
-        "category": "QfTmmqmsG",
-        "description": "justo lacinia eget tincidunt eget tempus vel pede morbi porttitor lorem id ligula suspendisse ornare consequat lectus in est risus auctor",
-        "image": "pasta.jpg"
-    },
-    {
         "id": 12,
         "name": "sandwich 2",
         "price": 42267,
@@ -70,14 +34,5 @@
         "category": "fxBHeQ",
         "description": "id nisl venenatis lacinia aenean sit amet justo morbi ut odio cras",
         "image": "coffee.jpg"
-    },
-    {
-        "id": 15,
-        "name": "sandwich 3",
-        "price": 3174,
-        "productTime": 36,
-        "category": "HzsFEq",
-        "description": "eu orci mauris lacinia sapien quis libero nullam sit amet turpis elementum ligula vehicula consequat morbi a ipsum integer a nibh",
-        "image": "sandwich.jpg"
     }
 ]
