@@ -10,7 +10,8 @@ const uploadFile = require('../utils/multerConfig')
 router.get('/', products.index)
 
 //Create one product
-router.post('/', uploadFile.single('image'), products.create)
+router.get('/create', products.create)
+router.post('/', uploadFile.single('image'), products.store)
 
 //Get one product(detail)
 router.get('/detail/:id', products.detail); 

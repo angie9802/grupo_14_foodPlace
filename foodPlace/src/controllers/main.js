@@ -16,9 +16,6 @@ const controller = {
   },
   editProduct: (req, res) => {
     res.render(path.resolve(__dirname, pathView('edit-product')))  
-  },
-  createProduct: (req,res) => {
-    res.render(path.resolve(__dirname,pathView('create-product')))
   }
 }
 

@@ -1,6 +1,5 @@
 const fs = require('fs')
 const path = require('path')
-const multer = require('multer')
 const pathView = require('../utils/pathViews')
 const maxId = require('../utils/maxId')
 const productsFilePath = path.resolve(__dirname, '../data/products.json')
@@ -11,7 +10,7 @@ const controller = {
   
   //Show all products
   index: (req, res) => {
-    res.render(path.resolve(__dirname, pathView('products')), { products })
+    res.render(path.resolve(__dirname, pathView('products')),{ products })
   },
 
   //Detail Product
@@ -23,9 +22,14 @@ const controller = {
     console.log(product)
     res.render(path.resolve(__dirname, pathView('detail')),{ product , products })
   },
-  
-  //Create a new product
+
+  //Create - Form to create products
   create: (req, res) => {
+    res.render(path.resolve(__dirname, pathView('create-product')))
+  },
+
+  //Create - Method to store
+  store: (req, res) => {
 
     console.log(req.file)
     
@@ -39,7 +43,8 @@ const controller = {
     
     let jsonProducts = JSON.stringify(products,null,4)
     fs.writeFileSync(productsFilePath, jsonProducts)
-    
+
+    res.render(path.resolve(__dirname, pathView('products')),{ products })
   },
   
   //Update a product
