@@ -10,19 +10,25 @@
   </head>
   <body>
     <div class="edit-product-box">
-      <header> <%- include('./partials/header') %></header>
-
+      <header> <%- include('./partials/header.ejs') %></header>
+      <% if (locals.product) { %>
       <main>
+        <div class="selector-edit" >
+          <h2 class="products-title">Estás editando: <i><%= product.name %></i></h2>
+        </div>
         <section>
-          <form >
+
+  
+          <form action="/products/<%= product.id %>?_method=PUT" method="POST">
+
             <div class="edit-form-element">
               <label for="product-name">Product Name</label>
-              <input type="text"/>
+              <input type="text" name="name" placeholder="Ej:Hamburguesa"/>
             </div>
 
             <div class="edit-form-element">
               <label for="product-description">Description</label>
-              <textarea rows="10" cols="50"></textarea>
+              <textarea rows="10" name="description"  cols="50"><%= product.description  %> </textarea>
             </div>
 
             <div class="edit-form-element">
@@ -32,7 +38,7 @@
 
             <div class="edit-form-element">
               <label for="product-category">Category</label>
-              <select id="product-category">
+              <select id="product-category" name="category">
                 <option value="hamburguer">Hamburguer</option>
                 <option value="vegan">Vegan</option>
                 <option value="chinese">Chinese</option>
@@ -43,19 +49,21 @@
 
             <div class="edit-form-element">
               <label for="product-price">Price</label>
-              <input id="product-price" type="number"/>
+              <input id="product-price" name="price" type="number"/>
             </div>
 
             <div class="edit-form-element">
               <label for="product-delay">Product Delay Time</label>
-              <input id="product-delay" type="text"/>
+              <input id="product-delay" name="productTime" type="text"/>
             </div>
 
             <button type="submit">Update</button>
           </form>
         </section>
       </main>
-
+      <% } else { %> 
+        <p> Este producto no existe</p>
+        <% } %> 
       <footer>
         <%- include('./partials/footer.ejs') %>
       </footer>
