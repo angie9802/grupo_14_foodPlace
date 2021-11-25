@@ -1,14 +1,5 @@
 [
     {
-        "id": 1,
-        "name": "Hot dog 1",
-        "price": 19500,
-        "productTime": 10,
-        "category": "Af9nCgRU",
-        "description": "donec semper sapien a libero nam dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis ut at dolor quis odio consequat varius integer ac",
-        "image": "hot-dog.jpg"
-    },
-    {
         "id": 2,
         "name": "Hot dog 2 ",
         "price": 38847,
@@ -88,50 +79,5 @@
         "category": "HzsFEq",
         "description": "eu orci mauris lacinia sapien quis libero nullam sit amet turpis elementum ligula vehicula consequat morbi a ipsum integer a nibh",
         "image": "sandwich.jpg"
-    },
-    {
-        "id": 16,
-        "productTime": 5,
-        "image": "coffee.jpg",
-        "name": "dfgdgfd",
-        "price": "32324",
-        "category": "hamburguer",
-        "description": " zdfgfdgdfgdfgd"
-    },
-    {
-        "id": 17,
-        "name": "Hot dog 4",
-        "price": 21750,
-        "productTime": 32,
-        "category": "LkfDPFWtXA",
-        "description": "non velit donec diam neque vestibulum eget vulputate ut ultrices vel augue vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec",
-        "image": "hot-dog.jpg"
-    },
-    {
-        "id": 18,
-        "name": "Coffee 5",
-        "price": 19790,
-        "productTime": 10,
-        "category": "uM2sknJ",
-        "description": "amet consectetuer adipiscing elit proin risus praesent lectus vestibulum quam sapien varius",
-        "image": "coffee.jpg"
-    },
-    {
-        "id": 19,
-        "name": "sandwich 4",
-        "price": 68981,
-        "productTime": 93,
-        "category": "LyHG1O",
-        "description": "morbi ut odio cras mi pede malesuada in imperdiet et commodo vulputate justo in blandit ultrices enim lorem ipsum dolor sit amet consectetuer adipiscing elit proin interdum mauris",
-        "image": "sandwich.jpg"
-    },
-    {
-        "id": 20,
-        "name": "Coffee 6",
-        "price": 14208,
-        "productTime": 25,
-        "category": "CxggCwaOhKp",
-        "description": "ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio",
-        "image": "coffee.jpg"
     }
 ]

@@ -75,7 +75,7 @@ const controller = {
 		let jsonProducts = JSON.stringify(products,null,4);
 		fs.writeFileSync(productsFilePath,jsonProducts);
 		
-    res.redirect('/')
+    res.redirect('/products')
   }
 }
 
