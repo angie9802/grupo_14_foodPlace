@@ -11,37 +11,75 @@
 </head>
 <body>
     <main>
-        <form action="/" class="registro" method="GET">
+        <form action="/users/register" class="registro" method="POST" enctype="multipart/form-data">
         <div class="register">
             <h1 class="title">Register</h1>
             <div class="fullname">
             <p>Full name:</p>
-            <input type="text" required>
+            <input type="text" name="fullname" class="<%= locals.errors && errors.fullname ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.fullname : null %>">
             </div>
+            <% if (locals.errors && errors.fullname) { %>
+                <div class="text-danger">
+                    <%= errors.fullname.msg %> 
+                </div>
+            <% } %>
             <div class="email">
                 <p>E-mail:</p>
-                <input type="email" required>
+                <input type="text" name="email" class="<%= locals.errors && errors.email ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.email : null %>">
             </div>
+            <% if (locals.errors && errors.email) { %>
+                <div class="text-danger">
+                    <%= errors.email.msg %> 
+                </div>
+            <% } %>
             <div class="teladress">
                 <div class="telephone">
                     <p>Telephone:</p>
-                    <input type= "number" required >
+                    <input type= "text"  name="number" class="<%= locals.errors && errors.number ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.number : null %>">
+                    <% if (locals.errors && errors.number) { %>
+                        <div class="text-danger">
+                            <%= errors.number.msg %> 
+                        </div>
+                    <% } %>
                 </div>
                 <div class="adress">
-                    <p>Adress:</p>
-                    <input type ="text" required>
+                    <p>Address:</p>
+                    <input type ="text"  name="address" class="<%= locals.errors && errors.address ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.address : null %>">
+                    <% if (locals.errors && errors.address) { %>
+                        <div class="text-danger">
+                            <%= errors.address.msg %> 
+                        </div>
+                    <% } %>
                 </div>
             </div>
             <div class="password">
                 <p>Password:</p>
-                <input type="password" minlength="5" required>
+                <input type="password" name="password" class="<%= locals.errors && errors.password ? 'is-invalid' : null %>">
             </div>
+            <% if (locals.errors && errors.password) { %>
+                <div class="text-danger">
+                    <%= errors.password.msg %> 
+                </div>
+            <% } %>
             <div class="confirmpassword">
                 <p>Confirm password:</p>
-                <input type="password" minlength="5" required>
+                <input type="password" name="cpassword" class="<%= locals.errors && errors.cpassword ? 'is-invalid' : null %>">
+            </div>
+            <% if (locals.errors && errors.cpassword) { %>
+                <div class="text-danger">
+                    <%= errors.cpassword.msg %> 
+                </div>
+            <% } %>
+            <div>
+                <input type="file"  name="userImage" >	
+                <% if (locals.errors && errors.userImage) { %>
+                    <div class="text-danger">
+                        <%= errors.userImage.msg %>
+                    </div>
+                <% } %>	
             </div>
             <div class="botonok">
-              <a href="login"> <button type="submit">OK!</button></a>
+               <button type="submit">OK!</button>
             </div>
             <div class="backhome">
                 <a href="/"><i class="fas fa-home"></i></a>

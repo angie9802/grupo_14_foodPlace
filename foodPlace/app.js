@@ -14,9 +14,11 @@ app.set('views', path.join(__dirname, 'src/views'))
 
 const mainRouter = require('./src/routes/main');
 const productsRouter = require('./src/routes/products')
+const usersRouter = require('./src/routes/users')
 
 app.use('/', mainRouter)
 app.use('/products', productsRouter)
+app.use('/users', usersRouter)
 
 
 app.listen(port, () => console.log("server running on port " + port));

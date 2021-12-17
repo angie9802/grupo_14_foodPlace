@@ -21,6 +21,13 @@ main {
     background-image: url("/img/407.jpg");
     background-size:contain;
 }
+main .text-danger{
+    font-size : 11px;
+    color: rgb(148, 24, 24)
+  }
+main .is-invalid{
+    border: 1px solid rgb(148, 24, 24);
+  }
 main .register{
     border: 1px solid black;
     text-align: center;
@@ -43,7 +50,7 @@ main .backhome i{
     color: black;
 }
 main .fullname {
-    margin: 0 20px;
+    margin: 0;
     
 }
 
@@ -51,57 +58,57 @@ main input {
     text-align: center;
 }
 main .fullname input {
-    width: 90%;
-    height: 35px;
+    width: 100%;
+    height: 25px;
     border-radius: 10px;
 
 }
 main .email {
-    margin: 0 20px;
+    margin: 0;
 }
 main .email input{
-    width: 90%;
-    height: 35px;
+    width: 100%;
+    height: 25px;
     border-radius: 10px;
     
 }
 main .teladress{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 main .telephone {
     width: 35% ;
 }
 main .telephone input{
-    width: 85%;
-    height: 35px;
+    width: 100%;
+    height: 25px;
     border-radius: 10px;
 }
 main .adress{
     width: 50%;
 }
 main .adress input{
-    width: 90%;
-    height: 35px;
+    width: 100%;
+    height: 25px;
     border-radius: 10px;
 }
 main .password {
-    margin: 0 20px;
+    margin: 0;
 }
 
 main .password input{
-    width: 90%;
-    height: 35px;
+    width: 100%;
+    height: 25px;
     border-radius: 10px;
 }
 main .confirmpassword {
-    margin:0 20px;
+    margin:0;
 
 }
 main .confirmpassword input{
-    width: 90%;
-    height: 35px;
+    width: 100%;
+    height: 25px;
     border-radius: 10px;
 }
 
