@@ -1,29 +1,27 @@
-const path = require('path')
-const pathView = require('../utils/pathViews')
 const { validationResult } = require('express-validator')
 const User = require('../models/User')
 const bcryptjs = require('bcryptjs')
 
 const controller = {
   register: (req, res) => {
-    res.render(path.resolve(__dirname, pathView('register')))  
+    res.render('register')  
   },
   login: (req, res) => {
-    res.render(path.resolve(__dirname, pathView('login'))) 
+    res.render('login') 
   },
   processRegister: (req,res)=>{
     const resultValidation = validationResult(req)
     
     if(resultValidation.errors.length>0){
       console.log(resultValidation)
-      return res.render(path.resolve(__dirname, pathView('register')),{
+      return res.render('register',{
         errors : resultValidation.mapped(),
         oldData : req.body
       })
     }
 
     if(User.findByField('email',req.body.email)){
-      return res.render(path.resolve(__dirname, pathView('register')),{
+      return res.render('register',{
         errors : {
           email :{
             msg: 'This email already exists'
@@ -33,7 +31,7 @@ const controller = {
       })
     }
     if (req.body.password !== req.body.cpassword){
-      return res.render(path.resolve(__dirname, pathView('register')),{
+      return res.render('register',{
         errors : {
           password :{
             msg: 'Passwords do not match'
@@ -58,6 +56,9 @@ const controller = {
     User.create(newUser)
     return res.redirect('/users/login')
   },
+  profile: (req, res) => {
+		return res.render('userProfile');
+	},
 }
 
 module.exports = controller

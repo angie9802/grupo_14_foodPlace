@@ -53,6 +53,7 @@ router.get('/register', usersController.register)
 router.post('/register',  uploadFile.single('userImage'), validations ,usersController.processRegister)
 router.get('/login', usersController.login)
 
+router.get('/profile' ,usersController.profile);
 
 
 module.exports = router

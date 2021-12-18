@@ -50,6 +50,7 @@ main .username input, .password input, .botonlogin button, .continuarg button{
     height: 30px;
     border-radius: 8px;
     text-align: center;
+    padding: 2px
 }
 main .username input {
     margin-top:15px ;
@@ -91,10 +92,7 @@ main .backhome i{
     font-size: 1.8rem;
     color: black;
 }
-main .or{
-    font-size: 12px;
-    margin-bottom: 5px;
-}
+
 
 main .continuarg button {
     margin-bottom: 10px;

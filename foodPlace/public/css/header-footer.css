@@ -277,4 +277,7 @@ footer div .footer-left i{
     flex-direction: column;
     margin: 0 15px;
   }
+  header .list1 {
+    right: 60px;
+  }
 }

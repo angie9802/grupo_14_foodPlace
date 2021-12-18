@@ -52,6 +52,7 @@ main .register input,.botonok button, .continuarg button{
     border-radius: 8px;
     text-align: center;
     margin: 5px 0;
+    padding: 2px;
 }
 main .backhome {
     margin-top: 5px;
@@ -96,10 +97,6 @@ main .botonok button:hover{
     background-color:#5811c4b9 ;
 }
 
-main .or {
-    margin-top: 5px;
-    font-size: 12px
-}
 
 main .continuarg button {
     cursor: pointer;
