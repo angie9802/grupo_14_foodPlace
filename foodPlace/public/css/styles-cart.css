@@ -1,4 +1,8 @@
 @import url("styles-home.css");
+body,html{
+   position: relative;
+   height: 100%
+}
 /*-------------------------------------------Cart-----------------------------------------*/
 .m-cart{
     width:100%;
@@ -12,7 +16,7 @@
     background-color: #4B4747;
     border-radius: 10px;
     padding: 25px 3px 3px 3px;
-    max-height: 330px;
+    max-height: 345px;
     overflow-y:scroll
  }
  main .container-ext::-webkit-scrollbar{
@@ -69,10 +73,12 @@
  .subtotal{
     font-size: 12px;
     font-weight: bold;
-    margin: 0 10px;
+    margin: 0;
+    align-self: center;
  }
  main .out-cart{
     display: flex;
+    height: 40px;
     margin:auto;
     width:99%;
     justify-content:space-between;
@@ -89,6 +95,11 @@
 @media screen and (max-width: 600px){
    main .container-int article img{
       width:50%
+   }
+ }
+ @media screen and (min-height: 540px){
+   main .container-ext{  
+    max-height: 410px;
    }
  }
 

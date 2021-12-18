@@ -56,7 +56,7 @@ header .nav-bar {
 header .nav-cell {
   position: relative;
 }
-header .list, .list1{
+header .list, .list1, .list2{
   display: block;
   position: absolute;
   background: white;
@@ -69,17 +69,23 @@ header .list {
 }
 header .list1 {
   right: 30px;
-  width:200px;
+  width:170px;
   top: -100%;
 }
-header .list li a,.list1 li a {
+
+header .list2 {
+  right: 0px;
+  width:100px;
+  top: -100%;
+}
+header .list li a, .list1 li a, .list2 li a {
   color: black;
   display: inline-block;
   width: 100%;
   border-bottom: 1px solid;
-  padding: 5px 20px;
+  padding: 3px 15px;
 }
-header .list1 li a{
+header .list1 li a, header .list2 li a{
   margin:0px;
 }
 
@@ -93,7 +99,7 @@ header .burger-menu {
   left: 0;
   transition: all 0.3s;
 }
-header .burger-admin {
+header .burger-admin, .burger-user {
   cursor: pointer;
 }
 #btn-admin {
@@ -102,6 +108,14 @@ header .burger-admin {
 #btn-admin:checked ~ .list1 {
   top: 65px;
 }
+#btn-user {
+  display: none;
+}
+#btn-user:checked ~ .list2 {
+  top: 65px;
+}
+
+
 
 
 header .search {
@@ -201,7 +215,7 @@ footer{
   bottom:0px;
 }
 .f-cart{
-  position: fixed;
+  position: absolute;
   bottom:0px;
 }
 .f-edit{

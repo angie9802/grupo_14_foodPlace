@@ -29,7 +29,7 @@ const validations = [
   body('address').notEmpty().withMessage('Enter an address'),
   body('password')
               .notEmpty().withMessage('Enter a password').bail()
-              .isLength({ min: 5 }),
+              .isLength({ min: 5 }).withMessage('Minimum length is 5'),
   body('cpassword')
               .notEmpty().withMessage('Confirm the password'),
   body('userImage').custom((value, { req }) => {
