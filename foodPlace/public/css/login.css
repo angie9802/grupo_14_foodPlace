@@ -110,3 +110,9 @@ main .continuarg i{
 main .continuarg button:hover {
     background-color: #9150f1;
 }
+
+/*Errors*/
+.errors {
+  color: red;
+  font-size: 12px;
+}
