@@ -11,20 +11,30 @@
 </head>
 <body>
     <main>
-        <form action="/" class="iniciosesion" method="GET">
+        <form action="/users/login" class="iniciosesion" method="POST">
         <div class="login">
             <h1 class="title">Login</h1>
             <h3 class="subtitle">Sign in to your account</h3>
             <div class="username">
-                <input type="text" placeholder="Username" required >
+                <input type="text" name="email" placeholder="Username" required >
+                <% if (locals.errors && errors.email) { %>
+                  <div class="errors">
+                    <%= errors.email.msg %>
+                  </div>
+                <%} %>
             </div>
             <div class="password">
-                <input type="password" minlength="5" name="password" placeholder="Password">
+                <input type="password" name="password" minlength="5" placeholder="Password">
+                <% if (locals.errors && errors.password) { %>
+                    <div class="errors">
+                      <%= errors.password.msg %>
+                    </div>
+                  <%} %>
                 <p><label for="password"> Do you forget your password? <a href="register">Click here</a></label></p>
             </div>
             <div class="remember">
                 <label for="rememberme">Remember me</label>
-                <input type="checkbox" name="rememberme" id ="rememberme" value="rememberme">
+                <input type="checkbox" name="remember" id ="rememberme" value="rememberme">
             </div>
             <div class="botonlogin">
                 <a href="/"><button type="submit">Login</button></a>

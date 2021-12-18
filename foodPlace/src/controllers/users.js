@@ -56,9 +56,56 @@ const controller = {
     User.create(newUser)
     return res.redirect('/users/login')
   },
+  loginProcess: (req, res) => {
+    console.log(req.body)
+    let userToLogin = User.findByField('email', req.body.email)
+
+    if (userToLogin){
+      let checkPassword = bcryptjs.compareSync(req.body.password, userToLogin.password)
+      if (checkPassword){
+        delete userToLogin.password;
+        req.session.userLogged = userToLogin;
+
+        if(req.body.remember){
+          res.cookie('userEmail', req.body.email, {
+            maxAge: (1000 * 60) * 60
+          })
+        }
+
+        return res.redirect('/users/profile')
+      }else {
+        return res.render('login', {
+          errors: {
+            password: {
+              msg: "The provided credentials are invalid"
+            }
+          }
+        })
+      }
+
+    }else {
+      return res.render('login', {
+        errors: {
+          email: {
+            msg: "The provided email does not exist"
+          }
+        }
+      })
+    }
+  },
   profile: (req, res) => {
-		return res.render('userProfile');
+    console.log(req.cookies.userEmail)
+		return res.render('userProfile', {
+      user: req.session.userLogged
+    });
 	},
+  logout: (req, res) => {
+    res.clearCookie("userEmail")
+    console.log(req.session)
+    req.session.destroy()
+    console.log(req.session)
+    return res.redirect('/')
+  }
 }
 
 module.exports = controller
