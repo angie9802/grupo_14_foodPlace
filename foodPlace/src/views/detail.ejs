@@ -34,13 +34,21 @@
               <%= product.description %> 
             </p>
             <h2>$<%= new Intl.NumberFormat("de-DE").format(product.price)%></h2>
-            <div class="single-btn">
-              <a href="#"> <button>Add to Cart</button></a>
-              <a href="/products/edit/<%= product.id %>"><button>Edit</button></a>
-              <form action="/products/<%= product.id %>?_method=DELETE" method="POST"  style="display: inline-flex">
-                <button type="submit" >Delete</button>
-              </form>
-            </div>
+            <% if(locals.isLogged){ %>
+              <div class="single-btn">
+                <a href="/shopping-cart"> <button>Add to Cart</button></a>
+                <a href="/products/edit/<%= product.id %>"><button>Edit</button></a>
+                <form action="/products/<%= product.id %>?_method=DELETE" method="POST"  style="display: inline-flex">
+                  <button type="submit" >Delete</button>
+                </form>
+              </div>
+             <% }else {%> 
+              <div class="single-btn">
+                <a href="/users/login"> <button>Add to Cart</button></a>
+                
+              </div>
+             <% } %> 
+            
           </article>
         </section>
         <% } else {%> 

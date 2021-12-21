@@ -4,13 +4,19 @@
     <%- include('./partials/head.ejs')  %> 
     <title>edit Product</title>
     <link rel="stylesheet" href="/css/normalize.css" />
+    
     <link rel="stylesheet" href="/css/form-product.css" />
     <link rel="stylesheet" href="/css/header-footer.css" />
   
   </head>
   <body>
     <div class="edit-product-box">
-      <header> <%- include('./partials/header.ejs') %></header>
+      <header>
+        
+       <%- include('./partials/header') %>
+       
+
+      </header>
       <% if (locals.product) { %>
       <main>
         <div class="selector-edit" >

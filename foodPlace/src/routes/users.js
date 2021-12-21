@@ -3,6 +3,8 @@ const path = require('path')
 const router = express.Router()
 const usersController = require('../controllers/users')
 const multer = require('multer')
+const guestMiddleware = require("../middlewares/guestMiddleware")
+const authMiddleware = require('../middlewares/authMiddleware')
 
 const { body } = require('express-validator');
 
@@ -49,16 +51,16 @@ const validations = [
 ]
 
 
-router.get('/register', usersController.register)
+router.get('/register',guestMiddleware, usersController.register)
 router.post('/register',  uploadFile.single('userImage'), validations ,usersController.processRegister)
 
 
-router.get('/login', usersController.login)
+router.get('/login',guestMiddleware, usersController.login)
 router.post('/login', usersController.loginProcess)
 
-router.get('/profile' ,usersController.profile);
+router.get('/profile',authMiddleware, usersController.profile);
 
 //Logout
-router.get('/logout', usersController.login);
+router.get('/logout', usersController.logout);
 
 module.exports = router

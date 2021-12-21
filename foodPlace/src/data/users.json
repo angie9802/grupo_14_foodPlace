@@ -7,5 +7,14 @@
         "address": "calle34a#99a-45",
         "password": "$2a$10$qo0OGWvpD5FaOzbO31v4H.EhUjSsUCyvqlzJwzneOCWIJ4Sz12X1C",
         "userImage": "1639758011391_img_.PNG"
+    },
+    {
+        "id": 2,
+        "fullname": "jorge Aguilar",
+        "email": "jorgeaguilar05@hotmail.com",
+        "number": "312787332",
+        "address": "Calle 31 #29",
+        "password": "$2a$10$SMbBTZiKvl3dTOa.Joo8hubXjzGaDloOJ6T/MI3DnbRalR8giDc9u",
+        "userImage": "1639972429336_img_.jpg"
     }
 ]

@@ -73,7 +73,7 @@ const controller = {
         }
 
         return res.redirect('/users/profile')
-      }else {
+      }
         return res.render('login', {
           errors: {
             password: {
@@ -81,9 +81,9 @@ const controller = {
             }
           }
         })
-      }
+      
 
-    }else {
+    }
       return res.render('login', {
         errors: {
           email: {
@@ -91,19 +91,19 @@ const controller = {
           }
         }
       })
-    }
+    
   },
   profile: (req, res) => {
-    console.log(req.cookies.userEmail)
+    
 		return res.render('userProfile', {
       user: req.session.userLogged
     });
 	},
   logout: (req, res) => {
     res.clearCookie("userEmail")
-    console.log(req.session)
+    
     req.session.destroy()
-    console.log(req.session)
+    
     return res.redirect('/')
   }
 }
