@@ -28,7 +28,7 @@ const User = {
     }, 
     delete : (id) =>{
         let finalUsers = User.getUsers().filter(user => user.id !== id)
-        fs.writeFileSync(usersFilePath, JSON.stringify(finalUsers,null,4))
+        fs.writeFileSync(usersFilePath, JSON.stringify(finalUsers,null,4), {encoding: "utf-8"})
         return true
     },
 }

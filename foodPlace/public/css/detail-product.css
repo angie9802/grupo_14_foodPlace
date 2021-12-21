@@ -5,6 +5,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+header .search button {
+  padding:  0 6px
+}
+header .list li a, .list1 li a, .list2 li a {
+  font-size: 15px;
+}
 
 .detail-product-box{
   width: 100%;
