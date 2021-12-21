@@ -195,7 +195,7 @@ main .btns-popup button{
   color: red;
 }
 #create-btn{
-  border: 2px solid #21b16c;;
+  border: 2px solid #21b16c;
   color:#21b16c;;
 }
 
@@ -219,6 +219,10 @@ footer{
   bottom:0px;
 }
 .f-edit{
+  position: relative;
+  bottom:0px;
+}
+.f-profile{
   position: relative;
   bottom:0px;
 }

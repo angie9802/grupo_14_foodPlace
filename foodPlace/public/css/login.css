@@ -45,6 +45,10 @@ main .subtitle {
     margin: 10px 0;
     
 }
+main .username  {
+    margin-bottom: 20px;
+    
+}
 main .username input, .password input, .botonlogin button, .continuarg button{
     width: 100%;
     height: 30px;
@@ -54,7 +58,7 @@ main .username input, .password input, .botonlogin button, .continuarg button{
 }
 main .username input {
     margin-top:15px ;
-    margin-bottom: 20px;
+    
 }
 main .password input {
     margin-bottom: 0;
@@ -65,7 +69,7 @@ main .password p {
 }
 main .remember {
     margin-bottom: 10px;
-    
+    font-size: 15px
 }
 main .botonlogin button{
     background-color:  #5E1EBE ;
@@ -112,7 +116,7 @@ main .continuarg button:hover {
 }
 
 /*Errors*/
-.errors {
-  color: red;
-  font-size: 12px;
-}
+main .text-danger{
+    font-size : 11px;
+    color: rgb(199, 2, 2);
+  }

@@ -4,15 +4,43 @@
     <%- include('./partials/head.ejs')  %> 
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/header-footer.css" />
+    <link rel="stylesheet" href="/css/profile.css" />
     <title>User Profile</title>
 </head>
 <body>
     <header><%- include('./partials/header')%></header>
     <main>
-      <!--Implement user profile (db-data)-->
-      <p> Hi: <%= user.fullname %></p>
+        <div class="container">
+            <div class="int-1">
+                <div class="box">
+                    <img  src="/img/users/<%= locals.userLogged.userImage %> ">
+                </div>
+                <h2>¡Welcome ,  <%= user.fullname %>!</h2>
+                <div class="container-email">
+                    <%= locals.userLogged.email %>
+                </div>
+                <form action="">
+                    <button class="button-edit">Edit profile</button>
+                </form>
+            </div>
+            <div class="int-2">
+                <h3>Recent orders</h3>
+                <div class="container-order">
+                    Order 1 ...
+                </div>
+                <div class="container-order">
+                    Order 2 ...
+                </div>
+                <div class="container-order">
+                    Order 3 ...
+                </div>
+                <a href="#">Delete my account</a>
+            </div>
+        </div>
+     
+      
     </main>
-    <footer class="f-home">
+    <footer class="f-profile">
         <%- include('./partials/footer.ejs') %>
     </footer>
 </body>

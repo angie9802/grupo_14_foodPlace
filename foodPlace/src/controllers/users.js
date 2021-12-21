@@ -57,7 +57,15 @@ const controller = {
     return res.redirect('/users/login')
   },
   loginProcess: (req, res) => {
-    console.log(req.body)
+    const resultValidation = validationResult(req)
+    
+    if(resultValidation.errors.length>0){
+      console.log(resultValidation)
+      return res.render('login',{
+        errors : resultValidation.mapped(),
+        oldData : req.body
+      })
+    }
     let userToLogin = User.findByField('email', req.body.email)
 
     if (userToLogin){

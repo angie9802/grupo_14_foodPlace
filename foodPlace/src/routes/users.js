@@ -22,7 +22,7 @@ const storage = multer.diskStorage({
     
 const uploadFile = multer({ storage })
 
-const validations = [
+const validationsRegister = [
   body('fullname').notEmpty().withMessage('Enter a name'),
   body('email')
               .notEmpty().withMessage('Enter an email').bail()
@@ -50,13 +50,18 @@ const validations = [
 	})
 ]
 
+const validationsLogin = [
+  body('email').notEmpty().withMessage('Enter your email'),
+  body('password').notEmpty().withMessage('Enter your password'),
+
+]
 
 router.get('/register',guestMiddleware, usersController.register)
-router.post('/register',  uploadFile.single('userImage'), validations ,usersController.processRegister)
+router.post('/register',  uploadFile.single('userImage'), validationsRegister ,usersController.processRegister)
 
 
 router.get('/login',guestMiddleware, usersController.login)
-router.post('/login', usersController.loginProcess)
+router.post('/login', validationsLogin, usersController.loginProcess)
 
 router.get('/profile',authMiddleware, usersController.profile);
 
