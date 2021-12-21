@@ -68,7 +68,7 @@ header .list {
   transition: all 0.3s;
 }
 header .list1 {
-  right: 30px;
+  right: 9%;
   width:170px;
   top: -100%;
 }
@@ -79,6 +79,7 @@ header .list2 {
   top: -100%;
 }
 header .list li a, .list1 li a, .list2 li a {
+  font-size: 15px;
   color: black;
   display: inline-block;
   width: 100%;
@@ -157,49 +158,6 @@ header .fa-shopping-cart,
   z-index: -1;
 }
 
-/*----------POPUP*------------*/
-main .general-container{
-  width: 60%;
-  height: 350px;
-  position: fixed;
-  top:20%;
-  left: 20%;
-  background:rgba(0, 0, 0, 0.6);
-  padding: 30px 40px;
-
-}
-main .pop-up{
-  width:100%;
-  height:100%;
-  margin:auto;
-  background-color:white;
-  border-radius: 20px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-
-main .btns-popup button{
-  width: 200px;
-  padding: 20px;
-  border-radius: 30px;
-  font-size: 20px;
-  margin: 10px;
-  background-color: transparent;
-  align-self: center;
-}
-
-
-#edit-btn{
-  border: 2px solid red;
-  color: red;
-}
-#create-btn{
-  border: 2px solid #21b16c;
-  color:#21b16c;;
-}
-
-/*----------POPUP*------------*/
 
 
 footer{
@@ -296,6 +254,6 @@ footer div .footer-left i{
     margin: 0 15px;
   }
   header .list1 {
-    right: 60px;
+    right: 11%;
   }
 }

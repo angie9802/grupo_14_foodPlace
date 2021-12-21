@@ -34,15 +34,17 @@ main .int-2{
     width: 100%;
     padding: 0 20px;
     position: relative;
-    border-left: 1.5px solid  #4B4747;;
+    border-left: 1.5px solid  #4B4747;
 }
 main .box{
     margin: 20px 10px;
 }
 
 main .int-1 img{
-    width: 100%;
+    width: 80%;
     border-radius: 100%;
+    margin: 15px auto;
+    display: block;
 }
 main .int-1 h2{
     text-align:center;
@@ -99,8 +101,9 @@ main .button-edit{
     }
     main .int-1 img{
         width: 70%;
-        margin: 15px auto;
-        display: block;
+    }
+    main .int-2{
+        border-left: none;
     }
   }
 
