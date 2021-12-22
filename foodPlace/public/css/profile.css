@@ -1,0 +1,118 @@
+
+
+main {
+    width: 100%;
+    height: 82%;
+    padding: 20px 
+}
+main .container {
+    width: 70%;
+    height: 100%;
+    border: 1px solid #4B4747;
+    background-color : #FFFFFF;
+    border-radius: 10px;
+    margin: auto;
+    display : flex;
+  justify-content: center;
+  overflow-y:scroll
+}
+main .container::-webkit-scrollbar{
+    width: 0px;
+ }
+ main .container::-webkit-scrollbar-thumb{
+    border-radius: 20px;
+    border: 1.5px solid  #4B4747;
+    background-color: #FFFFFF; ;
+ }
+
+ 
+main .int-1 {
+    width: 100%;
+    padding: 20px;
+}
+main .int-2{
+    width: 100%;
+    padding: 0 20px;
+    position: relative;
+    border-left: 1.5px solid  #4B4747;
+}
+main .box{
+    margin: 20px 10px;
+}
+
+main .int-1 img{
+    width: 80%;
+    border-radius: 100%;
+    margin: 15px auto;
+    display: block;
+}
+main .int-1 h2{
+    text-align:center;
+}
+main .int-2 a{
+    position: absolute;
+    text-decoration: underline;
+    font-size: 13px;
+    color: black;
+    bottom: 10px;
+    right: 10px;
+    margin-top: 20px;
+}
+
+main .container-email , main .container-order{
+    border-radius: 10px;
+    padding:10px;
+    font-weight: bold;
+    font-size: 14px;
+    text-align:center;
+    margin: 30px auto;
+    display: block;
+}
+main .container-email{
+    border: 1.5px solid #5811c4b9 ;
+    background-color:#5911c450 ;
+    color: #5811c4b9;
+}
+main .container-order {
+    position: relative;
+    border: 1.5px solid  #21b16c;
+    background-color: #21b16b41 ;
+    color:  #21b16c;
+}
+main form {
+    position: relative;
+}
+main .button-edit{
+    width: 120px;
+    border: 1px solid #5E1EBE;
+    border-radius:5px;
+    background-color:#5E1EBE;
+    color: #ffffff;
+    margin: 30px auto;
+    display: block;
+    padding: 10px;
+}
+
+@media screen and (max-width: 786px){
+    
+    .container {
+        width: 85%;
+        flex-wrap: wrap;
+    }
+    main .int-1 img{
+        width: 70%;
+    }
+    main .int-2{
+        border-left: none;
+    }
+  }
+
+@media screen and (max-width: 480px){
+ 
+    .container {
+        width: 90%;
+    }
+    main .container-email{
+        font-size: 11px;
+    }
+  }

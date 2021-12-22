@@ -2,6 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const pathView = require('../utils/pathViews')
 const maxId = require('../utils/maxId')
+const Product = require('../models/Product')
 const productsFilePath = path.resolve(__dirname, '../data/products.json')
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'))
 
@@ -10,17 +11,16 @@ const controller = {
   
   //Show all products
   index: (req, res) => {
-    const newProducts = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'))
+    const newProducts = Product.getProducts()
     res.render(path.resolve(__dirname, pathView('products')),{ newProducts })
   },
 
   //Detail Product
   detail: (req, res) => {
     let id = req.params.id;
-    let product = products.find(item=>{
-      return item.id == id
-    })
-    res.render(path.resolve(__dirname, pathView('detail')),{ product , products })
+    const products = Product.getProducts()
+    const product = Product.findById(id)
+    res.render(path.resolve(__dirname, pathView('detail')),{ product : product , products : products })
   },
 
   //Create - Form to create products
@@ -32,13 +32,13 @@ const controller = {
   store: (req, res) => {
     
     let product = {
-      id: maxId(products),
+      id: maxId(Product.getProducts()),
       image: req.file.filename,
       ...req.body
     }
 
     products.push(product)
-    const newProducts = products
+    const newProducts = Product.getProducts()
     
     let jsonProducts = JSON.stringify(newProducts,null,4)
     fs.writeFileSync(productsFilePath, jsonProducts)
@@ -47,18 +47,14 @@ const controller = {
   },
   edit: (req,res)=> {
     let id = req.params.id;
-		let product = products.find(item =>{
-			return item.id == id
-		})
+		let product = Product.findById(id)
 		res.render(path.resolve(__dirname, pathView('edit-product')),{product})
     },
   
   //Update a product
   update: (req, res) => {
     let id = req.params.id
-		let product = products.find(item =>{
-			return item.id == id
-		})
+		let product = Product.findById(id)
 		product.name = req.body.name;
 		product.price = req.body.price;
 		product.discount = req.body.discount;
@@ -74,12 +70,9 @@ const controller = {
   
   //Delete a product
   delete: (req, res) => {
-    const newProducts = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'))
     let id = req.params.id
-    const newDb = newProducts.filter(item => item.id != id);
-    let jsonProducts = JSON.stringify(newDb,null,4)
-    fs.writeFileSync(productsFilePath, jsonProducts,{encoding: "utf-8"})
-		
+    Product.delete(id)
+
     res.redirect('/products')
   }
 }

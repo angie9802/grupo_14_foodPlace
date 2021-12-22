@@ -13,7 +13,6 @@ const controller = {
     const resultValidation = validationResult(req)
     
     if(resultValidation.errors.length>0){
-      console.log(resultValidation)
       return res.render('register',{
         errors : resultValidation.mapped(),
         oldData : req.body
@@ -57,7 +56,19 @@ const controller = {
     return res.redirect('/users/login')
   },
   loginProcess: (req, res) => {
+<<<<<<< HEAD
     
+=======
+    const resultValidation = validationResult(req)
+    
+    if(resultValidation.errors.length>0){
+      console.log(resultValidation)
+      return res.render('login',{
+        errors : resultValidation.mapped(),
+        oldData : req.body
+      })
+    }
+>>>>>>> b2d3378e7daa800e639cc575120a3c3d75e393ac
     let userToLogin = User.findByField('email', req.body.email)
 
     if (userToLogin){
@@ -68,7 +79,7 @@ const controller = {
 
         if(req.body.remember){
           res.cookie('userEmail', req.body.email, {
-            maxAge: (1000 * 60) * 60
+            maxAge: (10000 * 60) * 60
           })
         }
 
