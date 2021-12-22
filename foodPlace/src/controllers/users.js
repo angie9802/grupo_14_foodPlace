@@ -57,7 +57,7 @@ const controller = {
     return res.redirect('/users/login')
   },
   loginProcess: (req, res) => {
-    console.log(req.body)
+    
     let userToLogin = User.findByField('email', req.body.email)
 
     if (userToLogin){

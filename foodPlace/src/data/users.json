@@ -16,5 +16,14 @@
         "address": "Calle 31 #29",
         "password": "$2a$10$SMbBTZiKvl3dTOa.Joo8hubXjzGaDloOJ6T/MI3DnbRalR8giDc9u",
         "userImage": "1639972429336_img_.jpg"
+    },
+    {
+        "id": 3,
+        "fullname": "Jorge Aguilar",
+        "email": "jorgeaguicon@gmail.com",
+        "number": "3166289408",
+        "address": "Calle 31 #29-25",
+        "password": "$2a$10$AC0JH87alB0xoh2HF4JkYeJCVrMNGCFDzE626OSh9YoLL8nUx121e",
+        "userImage": "1640136778314_img_.jpg"
     }
 ]
