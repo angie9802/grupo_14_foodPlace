@@ -38,7 +38,7 @@ main .register{
     min-height: 480px;
     max-height: 530px;
     width: 25vw;
-    min-width: 310px;
+    min-width: 370px;
     max-width: 600px;
     border-radius: 5px;
     box-shadow: 6px 9px 15px -3px rgba(0,0,0,0.75);
@@ -82,13 +82,24 @@ main .teladress{
 main .teladress input{
     width: 98%;
     justify-content: center;
-
 }
-
+main .radio-button{
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    margin: 7px 0;
+}
+main .radio-button input[type=radio]{
+    height: 11px;
+    width: 11px;
+    border-radius: 100%;
+    left: 15px;
+}
 
 main .botonok button{
     background-color:  #5E1EBE ;
-    margin-bottom: 0;
+    margin-top: 15px;
     cursor: pointer;
     color: white;
     transition: all 450ms;

@@ -12,8 +12,8 @@ body,html{
     width:99%;
     margin:auto;
     margin-top:1.5%;
-    border: 1px solid #4B4747;
-    background-color: #4B4747;
+    border: 1px solid #adaaaa8f ;
+    background-color: #adaaaa8f ;
     border-radius: 10px;
     padding: 25px 3px 3px 3px;
     max-height: 345px;
@@ -24,14 +24,14 @@ body,html{
  }
  main .container-ext::-webkit-scrollbar-thumb{
     border-radius: 20px;
-    border: 1.5px solid  #4B4747;
-    background-color: #FFFFFF; ;
+    border: 1.5px solid  #4b474798;
+    background-color: rgba(255, 255, 255, 0.9);
  }
  
  main .container-int{
     width:100%;
-    border: 1px solid #FFFFFF;
-    background-color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
     padding:5px;
     
@@ -82,14 +82,16 @@ body,html{
     margin:auto;
     width:99%;
     justify-content:space-between;
-    padding: 10px 0
+    padding: 10px 0;
+    color: #ffffff;
  }    
  main .out-cart button{
     width: 90px;
-    border: 1px solid #5E1EBE;
+    border: 1px solid #000000e1;
     border-radius:5px;
-    background-color:#5E1EBE;
-    color: #ffffff;
+    background-color:#fffffff5 ;
+    font-weight: bold;
+    color: #000000;
  }                           
  
 @media screen and (max-width: 600px){

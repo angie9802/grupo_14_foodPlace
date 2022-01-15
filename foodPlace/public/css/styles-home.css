@@ -1,6 +1,6 @@
 
 main .welcome-style{
-   background-image: url(../img/fast-food.jpg);
+  background-color: rgba(0, 0, 0, 0.116);
    background-repeat:repeat-y;
    background-size:100vw;
    max-width:100%;
@@ -26,13 +26,14 @@ main .welcome-style p{
 main .carousel-style {
    width: 100vw;
    margin: 0;
-   background-color: #F1F1F1 ;
+   background-color: #fdfdfd85 ;
    display: flex;
    align-items:center;
    padding: 20px 0;
    height: 40%;
    overflow-x: hidden;
    justify-content: space-evenly;
+   border-top : 4px solid  #ffffff8e ;
 }
 
 

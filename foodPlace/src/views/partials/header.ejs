@@ -1,7 +1,7 @@
 <header>
   <nav class="nav-bar">
     <a href="/"><img class="logo" src="../img/logo.png" alt="logo" /></a>
-    <a href="/products">Menu</a>
+    <a class="a-menu" href="/products">Menu</a>
     <div class="search">
       <button><i class="fas fa-search"></i></button>
       <input
@@ -11,43 +11,45 @@
         class="search-input"
       />
     </div>
-      <% if (locals.isLogged) { %>
-        <input type="checkbox" id="btn-admin" />
-    <label for="btn-admin" class="burger-admin"
-      ><i class="fas fa-wrench"></i></label>
-    <ul class="list1">
-      <li><a href="/products/create">Create Product</a></li>
-    </ul>
+      <% if (locals.isLogged && locals.userLogged.role == 1) { %>
+            <input type="checkbox" id="btn-admin" />
+        <label for="btn-admin" class="burger-admin"
+          ><i class="fas fa-wrench"></i></label>
+        <ul class="list1">
+          <li><a href="/products/create">Create product</a></li>
+          <li><a href="#">Edit products</a></li>
+          <li><a href="#">Edit users</a></li>
+        </ul>
 
-    <a href="/shopping-cart"><i class="fas fa-shopping-cart"></i></a>
+        <a href="/shopping-cart"><i class="fas fa-shopping-cart"></i></a>
 
+            <input type="checkbox" id="btn-user" />
+        <label for="btn-user">
+          <img class="img-profile" src="/img/users/<%= locals.userLogged.userImage %> " width="50px" style="border-radius: 100%;">
+        </label>
+        <ul class="list2">
+          <li><a href="/users/profile">Profile</a></li>
+          <li><a href="/users/logout">Log out</a></li>
+        </ul>
+      <% } else  if (locals.isLogged && locals.userLogged.role == 2){%>
+        <a href="/shopping-cart"><i class="fas fa-shopping-cart"></i></a>
         <input type="checkbox" id="btn-user" />
-    <label for="btn-user">
-      <img src="/img/users/<%= locals.userLogged.userImage %> " width="50px" style="border-radius: 100%;">
-      <!-- <i class="fas fa-user"></i> -->
-      </label>
-    <ul class="list2">
-      <li><a href="/users/profile">Profile</a></li>
-      <li><a href="/users/logout">Log out</a></li>
-    </ul>
+        <label for="btn-user">
+          <img  class="img-profile" src="/img/users/<%= locals.userLogged.userImage %> " width="50px" style="border-radius: 100%;">
+          <!-- <i class="fas fa-user"></i> -->
+          </label>
+        <ul class="list2">
+          <li><a href="/users/profile">Profile</a></li>
+          <li><a href="/users/logout">Log out</a></li>
+        </ul>
       <% } else {%>
-    <div class="container">
-      <a href="/users/register"><button>Register</button></a>
-      <a href="/users/login"><button>Log in</button></a>
-    </div>
-    
+        <div class="container">
+          <a href="/users/register"><button>Register</button></a>
+          <a href="/users/login"><button>Log in</button></a>
+        </div>
+        
     <% } %> 
-     <!--
-     -->
      
-    <!--
-     -->
-    
-
-    
-   
-    
-    
   </nav>
 
   <nav class="nav-cell">
@@ -57,11 +59,19 @@
     ></label>
     <ul class="list">
       <li><a href="/products">Menu</a></li>
-      <li><a href="/users/register">Register</a></li>
-      <li><a href="/create-product">Create Product</a></li>
-      <li><a href="/users/profile">Profile</a></li>
-      <li><a href="/users/login">Log In</a></li>
-      <li><a href="#">Log Out</a></li>
+      <% if (locals.isLogged && locals.userLogged.role == 1) { %>
+        <li><a href="/create-product">Create Product</a></li>
+        <li><a href="#">Edit products</a></li>
+        <li><a href="#">Edit users</a></li>
+        <li><a href="/users/profile">Profile</a></li>
+        <li><a href="/users/logout">Log Out</a></li>
+      <% } else if (locals.isLogged && locals.userLogged.role == 2){ %> 
+        <li><a href="/users/profile">Profile</a></li>
+        <li><a href="/users/logout">Log Out</a></li>
+      <% } else { %> 
+        <li><a href="/users/register">Register</a></li>
+        <li><a href="/users/login">Log In</a></li>
+      <% } %>
     </ul>
     <div class="search">
       <button><i class="fas fa-search"></i></button>
@@ -72,6 +82,13 @@
         class="search-input"
       />
     </div>
-    <a href="/shopping-cart"><i class="fas fa-shopping-cart"></i></a>
+    <% if (locals.isLogged) { %>
+      <a href="/shopping-cart"><i class="fas fa-shopping-cart"></i></a>
+      <a href="/users/profile"><img class="img-profile" src="/img/users/<%= locals.userLogged.userImage %> " width="50px" style="border-radius: 100%;"></a>
+    <% } else { %>
+      <i class="fas fa-user"></i>
+    <% } %>
+    
+    
   </nav>
 </header>

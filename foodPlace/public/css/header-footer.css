@@ -18,8 +18,9 @@ a{
   cursor: pointer;
 }
 body{
+  background-image: url(../img/fast-food.png);
+  background-size: cover;
   padding-top: 8px;
-  background-color: #F1F1F1 ;
 }
 header {
   font-family: "Poppins", sans-serif;
@@ -40,15 +41,17 @@ header .nav-cell,
   justify-content: space-between;
   width: 100%;
   height: 60px;
-  background-color: #ffffff;
+  background-color: #000000c0;
   opacity: 98%;
   align-items: center;
   padding: 0px 40px;
-  color: #6a696e;
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75);
 }
 header .nav-bar a {
-  color: #6a696e;
+  color:#000000;;
+}
+header .nav-bar .a-menu {
+  color:#ffffff;;
 }
 header .nav-bar {
   display: none;
@@ -59,12 +62,14 @@ header .nav-cell {
 header .list, .list1, .list2{
   display: block;
   position: absolute;
-  background: white;
+  background: #000000c0;
+  z-index: 100;
 }
 header .list {
   left: -100%;
   width: 100%;
   top: 60px;
+  background: #000000e1;
   transition: all 0.3s;
 }
 header .list1 {
@@ -80,7 +85,7 @@ header .list2 {
 }
 header .list li a, .list1 li a, .list2 li a {
   font-size: 15px;
-  color: black;
+  color: white;
   display: inline-block;
   width: 100%;
   border-bottom: 1px solid;
@@ -116,9 +121,6 @@ header .burger-admin, .burger-user {
   top: 65px;
 }
 
-
-
-
 header .search {
   background: #fff;
   height: 30px;
@@ -129,7 +131,7 @@ header .search {
   align-items: center;
   cursor: pointer;
   width: 50%;
-  box-shadow: 4px 4px 6px 0 rgba(0, 0, 0, 0.9);
+  box-shadow: 4px 4px 6px 0 rgba(0, 0, 0, 1);
 }
 header .search input,
 .search button {
@@ -144,11 +146,18 @@ header .fa-wrench {
 }
 header .fa-shopping-cart,
 .fa-user,.fa-bars,.fa-wrench {
-  background: #f1f1f1e6;
+  background: #ffffffe6;
   border-radius: 50%;
   padding: 10px;
   font-size: 100%;
   margin: 0 5px;
+  
+}
+
+header .img-profile{
+  width: 38px;
+  height:36px;
+  margin-top: 3px;
 }
 /*-------------------------------------------home-----------------------------------------*/
 .m-home {
@@ -163,7 +172,7 @@ header .fa-shopping-cart,
 footer{
   width: 100%;
   height: 50px;
-  background-color: #FFFFFF;
+  background-color:#000000c0;
   padding: 10px 20px;
   box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
    
@@ -197,11 +206,11 @@ footer div .footer-right li{
   margin: 0px 5px
 }
 footer div .footer-right li, div li a{
-  color:  #6A696E ;
+  color:  #ffffff ;
   font-size: 12px;
 }
 footer div .footer-left i{
-  color: #6A696E;
+  color: #000000;
   background: #f1f1f1e6;
   border-radius: 50%;
   padding: 5px;
@@ -225,6 +234,7 @@ footer div .footer-left i{
     width: 80px;
     border-radius: 30px;
     font-size: 14px;
+    font-weight: bold;
     margin: 2px 0;
     color: #21b16c;
     border: 2px solid #21b16c;
@@ -255,5 +265,9 @@ footer div .footer-left i{
   }
   header .list1 {
     right: 11%;
+  }
+  header .img-profile{
+    width: 48px;
+    height:46px;
   }
 }
