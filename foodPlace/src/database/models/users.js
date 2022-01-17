@@ -1,47 +1,47 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('Product', {
-    idProducts: {
-      autoIncrement: true,
+  return sequelize.define('users', {
+    id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
-    name: {
+    fullname: {
       type: DataTypes.STRING(45),
       allowNull: false
     },
-    price: {
-      type: DataTypes.FLOAT,
+    email: {
+      type: DataTypes.STRING(45),
+      allowNull: false,
+      unique: "email_UNIQUE"
+    },
+    number: {
+      type: DataTypes.INTEGER,
       allowNull: false
     },
-    producttime: {
-      type: DataTypes.FLOAT,
+    address: {
+      type: DataTypes.STRING(45),
       allowNull: false
     },
-    description: {
-      type: DataTypes.TEXT,
+    password: {
+      type: DataTypes.STRING(45),
       allowNull: false
     },
-    Category_idCategory: {
+    userimage: {
+      type: DataTypes.STRING(45),
+      allowNull: false
+    },
+    id_role: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'Category',
-        key: 'idCategory'
-      }
-    },
-    ProductsImages_idProductsImages: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'ProductsImages',
-        key: 'idProductsImages'
+        model: 'roles',
+        key: 'id'
       }
     }
   }, {
     sequelize,
-    tableName: 'Products',
+    tableName: 'users',
     timestamps: true,
     indexes: [
       {
@@ -49,21 +49,22 @@ module.exports = function(sequelize, DataTypes) {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "idProducts" },
+          { name: "id" },
         ]
       },
       {
-        name: "fk_Products_Category1_idx",
+        name: "email_UNIQUE",
+        unique: true,
         using: "BTREE",
         fields: [
-          { name: "Category_idCategory" },
+          { name: "email" },
         ]
       },
       {
-        name: "fk_Products_ProductsImages1_idx",
+        name: "fk_users_roles1_idx",
         using: "BTREE",
         fields: [
-          { name: "ProductsImages_idProductsImages" },
+          { name: "id_role" },
         ]
       },
     ]
