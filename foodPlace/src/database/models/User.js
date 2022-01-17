@@ -1,8 +1,7 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('User', {
-    idUsers: {
-      autoIncrement: true,
+  return sequelize.define('users', {
+    id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
@@ -32,17 +31,17 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(45),
       allowNull: false
     },
-    Roles_idRoles: {
+    id_role: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'Roles',
-        key: 'idRoles'
+        model: 'roles',
+        key: 'id'
       }
     }
   }, {
     sequelize,
-    tableName: 'Users',
+    tableName: 'users',
     timestamps: true,
     indexes: [
       {
@@ -50,7 +49,7 @@ module.exports = function(sequelize, DataTypes) {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "idUsers" },
+          { name: "id" },
         ]
       },
       {
@@ -62,10 +61,10 @@ module.exports = function(sequelize, DataTypes) {
         ]
       },
       {
-        name: "fk_Users_Roles1_idx",
+        name: "fk_users_roles1_idx",
         using: "BTREE",
         fields: [
-          { name: "Roles_idRoles" },
+          { name: "id_role" },
         ]
       },
     ]
