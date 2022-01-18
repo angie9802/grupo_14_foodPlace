@@ -1,35 +1,31 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  const Cart = sequelize.define('Cart', {
+  return sequelize.define('Products_Carts', {
     id: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
-    quantity: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
-    price: {
-      type: DataTypes.FLOAT,
-      allowNull: false
-    },
-    total: {
-      type: DataTypes.FLOAT,
-      allowNull: false
-    },
-    id_user: {
+    id_product: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'Users',
+        model: 'Products',
+        key: 'id'
+      }
+    },
+    id_cart: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'Carts',
         key: 'id'
       }
     }
   }, {
     sequelize,
-    tableName: 'Carts',
+    tableName: 'Products_Carts',
     timestamps: true,
     indexes: [
       {
@@ -41,19 +37,19 @@ module.exports = function(sequelize, DataTypes) {
         ]
       },
       {
-        name: "fk_ShoppingCarts_Users1_idx",
+        name: "fk_Products_has_ShoppingCarts_ShoppingCarts1_idx",
         using: "BTREE",
         fields: [
-          { name: "id_user" },
+          { name: "id_cart" },
+        ]
+      },
+      {
+        name: "fk_Products_has_ShoppingCarts_Products1_idx",
+        using: "BTREE",
+        fields: [
+          { name: "id_product" },
         ]
       },
     ]
   });
-  Cart.associate = (models) => {
-    Cart.belongsTo(models.User, {
-      as: "user", 
-      foreignKey: "id_user"
-    })
-  }
-  return Cart
 };

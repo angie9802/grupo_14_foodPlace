@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('roles', {
+  const Role =  sequelize.define('Role', {
     id: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
@@ -13,7 +13,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   }, {
     sequelize,
-    tableName: 'roles',
+    tableName: 'Roles',
     timestamps: true,
     indexes: [
       {
@@ -26,4 +26,10 @@ module.exports = function(sequelize, DataTypes) {
       },
     ]
   });
+  Role.associate = (models) =>{
+    Role.hasMany(models.User, { 
+      as: "users", 
+      foreignKey: "id_role"});
+  }
+  return Role
 };

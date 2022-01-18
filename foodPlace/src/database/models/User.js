@@ -1,7 +1,8 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('users', {
+  const User = sequelize.define('User', {
     id: {
+      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
@@ -35,13 +36,13 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'roles',
+        model: 'Roles',
         key: 'id'
       }
     }
   }, {
     sequelize,
-    tableName: 'users',
+    tableName: 'Users',
     timestamps: true,
     indexes: [
       {
@@ -61,7 +62,7 @@ module.exports = function(sequelize, DataTypes) {
         ]
       },
       {
-        name: "fk_users_roles1_idx",
+        name: "fk_Users_Roles1_idx",
         using: "BTREE",
         fields: [
           { name: "id_role" },
@@ -69,4 +70,11 @@ module.exports = function(sequelize, DataTypes) {
       },
     ]
   });
+  User.associate = (models) => {
+    User.belongsTo(models.Role, { 
+      as: "role", 
+      foreignKey: "id_role"});
+    User.hasOne(models.Cart)
+  }
+  return User
 };
