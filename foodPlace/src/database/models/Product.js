@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('products', {
+  const Product = sequelize.define('products', {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -27,14 +27,6 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       references: {
         model: 'categories',
-        key: 'id'
-      }
-    },
-    id_productimage: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'productsimages',
         key: 'id'
       }
     }
@@ -67,4 +59,15 @@ module.exports = function(sequelize, DataTypes) {
       },
     ]
   });
+  Product.associate = (models) =>{
+    Product.belongsTo(models.categories, { 
+      as: "category", 
+      foreignKey: "id_category"
+    })
+    Product.hasOne(models.productsimages, { 
+      foreignKey: "id_productimage"
+    })
+  }
+  return Product 
+  
 };

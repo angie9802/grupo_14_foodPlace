@@ -10,6 +10,14 @@ module.exports = function(sequelize, DataTypes) {
     image: {
       type: DataTypes.STRING(45),
       allowNull: false
+    },
+    id_product: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'Productimage',
+        key: 'id'
+      }
     }
   }, {
     sequelize,

@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('users', {
+  const User = sequelize.define('users', {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -69,4 +69,16 @@ module.exports = function(sequelize, DataTypes) {
       },
     ]
   });
+
+  User.associate = (models) => {
+    User.belongsTo(models.roles, { 
+      as: "role", 
+      foreignKey: "id_role"
+    });
+    User.belongsTo(carts, { 
+      as: "carts", 
+      foreignKey: "id_user"
+    });
+  }
+  return User
 };

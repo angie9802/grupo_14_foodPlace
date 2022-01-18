@@ -1,33 +1,70 @@
-var DataTypes = require("sequelize").DataTypes;
-var _carts = require("./carts");
-var _categories = require("./categories");
-var _products = require("./products");
-var _products_carts = require("./products_carts");
-var _productsimages = require("./productsimages");
-var _roles = require("./roles");
-var _users = require("./users");
+const DataTypes = require("sequelize").DataTypes;
+const _carts = require("./carts");
+const _categories = require("./categories");
+const _products = require("./products");
+const _products_carts = require("./products_carts");
+const _productsimages = require("./productsimages");
+const _roles = require("./roles");
+const _users = require("./users");
 
 function initModels(sequelize) {
-  var carts = _carts(sequelize, DataTypes);
-  var categories = _categories(sequelize, DataTypes);
-  var products = _products(sequelize, DataTypes);
-  var products_carts = _products_carts(sequelize, DataTypes);
-  var productsimages = _productsimages(sequelize, DataTypes);
-  var roles = _roles(sequelize, DataTypes);
-  var users = _users(sequelize, DataTypes);
+  const carts = _carts(sequelize, DataTypes);
+  const categories = _categories(sequelize, DataTypes);
+  const products = _products(sequelize, DataTypes);
+  const products_carts = _products_carts(sequelize, DataTypes);
+  const productsimages = _productsimages(sequelize, DataTypes);
+  const roles = _roles(sequelize, DataTypes);
+  const users = _users(sequelize, DataTypes);
 
   products_carts.belongsTo(carts, { as: "id_carts_cart", foreignKey: "id_carts"});
   carts.hasMany(products_carts, { as: "products_carts", foreignKey: "id_carts"});
-  products.belongsTo(categories, { as: "id_category_category", foreignKey: "id_category"});
-  categories.hasMany(products, { as: "products", foreignKey: "id_category"});
+
+  products.associate = (models) =>{
+    products.belongsTo(models.categories, { 
+      as: "category", 
+      foreignKey: "id_category"});
+  }
+  categories.associate = (models) =>{
+    categories.hasMany(models.products, { 
+      as: "products", 
+      foreignKey: "id_category"
+    });
+  }
   products_carts.belongsTo(products, { as: "id_products_product", foreignKey: "id_products"});
   products.hasMany(products_carts, { as: "products_carts", foreignKey: "id_products"});
-  products.belongsTo(productsimages, { as: "id_productimage_productsimage", foreignKey: "id_productimage"});
+  
+  products.associate = (models) => {
+    products.belongsTo(models.productsimages, { 
+      as: "productsimage", 
+      foreignKey: "id_productimage"
+    });
+  }
   productsimages.hasMany(products, { as: "products", foreignKey: "id_productimage"});
-  users.belongsTo(roles, { as: "id_role_role", foreignKey: "id_role"});
-  roles.hasMany(users, { as: "users", foreignKey: "id_role"});
-  carts.belongsTo(users, { as: "id_user_user", foreignKey: "id_user"});
-  users.hasMany(carts, { as: "carts", foreignKey: "id_user"});
+
+  users.associate = (models) => {
+    users.belongsTo(models.roles, { 
+      as: "role", 
+      foreignKey: "id_role"
+    });
+    users.belongsTo(carts, { 
+      as: "carts", 
+      foreignKey: "id_user"
+    });
+  }
+  roles.associate = (models) => {
+    roles.hasMany(models.users, { 
+      as: "users", 
+      foreignKey: "id_role"});
+  }
+
+  carts.associate = (models) => {
+    carts.belongsTo(users, { 
+      as: "user", 
+      foreignKey: "id_user"
+    });
+  }
+  
+
 
   return {
     carts,
