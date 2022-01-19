@@ -74,7 +74,8 @@ module.exports = function(sequelize, DataTypes) {
     User.belongsTo(models.Role, { 
       as: "role", 
       foreignKey: "id_role"});
-    User.hasOne(models.Cart)
+
+    //User.hasOne(models.Cart)
   }
   return User
 };

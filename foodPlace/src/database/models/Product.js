@@ -34,7 +34,11 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     sequelize,
     tableName: 'Products',
-    timestamps: true,
+    timestamps: false,
+    createdAt: 'created_at',
+    updatedAt: 'updated_at',
+    deletedAt: false,
+
     indexes: [
       {
         name: "PRIMARY",
@@ -53,11 +57,22 @@ module.exports = function(sequelize, DataTypes) {
       },
     ]
   });
+
   Product.associate = (models) => {
     Product.belongsTo(models.Category, { 
       as: "category", 
       foreignKey: "id_category"});
+
     Product.hasOne(models.ProductImage)
+
+    Product.belongsToMany(models.Cart, {
+      as: "carts",
+      through: "Product_Cart",
+      foreignKey: "id_product",
+      otherKey: "id_cart",
+      timestamps: false
+    })
+
   }
   return Product
 };

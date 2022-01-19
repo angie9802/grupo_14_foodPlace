@@ -12,71 +12,7 @@
        <%- include('./partials/header')%>
 
       <main>
-        <!--Single Product-->
-        <% if (locals.product) { %> 
-        <section class="detail-product-single">
-          <article class="product-single-product">
-            <img src="/img/products/<%= product.image %>" alt="product image"/>
-            <article class="single-product-quantity">
-              <div class="single-decrease-quantity">
-                <h2>-</h2>
-              </div>
-              <p>1</p>
-              <div class="single-increase-quantity">
-                <h2>+</h2>
-              </div>
-            </article>
-          </article>
-
-          <article class="product-single-description">
-            <h1><%= product.name %> </h1>
-            <p>
-              <%= product.description %> 
-            </p>
-            <h2>$<%= new Intl.NumberFormat("de-DE").format(product.price)%></h2>
-            <% if(locals.isLogged){ %>
-              <div class="single-btn">
-                <a href="/shopping-cart"> <button>Add to Cart</button></a>
-                <a href="/products/edit/<%= product.id %>"><button>Edit</button></a>
-                <form action="/products/<%= product.id %>?_method=DELETE" method="POST"  style="display: inline-flex">
-                  <button type="submit" >Delete</button>
-                </form>
-              </div>
-             <% }else {%> 
-              <div class="single-btn">
-                <a href="/users/login"> <button>Add to Cart</button></a>
-                
-              </div>
-             <% } %> 
-            
-          </article>
-        </section>
-        <% } else {%> 
-          <p class="announce">Este producto no existe</p>
-        <% } %> 
-        <section class="detail-product-others">
-          <article class="product-others-title">
-            <h1>Explore More Food</h1>
-          </article>
-
-          <section class="product-other-products">
-            <% for (let index = 0; index < 4 ; index++) {
-              const random = Math.floor(Math.random() * (products.length));
-               %>
-            <article class="other-products-single">
-              <img src="/img/products/<%= products[random].image %>" />
-              <div class="other-products-single-text">
-                <h1><%= products[random].name %> </h1>
-                <p><%= products[random].description %></p>
-                <h2>$ <%= new Intl.NumberFormat("de-DE").format(products[random].price)%></h2>
-              </div>
-              <div class="other-products-single-btn">
-                <button>+</button>
-              </div>
-            </article>
-            <% } %> 
-          </section>
-        </section>
+        <h1> <%= Product.category.name %> </h1>
       </main>
       <footer class="f-edit">
       <%- include('./partials/footer.ejs') %> 

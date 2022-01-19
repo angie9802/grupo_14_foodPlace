@@ -23,14 +23,14 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'Users',
+        model: 'User',
         key: 'id'
       }
     }
   }, {
     sequelize,
     tableName: 'Carts',
-    timestamps: true,
+    timestamps: false,
     indexes: [
       {
         name: "PRIMARY",
@@ -53,6 +53,13 @@ module.exports = function(sequelize, DataTypes) {
     Cart.belongsTo(models.User, {
       as: "user", 
       foreignKey: "id_user"
+    })
+    Cart.belongsToMany(models.Product, {
+      as: "products",
+      through: "Product_Cart",
+      foreignKey: "id_cart",
+      otherKey: "id_product",
+      timestamps: false
     })
   }
   return Cart

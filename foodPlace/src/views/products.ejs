@@ -19,7 +19,7 @@
 
           <article class="box-products-categories-content">
             <div class="categories-content-single-product">
-              <img src="/img/detail-hamburguer.jpg" />
+              <img src="" />
               <p>Hamburguer</p>
             </div>
 
@@ -74,11 +74,11 @@
           <h1>Products</h1>
         </article>
          <section class="section-products">
-            <% newProducts.forEach(product => {%> 
+            <% products.forEach(product => {%> 
             <article class="container-product"> 
             <a href="/products/<%= product.id %> "> 
                 <div class="container-img">
-                  <img src="/img/products/<%= product.image %> " alt="">
+                  <img src="/img/products/chicken.jpg " alt="">
                  
                 </div>
                 <div class="detail-product">
@@ -91,6 +91,7 @@
               </form>
             </article>
             <% }) %> 
+
          </section>
       
         <!----------->
