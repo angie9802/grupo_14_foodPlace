@@ -1,36 +1,31 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('carts', {
+  return sequelize.define('Carts_has_Products', {
     id: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
-    quantity: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
-    price: {
-      type: DataTypes.FLOAT,
-      allowNull: false
-    },
-    total: {
-      type: DataTypes.FLOAT,
-      allowNull: false
-    },
-    id_user: {
+    Carts_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'users',
+        model: 'Carts',
+        key: 'id'
+      }
+    },
+    Products_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'Products',
         key: 'id'
       }
     }
   }, {
     sequelize,
-    tableName: 'carts',
-    timestamps: true,
+    tableName: 'Carts_has_Products',
+    timestamps: false,
     indexes: [
       {
         name: "PRIMARY",
@@ -41,10 +36,17 @@ module.exports = function(sequelize, DataTypes) {
         ]
       },
       {
-        name: "fk_carts_users1_idx",
+        name: "fk_Carts_has_Products_Products1_idx",
         using: "BTREE",
         fields: [
-          { name: "id_user" },
+          { name: "Products_id" },
+        ]
+      },
+      {
+        name: "fk_Carts_has_Products_Carts1_idx",
+        using: "BTREE",
+        fields: [
+          { name: "Carts_id" },
         ]
       },
     ]
