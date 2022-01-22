@@ -56,9 +56,6 @@ const controller = {
     return res.redirect('/users/login')
   },
   loginProcess: (req, res) => {
-<<<<<<< HEAD
-    
-=======
     const resultValidation = validationResult(req)
     
     if(resultValidation.errors.length>0){
@@ -68,7 +65,6 @@ const controller = {
         oldData : req.body
       })
     }
->>>>>>> b2d3378e7daa800e639cc575120a3c3d75e393ac
     let userToLogin = User.findByField('email', req.body.email)
 
     if (userToLogin){
