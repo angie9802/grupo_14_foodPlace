@@ -48,6 +48,16 @@
                     <% } %>
                 </div>
             </div>
+            <div class="radio-button">
+                <div>
+                    <input type="radio" name="role" value="1" required>
+                    <label>Administrator </label>
+                </div>
+                <div>
+                    <input type="radio" name="role" value="2" required>
+                    <label>Normal user </label>
+                </div>
+            </div>
             <div>
                 <input type="password" placeholder="Password" name="password" class="<%= locals.errors && errors.password ? 'is-invalid' : null %>">
             </div>
@@ -74,9 +84,6 @@
             </div>
             <div class="botonok">
                <button type="submit">OK!</button>
-            </div>
-            <div class="continuarg">
-                <button type="button">Continue with Google <i class="fab fa-google"></i></button>
             </div>
             <div class="backhome">
                 <a href="/"><i class="fas fa-caret-left"></i></a>

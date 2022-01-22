@@ -76,13 +76,19 @@
          <section class="section-products">
             <% newProducts.forEach(product => {%> 
             <article class="container-product"> 
-              <a href="/products/<%= product.id %> ">
-                <img src="/img/products/<%= product.image %> " alt="">
+            <a href="/products/<%= product.id %> "> 
+                <div class="container-img">
+                  <img src="/img/products/<%= product.image %> " alt="">
+                 
+                </div>
                 <div class="detail-product">
                   <h4><%= product.name %> </h4>
                   <p>$<%= new Intl.NumberFormat("de-DE").format(product.price)%></p>
                 </div>
-              </a>
+              </a> 
+              <form action="/shopping-cart">
+                  <button class="button-cart"><i class="fas fa-shopping-cart"></i> Add to cart</button>
+              </form>
             </article>
             <% }) %> 
          </section>

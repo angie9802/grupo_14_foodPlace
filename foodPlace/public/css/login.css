@@ -65,15 +65,16 @@ main .password input {
 }
 main .password p {
     font-size: 1.2rem;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 main .remember {
-    margin-bottom: 10px;
-    font-size: 15px
+    font-size: 13px;
+    font-weight: bold;
 }
+
 main .botonlogin button{
     background-color:  #5E1EBE ;
-    margin-bottom: 0;
+    margin-top: 20px;
     cursor: pointer;
     color: white;
     transition: all 450ms;
@@ -83,7 +84,7 @@ main .botonlogin button:hover{
 }
 main .botonlogin p{
     font-size: 1.2rem;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 main .backhome {
     margin-top: 5px;

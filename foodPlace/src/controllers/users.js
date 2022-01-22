@@ -49,11 +49,13 @@ const controller = {
       email: req.body.email,
       number: req.body.number,
       address: req.body.address,
+      role : req.body.role,
       password : bcryptjs.hashSync(req.body.password, 10),
       userImage : req.file.filename
     }
     User.create(newUser)
     return res.redirect('/users/login')
+    //return res.send(newUser)
   },
   loginProcess: (req, res) => {
     const resultValidation = validationResult(req)

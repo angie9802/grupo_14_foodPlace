@@ -12,20 +12,66 @@
     <main>
         <div class="container">
             <div class="int-1">
-                <div class="box">
-                    <img  src="/img/users/<%= locals.userLogged.userImage %> ">
-                </div>
-                <h2>¡Welcome ,  <%= user.fullname %>!</h2>
-                <div class="container-email">
-                    <%= locals.userLogged.email %>
-                </div>
                 <form action="">
-                    <button class="button-edit">Edit profile</button>
+                    <div class="box">
+                        <img  src="/img/users/<%= locals.userLogged.userImage %> ">	
+                    </div>
+                    <div  class="container-form" >
+                        <div>
+                            <input type="text" placeholder="Full name" name="fullnamee" value="<%= locals.userLogged.fullname %>">
+                        </div>
+                        <div>
+                            <input type="text" placeholder="Email" name="emaile"  value="<%= locals.userLogged.email %>">
+                        </div>
+                        <div class="teladress">
+                            <div>
+                                <input type= "text" placeholder="Telephone" name="numbere"  value="<%= locals.userLogged.number %>">
+                            </div>
+                            <div>
+                                <input type ="text" placeholder="Address" name="addresse"  value="<%= locals.userLogged.address %>">
+                            </div>
+                        </div>
+                        <% if (locals.userLogged.role == 1) { %>
+                            <div class="radio-button">
+                                <div>
+                                    <input type="radio" name="role" value="1" selected>
+                                    <label>Administrator </label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="role" value="2">
+                                    <label>Normal user </label>
+                                </div>
+                            </div>
+                        <% } %>
+                        <div>
+                            <input type="file"  name="userImage" >	
+                        </div>
+                        <div>
+                            <input type="oldpassword" placeholder="Old password" name="password">
+                        </div>
+                        <div>
+                            <input type="newpassword" placeholder="New password" name="password">
+                        </div>
+                        <div>
+                            <input type="cnewpassword" placeholder="Confirm new Password" name="cpassword">
+                        </div>
+                        <button class="button-edit">Edit profile</button>
+                    </div>
                 </form>
             </div>
             <hr>
             <div class="int-2">
-                <h3>Recent orders</h3>
+                <h4>Account type</h4>
+                <% if (locals.userLogged.role == 2) { %>
+                    <div class="container-type">
+                        Normal user
+                    </div>
+                <% } else if (locals.userLogged.role == 1){ %>
+                    <div class="container-type">
+                        Administrator
+                    </div>
+                <% } %>
+                <h4>Recent orders</h4>
                 <div class="container-order">
                     Order 1 ...
                 </div>
@@ -35,7 +81,9 @@
                 <div class="container-order">
                     Order 3 ...
                 </div>
-                <a href="#">Delete my account</a>
+                <div class="delete">
+                    <a href="#">Delete my account</a>
+                </div>
             </div>
         </div>
      
