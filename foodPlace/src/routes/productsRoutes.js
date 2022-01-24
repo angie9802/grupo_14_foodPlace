@@ -1,13 +1,13 @@
 const express = require('express')
 const router = express.Router()
-const products = require('../controllers/products')
+const products = require('../controllers/productsController')
 
 
 const uploadFile = require('../utils/multerConfig')
 
 
 //Get all products
-router.get('/', products.index)
+router.get('/', products.list)
 
 //Create one product
 router.get('/create', products.create)
