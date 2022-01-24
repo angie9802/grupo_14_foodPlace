@@ -45,18 +45,18 @@ const controller = {
   store: (req, res,next) => {
 
     
-    const newProducts = ProductModel.findAll()
-    newProducts.then((products)=>{
-      console.log(newProducts)
+    const products = ProductModel.findAll()
+    products.then((products)=>{
       let newProduct = {
         id: maxId(products),
         image: req.file.filename,
         ...req.body
       }
-  
       ProductModel.store(newProduct)
-      console.log(newProduct)
-      res.render("products.ejs", {products})
+      const newProducts = ProductModel.findAll()
+      newProducts.then((products)=>{
+        res.render("products.ejs", {products})
+      })
     }).catch((err) => {
       next(err);
     })
