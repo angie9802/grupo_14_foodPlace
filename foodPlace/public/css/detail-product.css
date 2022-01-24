@@ -150,6 +150,7 @@ main .product-other-products .other-products-single{
   max-width: 600px;
   max-height: 300px;
   padding: 15px;
+  justify-content: space-between;
 }
 
 main .product-other-products .other-products-single img{

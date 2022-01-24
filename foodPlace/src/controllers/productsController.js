@@ -2,26 +2,39 @@ const fs = require('fs')
 const path = require('path')
 const pathView = require('../utils/pathViews')
 const maxId = require('../utils/maxId')
-const Product = require('../models/Product')
+const ProductModel = require('../models/modelProduct')
+const CategoryModel = require('../models/modelProduct')
 const productsFilePath = path.resolve(__dirname, '../data/products.json')
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'))
+
 
 
 const controller = {
   
   //Show all products
-  index: (req, res) => {
-    const newProducts = Product.getProducts()
-    res.render(path.resolve(__dirname, pathView('products')),{ newProducts })
+  list: (req, res,next) => {
+    const Products = ProductModel.findAll()
+
+      Products.then((products)=>{
+        res.render("products.ejs", {products})
+      }).catch((err) => {
+        next(err);
+      })
   },
 
   //Detail Product
-  detail: (req, res) => {
-    let id = req.params.id;
-    const products = Product.getProducts()
-    const product = Product.findById(id)
-    res.render(path.resolve(__dirname, pathView('detail')),{ product : product , products : products })
-  },
+  detail: (req, res, next) => {
+    const products = ProductModel.findAll()
+    const Product = ProductModel.findById(req.params.id);
+    const Categories = CategoryModel.findAll()
+
+    Promise.all([Product,Categories, products])
+      .then(([product, allCategories, products])=>{
+        res.render("detail.ejs", {product:product , allCategories: allCategories, products:products})
+      }).catch((err) => {
+      next(err);
+    })
+     },
 
   //Create - Form to create products
   create: (req, res) => {
@@ -29,21 +42,28 @@ const controller = {
   },
 
   //Create - Method to store
-  store: (req, res) => {
-    
-    let product = {
-      id: maxId(Product.getProducts()),
-      image: req.file.filename,
-      ...req.body
-    }
+  store: (req, res,next) => {
 
-    products.push(product)
-    const newProducts = Product.getProducts()
     
-    let jsonProducts = JSON.stringify(newProducts,null,4)
-    fs.writeFileSync(productsFilePath, jsonProducts)
+    const newProducts = ProductModel.findAll()
+    newProducts.then((products)=>{
+      console.log(newProducts)
+      let newProduct = {
+        id: maxId(products),
+        image: req.file.filename,
+        ...req.body
+      }
+  
+      ProductModel.store(newProduct)
+      console.log(newProduct)
+      res.render("products.ejs", {products})
+    }).catch((err) => {
+      next(err);
+    })
+    
 
-    res.render(path.resolve(__dirname, pathView('products')),{ newProducts })
+
+
   },
   edit: (req,res)=> {
     let id = req.params.id;

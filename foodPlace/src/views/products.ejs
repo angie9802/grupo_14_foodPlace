@@ -74,11 +74,11 @@
           <h1>Products</h1>
         </article>
          <section class="section-products">
-            <% newProducts.forEach(product => {%> 
+            <% products.forEach(product => {%> 
             <article class="container-product"> 
             <a href="/products/<%= product.id %> "> 
                 <div class="container-img">
-                  <img src="/img/products/<%= product.image %> " alt="">
+                  <img src="/img/products/<%= product.image %>" alt="">
                  
                 </div>
                 <div class="detail-product">
