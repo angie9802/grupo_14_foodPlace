@@ -1,5 +1,5 @@
 const { validationResult } = require('express-validator')
-const User = require('../models/modelUser')
+const UserModel = require('../models/modelUser')
 const bcryptjs = require('bcryptjs')
 
 const controller = {
@@ -8,6 +8,15 @@ const controller = {
   },
   login: (req, res) => {
     res.render('login') 
+  },
+  list: (req, res,next) => {
+    const Users = UserModel.findAll()
+      console.log(Users)
+      Users.then((users)=>{
+        res.render("manage-users.ejs", {users})
+      }).catch((err) => {
+        next(err);
+      })
   },
   processRegister: (req,res)=>{
     const resultValidation = validationResult(req)

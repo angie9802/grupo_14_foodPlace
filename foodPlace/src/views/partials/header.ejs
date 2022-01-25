@@ -18,7 +18,7 @@
         <ul class="list1">
           <li><a href="/products/create">Create product</a></li>
           <li><a href="#">Edit products</a></li>
-          <li><a href="#">Edit users</a></li>
+          <li><a href="/users/manage">Manage users</a></li>
         </ul>
 
         <a href="/shopping-cart"><i class="fas fa-shopping-cart"></i></a>
@@ -62,7 +62,7 @@
       <% if (locals.isLogged && locals.userLogged.role == 1) { %>
         <li><a href="/create-product">Create Product</a></li>
         <li><a href="#">Edit products</a></li>
-        <li><a href="#">Edit users</a></li>
+        <li><a href="/users/manage">Manage users</a></li>
         <li><a href="/users/profile">Profile</a></li>
         <li><a href="/users/logout">Log Out</a></li>
       <% } else if (locals.isLogged && locals.userLogged.role == 2){ %> 

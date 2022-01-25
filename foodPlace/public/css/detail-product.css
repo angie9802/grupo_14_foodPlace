@@ -5,6 +5,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+body{
+  background-image: url(../img/fast-food-1.jpg);
+  background-size: cover;
+  padding-top: 8px;
+}
 header .search button {
   padding:  0 6px
 }
@@ -14,7 +19,7 @@ header .list li a, .list1 li a, .list2 li a {
 
 .detail-product-box{
   width: 100%;
-  background-color: #F1F1F1;
+
   min-height: 100vh;
 }
 

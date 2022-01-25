@@ -1,0 +1,196 @@
+
+body{
+   background-image: url(../img/fast-food.jpg);
+   background-size: cover;
+   padding-top: 8px;
+ }
+main .welcome-style{
+  background-color: rgba(0, 0, 0, 0.116);
+   background-repeat:repeat-y;
+   background-size:100vw;
+   max-width:100%;
+   height: 60%;
+   padding:50px 20px 20px 20px ;
+   color: white;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+main .carousel-style i{
+   display:none;
+   font-size: 40px;
+
+}
+main .welcome-style h1{
+   font-size: 35px;
+}
+main .welcome-style p{
+  max-width: 70%;
+  
+}
+main .carousel-style {
+   width: 100vw;
+   margin: 0;
+   background-color: #fdfdfd91 ;
+   display: flex;
+   align-items:center;
+   padding: 20px 0;
+   height: 40%;
+   overflow-x: hidden;
+   justify-content: space-evenly;
+   border-top : 4px solid  #ffffff8e ;
+}
+
+
+main .carousel-style article{
+   max-width: 170px;
+   min-width: 165px;
+   margin:0 20px;
+  
+}
+main .carousel-style img{
+   width: 100%;
+   align-self: center;
+   
+}
+
+
+
+/*-------------------------------------------home-----------------------------------------*/
+
+footer{
+   width: 100vw;
+   height: 50px;
+   background-color: #FFFFFF;
+   padding: 10px 20px;
+   box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    
+ }
+.f-home{
+   position: absolute;
+   bottom:0px;
+}
+.f-cart{
+   position: fixed;
+   bottom:0px;
+}
+ footer div{
+   display: flex;
+    justify-content:space-between;
+    align-items: center;
+ }
+
+ footer div .footer-right, div .footer-left{
+   display: flex;
+ }
+ footer div .footer-right li{
+   margin: 0px 5px
+ }
+ footer div .footer-right li, div li a{
+   color:  #6A696E ;
+   font-size: 12px;
+ }
+ footer div .footer-left i{
+   color: #6A696E;
+   background: #f1f1f1e6;
+   border-radius: 50%;
+   padding: 5px;
+   font-size: 20px;
+   margin: 0px 5px;
+ }
+ @media (min-width: 480px) {
+   
+
+   main .container-int article div li{
+      margin:  10px 10px;
+   }
+   main .container-int article img{
+      max-width: 250px;
+   }
+   main .container-int article div{
+      margin: 0 20px
+   }
+   main .container-int article .fa-trash-alt{
+      margin: 0 20px;
+      font-size: 25px
+   }
+
+ }
+@media (min-width: 768px) {
+   header .nav-cell{
+      display:none;
+   }
+   header .nav-bar{
+      display: flex;
+   
+   }
+   header .nav-bar a{
+      font-size: bold;
+      margin: 0 15px;
+   } 
+   header .container button{
+      width: 80px;
+      border-radius: 30px;
+      font-size: 14px;
+      margin: 2px 0;
+      color: #21B16C ;
+      border: 2px solid #21B16C ;
+      background-color: transparent;
+      align-self: center;
+   }
+   header .fa-shopping-cart, .fa-user{
+      padding: 15px;
+   }
+   header .logo{
+      display: block;
+      width: 75px;
+   }
+   button:hover{
+      cursor:pointer;
+   }
+
+   header .search{
+      background-color: white;
+      margin: 0 15px;
+   }
+
+   header .container{
+      display: flex;
+      flex-direction: column;
+      margin: 0 15px;
+   }
+ /*-------------------------------------------home-----------------------------------------*/
+   main .welcome-style h1{
+      font-size: 50px;
+   }
+   main .welcome-style p{
+      max-width: 50%;  
+   }
+/*-------------------------------------------home-----------------------------------------*/
+   main .container-int article div{
+      margin: 0;
+   }   
+   main .container-int article div ul{
+      display: flex;
+      align-items:center;
+   }
+   main .container-int  article ul li{
+      margin: 0 25px
+   } 
+}
+  
+
+
+@media (min-width: 1200px) {
+/*-------------------------------------------home-----------------------------------------*/
+   main .carousel-style i{
+      display:block;
+      font-size: 40px;
+   }
+   main .carousel-style{
+      justify-content: space-between;
+   }
+
+
+/*-------------------------------------------home-----------------------------------------*/  
+}

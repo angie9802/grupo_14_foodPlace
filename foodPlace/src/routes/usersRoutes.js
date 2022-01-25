@@ -65,6 +65,8 @@ router.post('/login', validationsLogin, usersController.loginProcess)
 
 router.get('/profile',authMiddleware, usersController.profile);
 
+router.get('/manage',authMiddleware, usersController.list);
+
 //Logout
 router.get('/logout', usersController.logout);
 

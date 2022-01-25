@@ -3,11 +3,22 @@ const path = require('path')
 const usersFilePath = path.resolve(__dirname, '../data/users.json')
 const maxId = require('../utils/maxId')
 
+const db = require('../database/models')
+
+
 const User = {
+    findAll : async ()=>{
+        try{
+            let users = await db.Users.findAll()
+            return users
+        }catch(err){
+            console.log(err)
+        }
+        
+    },
     getUsers : ()=>{
         return JSON.parse(fs.readFileSync(usersFilePath,'utf-8'))
     },
-    
     findById : (id) =>{
         let userFound = User.getUsers().find(user => user.id === id)
         return userFound

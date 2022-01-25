@@ -5,6 +5,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+body{
+  background-image: url(../img/fast-food-1.jpg);
+  background-size: cover;
+  padding-top: 8px;
+}
 
 header .search button {
   padding:  0 6px
@@ -22,7 +27,7 @@ header {
 
 /*Products Categories*/
 main .box-products-categories {
-  background-color:  #000000c0;
+  background-color:  #000000b2;
    border-bottom : 4px solid   #000000;
 }
 
@@ -197,7 +202,7 @@ main .bestsellers-content-single-product {
   -moz-box-shadow: 0px 2px 33px -22px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 2px 33px -22px rgba(0, 0, 0, 0.75);
   transition: all 0.6s ease-in-out;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.315);
 }
 
 main .bestsellers-content-single-product:hover {
