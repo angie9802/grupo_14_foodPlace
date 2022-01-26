@@ -84,7 +84,7 @@ main .teladress input{
 }
 main .container-order, .container-type{
     border-radius: 5px;
-    padding: 5px;
+    padding: 10px;
     text-align: center;
     font-weight: bold;
 }

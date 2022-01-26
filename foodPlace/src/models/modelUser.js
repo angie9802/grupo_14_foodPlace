@@ -19,9 +19,16 @@ const User = {
     getUsers : ()=>{
         return JSON.parse(fs.readFileSync(usersFilePath,'utf-8'))
     },
-    findById : (id) =>{
-        let userFound = User.getUsers().find(user => user.id === id)
-        return userFound
+    findById : async (id) =>{
+        try{
+            let user = await db.Users.findByPk(id,{
+                include: ["Role"]
+            })
+            return user
+        }catch(err){
+            console.log(err)
+        }
+        
     },
     findByField :(field, text)=>{
         let userFound = User.getUsers().find(user=> user[field]=== text)

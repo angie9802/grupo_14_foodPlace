@@ -64,10 +64,13 @@ router.get('/login',guestMiddleware, usersController.login)
 router.post('/login', validationsLogin, usersController.loginProcess)
 
 router.get('/profile',authMiddleware, usersController.profile);
-
 router.get('/manage',authMiddleware, usersController.list);
+
+
 
 //Logout
 router.get('/logout', usersController.logout);
+
+router.get('/:id',authMiddleware, usersController.detail);
 
 module.exports = router

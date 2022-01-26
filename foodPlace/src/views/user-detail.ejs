@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs')  %> 
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/header-footer.css" />
+    <link rel="stylesheet" href="/css/user-detail.css" />
+    <title>User Profile</title>
+</head>
+<body>
+    <header><%- include('./partials/header')%></header>
+    <main>
+        <% if(locals.user) { %> 
+        <div class="container">
+            <div class="int-1">
+                <img  src="/img/users/<%= user.userimage %> ">	
+                <h1><%= user.fullname %> </h1>
+                <div class="container-order">
+                    <%= user.email %> 
+                </div>
+            </div>
+            <hr>
+            <div class="int-2">
+                <h3>Role</h3>
+                <% if (user.Roles_id == 2) { %>
+                    <div class="container-type">
+                        Normal user
+                    </div>
+                <% } else if (user.Roles_id == 1){ %>
+                    <div class="container-type">
+                        Administrator
+                    </div>
+                <% } %>
+                <div class="">
+
+                </div>
+            </div>
+        </div>
+        
+        <% } %> 
+    </main>
+    <footer class="f-profile">
+        <%- include('./partials/footer.ejs') %>
+    </footer>
+</body>
+</html>

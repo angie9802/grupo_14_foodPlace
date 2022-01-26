@@ -1,5 +1,6 @@
 const { validationResult } = require('express-validator')
 const UserModel = require('../models/modelUser')
+const RoleModel = require('../models/modelRole')
 const bcryptjs = require('bcryptjs')
 
 const controller = {
@@ -76,14 +77,14 @@ const controller = {
         oldData : req.body
       })
     }
-    let userToLogin = User.findByField('email', req.body.email)
+    let userToLogin = UserModel.findByField('email', req.body.email)
 
     if (userToLogin){
       let checkPassword = bcryptjs.compareSync(req.body.password, userToLogin.password)
       if (checkPassword){
         delete userToLogin.password;
         req.session.userLogged = userToLogin;
-
+        
         if(req.body.remember){
           res.cookie('userEmail', req.body.email, {
             maxAge: (10000 * 60) * 60
@@ -111,6 +112,18 @@ const controller = {
       })
     
   },
+  detail: (req, res, next) => {
+
+    const User = UserModel.findById(req.params.id);
+    const Roles = RoleModel.findAll()
+
+    Promise.all([User,Roles])
+      .then(([user, allRoles])=>{
+        res.render("user-detail.ejs",  { user:user , allRoles: allRoles })
+      }).catch((err) => {
+      next(err);
+    })
+     },
   profile: (req, res) => {
     
 		return res.render('userProfile', {

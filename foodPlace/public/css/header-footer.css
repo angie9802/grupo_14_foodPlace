@@ -180,6 +180,7 @@ footer{
 }
 
 .f-edit, .f-profile{
+  background-color:#000000da;
   position: relative;
   bottom:0px;
 }

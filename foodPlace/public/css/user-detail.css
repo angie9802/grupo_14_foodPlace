@@ -1,0 +1,13 @@
+@import url('profile.css');
+main .int-1 h1{
+   text-align: center
+}
+main .int-1 img{
+    width:150px;
+    height:150px;
+    margin-bottom: 40px;
+    margin-top: 25px;
+}
+main .container-order{
+    padding: 15px;
+}
