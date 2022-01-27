@@ -15,7 +15,7 @@
             <div class="ext">
                 <div class="int-1">
                     <img  src="/img/users/<%= user.userimage %>">	
-                    <h1><%= user.fullname %></h1>
+                    <h1><%= user.fullname.replace(/\b\w/g, l => l.toUpperCase()) %></h1>
                 </div>
             </div>
             <hr>

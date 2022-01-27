@@ -226,10 +226,10 @@ footer div .footer-left i{
     width: 80px;
     border-radius: 30px;
     font-size: 14px;
-    font-weight: bold;
+    font-weight: normal;
     margin: 2px 0;
-    color: #21b16c;
-    border: 2px solid #21b16c;
+    color: #ffffff;
+    border: 2px solid #ffffff;
     background-color: transparent;
     align-self: center;
   }

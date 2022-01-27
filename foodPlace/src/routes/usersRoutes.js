@@ -71,4 +71,7 @@ router.get('/logout', usersController.logout);
 
 router.get('/:id',authMiddleware, usersController.detail);
 
+//delete
+router.delete('/delete/:id',usersController.delete)
+
 module.exports = router

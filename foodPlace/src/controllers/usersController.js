@@ -136,6 +136,14 @@ const controller = {
     req.session.destroy()
     
     return res.redirect('/')
+  },
+  delete:  async (req, res) => {
+    try{ 
+      UserModel.destroy(req.params.id);
+      res.redirect("/users/manage")
+    }catch(err){
+      console.log(err)
+    }
   }
 }
 

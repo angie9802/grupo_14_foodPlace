@@ -23,7 +23,13 @@
                       <td><%= user.fullname.replace(/\b\w/g, l => l.toUpperCase())%> </td>
                       <td><a href="/users/<%= user.id%> "> <i class="fas fa-eye"></i></a></td>
                       <td><a href="/administrar/edit/<%= user.id%> "> <i class="fas fa-edit"></i></a></td>
-                      <td class="right"><a href="/administrar/delete/<%= user.id%>"><i class="fas fa-trash-alt"></i></a></td>
+                      <td class="right">
+                        <form action="/users/delete/<%= user.id%>?_method=DELETE" method="POST">
+                          <button class="delete">
+                            <i class="far fa-trash-alt"></i>
+                          </button>
+                        </form>
+                      </td>
                     </tr>
                     <% }); %>
                 </table>

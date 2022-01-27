@@ -26,7 +26,7 @@ router.put('/:id',productsController.update)
 
 //Delete one product
 
-router.delete('/:id',productsController.delete)
+router.delete('/delete/:id',productsController.delete)
 
 
 

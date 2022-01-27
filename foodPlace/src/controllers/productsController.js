@@ -100,12 +100,14 @@ const controller = {
   },
 
   //Delete a product
-  delete: (req, res) => {
-    let id = req.params.id;
-    ProductModel.delete(id);
-
-    res.redirect("/products");
-  },
+  delete:  async (req, res) => {
+    try{ 
+      ProductModel.destroy(req.params.id);
+      res.redirect("/products/manage")
+    }catch(err){
+      console.log(err)
+    }
+  }
 };
 
 module.exports = controller;

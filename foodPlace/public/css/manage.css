@@ -59,3 +59,9 @@ main .tftable td a{
 }
 main .tftable tr:hover {
     background-color:#ffffff;}
+main .delete{
+    border: none
+}
+main .delete i{
+    font-weight: bold;
+}
