@@ -1,5 +1,5 @@
 body{
-    background-image: url(../img/fast-food.jpg);
+    background-image: url(../img/fast-food-1.jpg);
     background-size: cover;
     padding-top: 8px;
   }
@@ -9,15 +9,21 @@ main {
     height: 82%;
     padding: 20px 
 }
+main h1, h3{
+    color: black;
+    
+}
 main .container {
     width: 70%;
     height: 100%;
-    border: 1px solid #ffffffe0;
-    background-color : #ffffffe3;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    background-color : rgba(255, 255, 255, 0.9);
     margin: auto;
     display : flex;
   justify-content: center;
-  overflow-y:scroll
+  overflow-y:scroll;
+  
 }
 main .container::-webkit-scrollbar{
     width: 0px;
@@ -52,16 +58,15 @@ main .int-1 img{
     display:block
 }
 
-main .int-1 h4{
-    margin: 10px 
-}
+
 
 
 main .container-form{
     border: 1px solid rgba(59, 59, 59, 0.733);
     padding: 10px 20px;
-    background-color : #ffffffdc;
+    background-color : #ffffffc0;
     position: relative;
+    border-radius: 10px;
 }
 
 main .container-form input{
@@ -86,17 +91,17 @@ main .container-order, .container-type{
     border-radius: 5px;
     padding: 10px;
     text-align: center;
-    font-weight: bold;
+    font-weight: normal;
 }
 main .container-type {
-    border: 1.5px solid  #ec0202e1 ;
-    background-color: #ff000073 ;
-    color:  #ec0202e1 ;
+    border: 2px solid  #ec0202e1 ;
+    background-color: #ff000098 ;
+    color:  black;
 }
 main .container-order {
-    border: 1.5px solid  #21b16c;
-    background-color: #21b16b41 ;
-    color:  #21b16c;
+    border: 2px solid  #21b16be7;
+    background-color: #1b925879 ;
+    color:  black;
     margin: 8px 0;
 }
 
@@ -153,7 +158,7 @@ main .delete{
 main .delete a{
     text-decoration: underline;
     font-size: 13px;
-    color: black;
+    color: white;
 }
 
 @media screen and (max-width: 786px){

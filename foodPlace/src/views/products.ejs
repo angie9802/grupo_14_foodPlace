@@ -82,7 +82,7 @@
                  
                 </div>
                 <div class="detail-product">
-                  <h4><%= product.name %> </h4>
+                  <h4><%= product.name.replace(/\b\w/g, l => l.toUpperCase()) %> </h4>
                   <p>$<%= new Intl.NumberFormat("de-DE").format(product.price)%></p>
                 </div>
               </a> 

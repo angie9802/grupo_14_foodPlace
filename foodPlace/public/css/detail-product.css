@@ -38,21 +38,17 @@ header .list li a, .list1 li a, .list2 li a {
 /*Header*/
 
 
-/*Main*/
-main {
-  margin-top: 20px;
-}
-
-
 /*Product Detail*/
+
 main .detail-product-single {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
   margin: 0 auto;
   gap: 10px;
-  background-color: #FFFFFF;
-  padding: 30px;
+  padding: 60px 30px  30px  30px;
+  background-color:  #000000b2;
+   border-bottom : 4px solid   #000000;
 }
 
 
@@ -62,15 +58,16 @@ main .product-single-product {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  width: 50%;
 }
 
 main .product-single-product img {
-  width: 80%;
+  width: 75%;
   max-width: 700px;
-  border-radius: 3px;
-  -webkit-box-shadow: 10px 10px 21px -8px rgba(0,0,0,0.75);
-  -moz-box-shadow: 10px 10px 21px -8px rgba(0,0,0,0.75);
-  box-shadow: 10px 10px 21px -8px rgba(0,0,0,0.75);
+  border-radius: 10px;
+  -webkit-box-shadow: 10px 10px 21px -8px rgba(61, 60, 60, 0.75);
+  -moz-box-shadow: 10px 10px 21px -8px rgba(61, 60, 60, 0.75);
+  box-shadow: 10px 10px 21px -8px rgba(61, 60, 60, 0.75);
 }
 
 main .single-product-quantity{
@@ -89,7 +86,7 @@ main .single-product-quantity div{
   align-items: center;
   cursor: pointer;
   color: white;
-  background-color: #5E1EBE;
+  background-color: #ec020277;
 }
 
 /*Product Description box*/
@@ -100,42 +97,39 @@ main .product-single-description {
   justify-content: space-evenly;
   padding: 0px 30px;
   max-width: 400px;
+  color: white
 }
 
-main .product-single-description p{
-
+main .product-single-description p,.product-single-description h1{
+  color: white
 }
+
 
 main .product-single-description h2{
-  font-size: 20px
+  font-size: 20px;
+  color: white
 }
 
-main .product-single-description button{
-  width: 140px;
-  padding: 13px;
-  background-color: #5E1EBE;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  cursor: pointer;
-}
 
 
 /*Other products*/
 
 main .detail-product-others{
   margin-top: 60px;
-  background-color: #FFFFFF;;
+  background-color: #ffffffc2;
+
 }
 
 main .product-others-title{
   display: flex;
   justify-content: center;
   padding-top: 30px;
+  border-top: 4px solid white
 }
 
 main .product-others-title h1{
   font-size: 25px;
+  color: #000000;
 }
 
 main .product-other-products {
@@ -145,6 +139,7 @@ main .product-other-products {
   margin-top: 30px;
   padding: 20px;
   width: 100%;
+  
 }
 
 
@@ -173,26 +168,32 @@ main .product-other-products .other-products-single-text{
 
 main .other-products-single-text h1{
   font-size: 18px;
-  font-weight: 400
+  font-weight: 400;
+  color: #000000;
 }
 
 main .other-products-single-text h2{
   font-size: 15px;
   font-weight: 900;
+  color: #000000;
 }
 
 main .other-products-single-text p{
   font-size: 14px;
+  color: #000000;
 }
+
 main .other-products-single-btn button{
-  width: 40px;
-  height: 40px;
-  background-color: #5E1EBE;
-  color: white;
+  width: 30px;
+  height: 30px;
+  background-color: #ec0202a2;
   font-size: 25px;
   border-radius: 50%;
-  border: none;
   cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border: none;
 }
 
 main .single-btn{
@@ -201,16 +202,33 @@ main .single-btn{
   display: flex;
   justify-content: space-between;
 }
-main .single-btn a button, .single-btn form button{
-  color:  #5E1EBE;
-  border: solid 2px  #5E1EBE;
-  font-size: 13px;
+main .button-cart{
+  width: 120px;
+  margin: 20px 5px 10px;
+  padding: 10px 20px;
+  display: block;
+  font-size: 0.8rem;
   font-weight: bold;
-  border-radius: 15px;
-  width: 95px;
-  margin: 2px;
-  background-color: #FFFFFF;
-  padding:2px
+  background-color:rgba(255, 255, 255, 0.829);
+  border : 2px solid #ff000073 ;
+  color:#ec0202e1 ;
+  position: relative;
+  border-radius:5px
+}
+
+main .button-cart:before{
+  content:"";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 0px;
+  background:#ff000073 ;
+  transition: all 0.2s ease;
+}
+
+main .button-cart:hover::before{
+  height: 100%;
 }
 main .product-single-description h1{
   font-size: 30px;

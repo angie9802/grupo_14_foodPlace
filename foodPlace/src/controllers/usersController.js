@@ -10,7 +10,7 @@ const controller = {
   login: (req, res) => {
     res.render('login') 
   },
-  list: (req, res,next) => {
+  show: (req, res,next) => {
     const Users = UserModel.findAll()
       console.log(Users)
       Users.then((users)=>{
