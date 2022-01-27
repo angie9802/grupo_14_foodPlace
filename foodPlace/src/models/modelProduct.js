@@ -36,11 +36,17 @@ const Product = {
             console.log(err)
         }
     },
-    delete : (id) =>{
-        const newDb = Product.getProducts().filter(item => item.id != id);
-        fs.writeFileSync(productsFilePath, JSON.stringify(newDb,null,4),{encoding: "utf-8"})
-        return true
-    },
+    destroy: async (id) => {
+        try{
+             await db.Products.destroy({
+                where : {
+                    id :id
+                }
+            })
+        }catch(err){
+            console.log(err)
+        }
+    }
 }
 module.exports = Product
 
