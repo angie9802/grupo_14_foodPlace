@@ -98,7 +98,18 @@ const controller = {
 
     res.redirect("/products");
   },
-
+  search: async  (req, res) => {
+		try {
+			let query = req.query.searchbar;
+			let products = await ProductModel.search(query)
+     
+        res.render("search-products.ejs", { products: products , query : query });
+      
+	
+		} catch (err) {
+			console.log(err);
+		}
+	},
   //Delete a product
   delete:  async (req, res) => {
     try{ 

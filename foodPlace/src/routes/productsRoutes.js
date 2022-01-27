@@ -16,12 +16,15 @@ router.get('/create',authMiddleware, adminMiddleware, productsController.create)
 router.post('/', uploadFile.single('image'), productsController.store)
 
 router.get('/manage',authMiddleware, productsController.show);
+router.get('/search', productsController.search);
 //Get one product(detail)
 router.get('/:id', productsController.detail); 
 
 //Edit one product
 router.get('/edit/:id',authMiddleware, adminMiddleware, productsController.edit)
 router.put('/:id',productsController.update)
+
+
 
 
 //Delete one product

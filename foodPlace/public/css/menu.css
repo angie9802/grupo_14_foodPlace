@@ -227,9 +227,11 @@ main .bestsellers-content-single-product p {
 main .box-products-lovedbypeople {
   border: 2px solid orange;
 }
-
-
-
+main .empty{
+  font-size: 25px;
+  color: rgba(139, 137, 137, 0.767);
+  font-weight:bold
+}
 /*Footer*/
 footer {
   max-width: 100%;

@@ -2,15 +2,12 @@
   <nav class="nav-bar">
     <a href="/"><img class="logo" src="../img/logo.png" alt="logo" /></a>
     <a class="a-menu" href="/products">Menu</a>
-    <div class="search">
-      <button><i class="fas fa-search"></i></button>
-      <input
-        type="text"
-        name="search-bar"
-        placeholder="Search..."
-        class="search-input"
-      />
-    </div>
+    
+      <form class="search" method="get" action="/products/search">
+        <button><i class="fas fa-search"></i></button>
+        <input type="text" name="searchbar" placeholder="Search..." class="search-input"
+        />
+    </form>
       <% if (locals.isLogged && locals.userLogged.role == 1) { %>
             <input type="checkbox" id="btn-admin" />
         <label for="btn-admin" class="burger-admin"

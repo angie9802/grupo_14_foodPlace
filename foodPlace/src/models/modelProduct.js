@@ -1,5 +1,5 @@
 const db = require('../database/models')
-const Categories = require('../database/models/Categories')
+const { Op } = require("sequelize");
 
 const Product = {
     findAll : async ()=>{
@@ -24,15 +24,28 @@ const Product = {
         
     },
     findByField :(field, text)=>{
-        let productFound = Product.getProducts().find(product=> product[field]=== text)
-        return productFound
+        let foundProduct = Product.getProducts().find(product=> product[field]=== text)
+        return foundProduct
     },
     store: async (dataProduct)=>{
         try{
             let newProduct = await db.Products.create(dataProduct)
-            console.log(newProduct)
             return newProduct
         }catch(err){
+            console.log(err)
+        }
+    },
+    search : async (searchQuery) =>{
+        try{
+            let searchedProducts = await db.Products.findAll({
+                where: {
+                    name: {
+                        [Op.substring]:  [searchQuery], 
+                    }
+                  }
+            })
+            return searchedProducts
+        }catch{
             console.log(err)
         }
     },
@@ -49,5 +62,4 @@ const Product = {
     }
 }
 module.exports = Product
-
 
