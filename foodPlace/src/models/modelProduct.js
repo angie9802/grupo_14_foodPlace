@@ -30,7 +30,6 @@ const Product = {
     store: async (dataProduct)=>{
         try{
             let newProduct = await db.Products.create(dataProduct)
-            console.log(newProduct)
             return newProduct
         }catch(err){
             console.log(err)

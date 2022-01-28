@@ -11,7 +11,7 @@
         class="search-input"
       />
     </div>
-      <% if (locals.isLogged && locals.userLogged.role == 1) { %>
+      <% if (locals.isLogged && locals.userLogged.Roles_id == 1) { %>
             <input type="checkbox" id="btn-admin" />
         <label for="btn-admin" class="burger-admin"
           ><i class="fas fa-wrench"></i></label>
@@ -25,17 +25,17 @@
 
             <input type="checkbox" id="btn-user" />
         <label for="btn-user">
-          <img class="img-profile" src="/img/users/<%= locals.userLogged.userImage %> " width="50px" style="border-radius: 100%;">
+          <img class="img-profile" src="/img/users/<%= locals.userLogged.userimage %> " width="50px" style="border-radius: 100%;">
         </label>
         <ul class="list2">
           <li><a href="/users/profile">Profile</a></li>
           <li><a href="/users/logout">Log out</a></li>
         </ul>
-      <% } else  if (locals.isLogged && locals.userLogged.role == 2){%>
+      <% } else  if (locals.isLogged && locals.userLogged.Roles_id == 2){%>
         <a href="/shopping-cart"><i class="fas fa-shopping-cart"></i></a>
         <input type="checkbox" id="btn-user" />
         <label for="btn-user">
-          <img  class="img-profile" src="/img/users/<%= locals.userLogged.userImage %> " width="50px" style="border-radius: 100%;">
+          <img  class="img-profile" src="/img/users/<%= locals.userLogged.userimage %> " width="50px" style="border-radius: 100%;">
           <!-- <i class="fas fa-user"></i> -->
           </label>
         <ul class="list2">
@@ -59,13 +59,13 @@
     ></label>
     <ul class="list">
       <li><a href="/products">Menu</a></li>
-      <% if (locals.isLogged && locals.userLogged.role == 1) { %>
-        <li><a href="/create-product">Create Product</a></li>
+      <% if (locals.isLogged && locals.userLogged.Roles_id == 1) { %>
+        <li><a href="/products/create">Create Product</a></li>
         <li><a href="#">Edit products</a></li>
         <li><a href="/users/manage">Manage users</a></li>
         <li><a href="/users/profile">Profile</a></li>
         <li><a href="/users/logout">Log Out</a></li>
-      <% } else if (locals.isLogged && locals.userLogged.role == 2){ %> 
+      <% } else if (locals.isLogged && locals.userLogged.Roles_id == 2){ %> 
         <li><a href="/users/profile">Profile</a></li>
         <li><a href="/users/logout">Log Out</a></li>
       <% } else { %> 
@@ -84,7 +84,7 @@
     </div>
     <% if (locals.isLogged) { %>
       <a href="/shopping-cart"><i class="fas fa-shopping-cart"></i></a>
-      <a href="/users/profile"><img class="img-profile" src="/img/users/<%= locals.userLogged.userImage %> " width="50px" style="border-radius: 100%;"></a>
+      <a href="/users/profile"><img class="img-profile" src="/img/users/<%= locals.userLogged.userimage %> " width="50px" style="border-radius: 100%;"></a>
     <% } else { %>
       <i class="fas fa-user"></i>
     <% } %>

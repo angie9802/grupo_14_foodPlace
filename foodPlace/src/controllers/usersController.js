@@ -12,14 +12,13 @@ const controller = {
   },
   list: (req, res,next) => {
     const Users = UserModel.findAll()
-      console.log(Users)
       Users.then((users)=>{
         res.render("manage-users.ejs", {users})
       }).catch((err) => {
         next(err);
       })
   },
-  processRegister: (req,res)=>{
+  processRegister: async(req,res)=>{
     const resultValidation = validationResult(req)
     
     if(resultValidation.errors.length>0){
@@ -29,7 +28,7 @@ const controller = {
       })
     }
 
-    if(User.findByField('email',req.body.email)){
+    if(await UserModel.findByField('email', req.body.email)){
       return res.render('register',{
         errors : {
           email :{
@@ -63,22 +62,21 @@ const controller = {
       password : bcryptjs.hashSync(req.body.password, 10),
       userImage : req.file.filename
     }
-    User.create(newUser)
+    UserModel.create(newUser)
     return res.redirect('/users/login')
-    //return res.send(newUser)
   },
-  loginProcess: (req, res) => {
+  loginProcess: async (req, res) => {
     const resultValidation = validationResult(req)
     
-    if(resultValidation.errors.length>0){
-      console.log(resultValidation)
+    if(resultValidation.errors.length > 0){
       return res.render('login',{
         errors : resultValidation.mapped(),
         oldData : req.body
       })
     }
-    let userToLogin = UserModel.findByField('email', req.body.email)
-
+    
+    let userToLogin = await UserModel.findByField('email', req.body.email)
+    
     if (userToLogin){
       let checkPassword = bcryptjs.compareSync(req.body.password, userToLogin.password)
       if (checkPassword){
@@ -92,7 +90,9 @@ const controller = {
         }
 
         return res.redirect('/users/profile')
-      }
+      } 
+
+        
         return res.render('login', {
           errors: {
             password: {
@@ -100,7 +100,6 @@ const controller = {
             }
           }
         })
-      
 
     }
       return res.render('login', {
@@ -111,6 +110,35 @@ const controller = {
         }
       })
     
+  },
+  updateUser: async ( req, res ) => {
+    try {
+      if (req.body.password === req.body.confirmpassword){
+        
+        console.log("img", req.session.userLogged.userimage)
+        let user = {
+          fullname: req.body.fullname,
+          email: req.body.email,
+          number: req.body.number,
+          address: req.body.address,
+          password: bcryptjs.hashSync(req.body.newpassword, 10),
+          userimage: req.file ? req.file.filename : req.session.userLogged.userimage,
+          Roles_id: req.body.role
+        }
+
+        const userLogged = req.session.userLogged
+
+        await UserModel.update(userLogged.id, user).then(result => {
+          console.log(result)
+          res.redirect('/')
+        }).catch(err => console.log(err))
+      } else {
+        res.redirect('/users/profile')
+      }
+    } catch (err) {
+      console.log(err)
+      return err
+    }
   },
   detail: (req, res, next) => {
 
@@ -125,7 +153,6 @@ const controller = {
     })
      },
   profile: (req, res) => {
-    
 		return res.render('userProfile', {
       user: req.session.userLogged
     });
