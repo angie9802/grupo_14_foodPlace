@@ -1,23 +1,20 @@
 <header>
   <nav class="nav-bar">
-    <a href="/"><img class="logo" src="../img/logo.png" alt="logo" /></a>
+    <a href="/"><img class="logo" src="../../img/logo.png" alt="logo" /></a>
     <a class="a-menu" href="/products">Menu</a>
-    <div class="search">
-      <button><i class="fas fa-search"></i></button>
-      <input
-        type="text"
-        name="search-bar"
-        placeholder="Search..."
-        class="search-input"
-      />
-    </div>
+    
+      <form class="search" method="get" action="/products/search">
+        <button><i class="fas fa-search"></i></button>
+        <input type="text" name="searchbar" placeholder="Search..." class="search-input"
+        />
+    </form>
       <% if (locals.isLogged && locals.userLogged.Roles_id == 1) { %>
             <input type="checkbox" id="btn-admin" />
         <label for="btn-admin" class="burger-admin"
           ><i class="fas fa-wrench"></i></label>
         <ul class="list1">
           <li><a href="/products/create">Create product</a></li>
-          <li><a href="#">Edit products</a></li>
+          <li><a href="/products/manage">Manage products</a></li>
           <li><a href="/users/manage">Manage users</a></li>
         </ul>
 
@@ -61,7 +58,7 @@
       <li><a href="/products">Menu</a></li>
       <% if (locals.isLogged && locals.userLogged.Roles_id == 1) { %>
         <li><a href="/products/create">Create Product</a></li>
-        <li><a href="#">Edit products</a></li>
+        <li><a href="/products/manage">Manage products</a></li>
         <li><a href="/users/manage">Manage users</a></li>
         <li><a href="/users/profile">Profile</a></li>
         <li><a href="/users/logout">Log Out</a></li>

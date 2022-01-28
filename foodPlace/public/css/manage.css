@@ -1,7 +1,8 @@
+@import url("header-footer.css");
 @import url("shopping-cart.css");
 
 body{
-    background-image: url(../img/fast-food.jpg);
+    background-image: url(../img/fast-food-1.jpg);
     background-size: cover;
     padding-top: 8px;
   }
@@ -59,3 +60,9 @@ main .tftable td a{
 }
 main .tftable tr:hover {
     background-color:#ffffff;}
+main .delete{
+    border: none
+}
+main .delete i{
+    font-weight: bold;
+}

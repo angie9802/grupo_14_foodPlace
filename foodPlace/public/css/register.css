@@ -98,14 +98,15 @@ main .radio-button input[type=radio]{
 }
 
 main .botonok button{
-    background-color:  #5E1EBE ;
+    background-color:  #e60202;
+    border-color: #e60202da;
     margin-top: 15px;
     cursor: pointer;
     color: white;
     transition: all 450ms;
 }
 main .botonok button:hover{
-    background-color:#5811c4b9 ;
+    background-color:#e60202a6;
 }
 
 

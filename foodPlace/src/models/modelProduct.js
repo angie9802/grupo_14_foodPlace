@@ -1,5 +1,5 @@
 const db = require('../database/models')
-const Categories = require('../database/models/Categories')
+const { Op } = require("sequelize");
 
 const Product = {
     findAll : async ()=>{
@@ -24,8 +24,8 @@ const Product = {
         
     },
     findByField :(field, text)=>{
-        let productFound = Product.getProducts().find(product=> product[field]=== text)
-        return productFound
+        let foundProduct = Product.getProducts().find(product=> product[field]=== text)
+        return foundProduct
     },
     store: async (dataProduct)=>{
         try{
@@ -35,12 +35,31 @@ const Product = {
             console.log(err)
         }
     },
-    delete : (id) =>{
-        const newDb = Product.getProducts().filter(item => item.id != id);
-        fs.writeFileSync(productsFilePath, JSON.stringify(newDb,null,4),{encoding: "utf-8"})
-        return true
+    search : async (searchQuery) =>{
+        try{
+            let searchedProducts = await db.Products.findAll({
+                where: {
+                    name: {
+                        [Op.substring]:  [searchQuery], 
+                    }
+                  }
+            })
+            return searchedProducts
+        }catch{
+            console.log(err)
+        }
     },
+    destroy: async (id) => {
+        try{
+             await db.Products.destroy({
+                where : {
+                    id :id
+                }
+            })
+        }catch(err){
+            console.log(err)
+        }
+    }
 }
 module.exports = Product
-
 

@@ -10,7 +10,7 @@ const controller = {
   login: (req, res) => {
     res.render('login') 
   },
-  list: (req, res,next) => {
+  show: (req, res,next) => {
     const Users = UserModel.findAll()
       Users.then((users)=>{
         res.render("manage-users.ejs", {users})
@@ -163,6 +163,14 @@ const controller = {
     req.session.destroy()
     
     return res.redirect('/')
+  },
+  delete:  async (req, res) => {
+    try{ 
+      UserModel.destroy(req.params.id);
+      res.redirect("/users/manage")
+    }catch(err){
+      console.log(err)
+    }
   }
 }
 

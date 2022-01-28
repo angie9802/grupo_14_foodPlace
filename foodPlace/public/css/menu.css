@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
-
+@import url("header-footer.css");
 * {
   margin: 0;
   padding: 0;
@@ -227,9 +227,11 @@ main .bestsellers-content-single-product p {
 main .box-products-lovedbypeople {
   border: 2px solid orange;
 }
-
-
-
+main .empty{
+  font-size: 25px;
+  color: rgba(139, 137, 137, 0.767);
+  font-weight:bold
+}
 /*Footer*/
 footer {
   max-width: 100%;

@@ -41,7 +41,7 @@ header .nav-cell,
   opacity: 98%;
   align-items: center;
   padding: 0px 40px;
-  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.87);
 }
 header .nav-bar a {
   color:#000000;;
@@ -226,10 +226,10 @@ footer div .footer-left i{
     width: 80px;
     border-radius: 30px;
     font-size: 14px;
-    font-weight: bold;
+    font-weight: normal;
     margin: 2px 0;
-    color: #21b16c;
-    border: 2px solid #21b16c;
+    color: #ffffff;
+    border: 2px solid #ffffff;
     background-color: transparent;
     align-self: center;
   }

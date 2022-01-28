@@ -63,10 +63,19 @@ const User = {
         console.log(err)
       }
     },
-    delete : (id) =>{
-        let finalUsers = User.findAll().filter(user => user.id !== id)
-        fs.writeFileSync(usersFilePath, JSON.stringify(finalUsers,null,4), {encoding: "utf-8"})
-        return true
-    },
+    destroy: async (id) => {
+        try{
+             await db.Users.destroy({
+                where : {
+                    id :id
+                }
+            })
+        }catch(err){
+            console.log(err)
+        }
+       
+    }
 }
 module.exports = User
+
+

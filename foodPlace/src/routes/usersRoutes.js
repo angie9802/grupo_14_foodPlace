@@ -64,14 +64,18 @@ router.get('/login',guestMiddleware, usersController.login)
 router.post('/login', validationsLogin, usersController.loginProcess)
 
 router.get('/profile',authMiddleware, usersController.profile);
-router.get('/manage',authMiddleware, usersController.list);
+router.get('/manage',authMiddleware, usersController.show);
 
 //edit user
 router.put('/edit-user/:id',uploadFile.single('userImage'), usersController.updateUser)
+
 
 //Logout
 router.get('/logout', usersController.logout);
 
 router.get('/:id',authMiddleware, usersController.detail);
+
+//delete
+router.delete('/delete/:id',usersController.delete)
 
 module.exports = router
