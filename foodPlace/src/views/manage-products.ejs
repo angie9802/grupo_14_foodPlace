@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head.ejs')  %> 
+    <title>Products</title>
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/manage.css" />
+  </head>
+  <body>
+ 
+       <%- include('./partials/header')%>
+
+      <main>
+          <h1>Manage Products</h1>
+          <section class="container-ext">
+            <section class="container-int">
+              <table class="tftable" >
+                <tr><th class="left"><p>ID</p></th><th><p>Name</p></th><th> <p>See</p></th><th><p>Edit</p></th><th  class="right"><p>Delete</p></th></tr>
+                <% products.forEach(product => { %>
+                    <tr>
+                      <td class="left"><%= product.id%> </td>
+                      <td><%= product.name.replace(/\b\w/g, l => l.toUpperCase());%> </td>
+                      <td><a  href="/products/<%= product.id %> "> <i class="fas fa-eye"></i></a></td>
+                      <td><a href="/products/edit/<%= product.id %>"> <i class="fas fa-edit"></i></a></td>
+                      <td class="right">
+                        <form action="/products/delete/<%= product.id%>?_method=DELETE" method="POST">
+                          <button class="delete">
+                            <i class="far fa-trash-alt"></i>
+                          </button>
+                        </form>
+                      </td>
+                    </tr>
+                    <% }); %>
+                </table>
+            </section> 
+        </section>
+    </main>
+  
+    <footer class="f-cart">
+      <%- include('./partials/footer.ejs') %>
+      </footer>
+  </body>
+</html>

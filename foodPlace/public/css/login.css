@@ -73,14 +73,15 @@ main .remember {
 }
 
 main .botonlogin button{
-    background-color:  #5E1EBE ;
+    background-color:  #e60202;
+    border-color: #e60202da;
     margin-top: 20px;
     cursor: pointer;
     color: white;
     transition: all 450ms;
 }
 main .botonlogin button:hover{
-    background-color:#5811c4b9 ;
+    background-color: #e60202a6;
 }
 main .botonlogin p{
     font-size: 1.2rem;

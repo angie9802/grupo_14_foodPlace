@@ -1,9 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
-
+@import url("header-footer.css");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+body{
+  background-image: url(../img/fast-food-1.jpg);
+  background-size: cover;
+  padding-top: 8px;
 }
 
 header .search button {
@@ -22,7 +27,7 @@ header {
 
 /*Products Categories*/
 main .box-products-categories {
-  background-color:  #000000c0;
+  background-color:  #000000b2;
    border-bottom : 4px solid   #000000;
 }
 
@@ -197,7 +202,7 @@ main .bestsellers-content-single-product {
   -moz-box-shadow: 0px 2px 33px -22px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 2px 33px -22px rgba(0, 0, 0, 0.75);
   transition: all 0.6s ease-in-out;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.315);
 }
 
 main .bestsellers-content-single-product:hover {
@@ -222,9 +227,11 @@ main .bestsellers-content-single-product p {
 main .box-products-lovedbypeople {
   border: 2px solid orange;
 }
-
-
-
+main .empty{
+  font-size: 25px;
+  color: rgba(139, 137, 137, 0.767);
+  font-weight:bold
+}
 /*Footer*/
 footer {
   max-width: 100%;

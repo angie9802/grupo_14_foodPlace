@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs')  %> 
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/user-detail.css" />
+    <title>User Profile</title>
+</head>
+<body>
+    <header><%- include('./partials/header')%></header>
+    <main>
+        <% if(locals.user) { %> 
+        <div class="container">
+            <div class="ext">
+                <div class="int-1">
+                    <img  src="/img/users/<%= user.userimage %>">	
+                    <h1><%= user.fullname.replace(/\b\w/g, l => l.toUpperCase()) %></h1>
+                </div>
+            </div>
+            <hr>
+            <div class="int-2">
+                <h3>Role</h3>
+                <% if (user.Roles_id == 2) { %>
+                    <div class="container-type">
+                        Normal user
+                    </div>
+                <% } else if (user.Roles_id == 1) { %>
+                    <div class="container-type">
+                        Administrator
+                    </div>
+                <% } %>
+                <h3>Information</h3>
+                
+                <div class="container-order">
+                    <p><b>User ID : </b><%= user.id %> </p>
+                    <p><b>Phone number : </b><%= user.number %> </p>
+                    <p><b>Address : </b><%= user.address %> </p>
+                    <p><b>E-mail: </b><%= user.email %> </p>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        <% } %> 
+    </main>
+    <footer class="f-profile">
+        <%- include('./partials/footer.ejs') %>
+    </footer>
+</body>
+</html>

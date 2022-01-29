@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head.ejs')  %> 
+    <title>Search</title>
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/menu.css" />
+  
+  </head>
+  <body>
+    <%- include('./partials/header')%>
+ 
+      <main>
+        <section class="box-products-categories">
+          <article class="box-products-categories-title">
+            <h1>Categories</h1>
+          </article>
+
+
+          <article class="box-products-categories-content">
+            <div class="categories-content-single-product">
+              <img src="/img/detail-hamburguer.jpg" />
+              <p>Hamburguer</p>
+            </div>
+
+            <div class="categories-content-single-product">
+              <img src="/img/asiaticfood.jpg" />
+              <p>Asiatic</p>
+            </div>
+
+            <div class="categories-content-single-product">
+              <img src="/img/chicken.jpg" />
+              <p>Chicken</p>
+            </div>
+
+            <div class="categories-content-single-product">
+              <img src="/img/coffee.jpg" />
+              <p>Coffee</p>
+            </div>
+
+            <div class="categories-content-single-product">
+              <img src="/img/crepes.jpg" />
+              <p>Crepes</p>
+            </div>
+
+            <div class="categories-content-single-product">
+              <img src="/img/foodchinese.jpg" />
+              <p>Chinese</p>
+            </div>
+
+            <div class="categories-content-single-product">
+              <img src="/img/icecream.jpg" />
+              <p>Ice Cream</p>
+            </div>
+
+            <div class="categories-content-single-product">
+              <img src="/img/pasta.jpg" />
+              <p>Pasta</p>
+            </div>
+
+            <div class="categories-content-single-product">
+              <img src="/img/sandwich.jpg" />
+              <p>Sandwich</p>
+            </div>
+
+            <div class="categories-content-single-product">
+              <img src="/img/vegan.jpg" />
+              <p>Vegan</p>
+            </div>
+          </article>
+        </section>
+         <!--------->
+         <article class="box-products-categories-title">
+          <h1>Searches related to : <i style="font-weight: normal;"><%= query %></i>  </h1>
+        </article>
+         <section class="section-products">
+             <% if (locals.products.length > 0) { %>
+                <% products.forEach(product => {%> 
+                    <article class="container-product"> 
+                    <a href="/products/<%= product.id %> "> 
+                        <div class="container-img">
+                        <img src="/img/products/<%= product.image %>" alt="">
+                        
+                        </div>
+                        <div class="detail-product">
+                        <h4><%= product.name.replace(/\b\w/g, l => l.toUpperCase()) %> </h4>
+                        <p>$<%= new Intl.NumberFormat("de-DE").format(product.price)%></p>
+                        </div>
+                    </a> 
+                    <form action="/shopping-cart">
+                        <button class="button-cart"><i class="fas fa-shopping-cart"></i> Add to cart</button>
+                    </form>
+                    </article>
+                <% }) %> 
+             <% } else { %>
+                <p class="empty">Empty</p>
+             <% } %> 
+         </section>
+      
+        <!----------->
+        <section class="box-products-bestsellers">
+          <article class="box-products-bestsellers-title">
+            <h1>Best Sellers</h1>
+          </article>
+
+          <article class="box-products-bestsellers-content">
+            <div class="bestsellers-content-single-product">
+              <img src="/img/chicken.jpg" />
+              <h2>Roast Chicken</h2>
+              <p>Time 20min</p>
+            </div>
+
+            <div class="bestsellers-content-single-product">
+              <img src="/img/icecream.jpg" />
+              <h2>Ice Cream</h2>
+              <p>Time 10min</p>
+            </div>
+
+            <div class="bestsellers-content-single-product">
+              <img src="/img/sandwich.jpg" />
+              <h2>Sandwich</h2>
+              <p>Time 15min</p>
+            </div>
+
+            <div class="bestsellers-content-single-product">
+              <img src="/img/crepes.jpg" />
+              <h2>Fruit crepes</h2>
+              <p>Time 10min</p>
+            </div>
+
+            <div class="bestsellers-content-single-product">
+              <img src="/img/vegan.jpg" />
+              <h2>Vegetal Omelet</h2>
+              <p>Time 25min</p>
+            </div>
+          </article>
+        </section>
+      </main>
+    <footer class="f-edit">
+      <%- include('./partials/footer.ejs') %> 
+    </footer>
+  </body>
+</html>

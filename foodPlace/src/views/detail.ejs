@@ -5,7 +5,6 @@
     <title>Detail product</title>
     <link rel="stylesheet" href="/css/normalize.css" />
     <link rel="stylesheet" href="/css/detail-product.css" />
-    <link rel="stylesheet" href="/css/header-footer.css" />
   </head>
   <body>
     <div class="detail-product-box">
@@ -17,38 +16,28 @@
         <section class="detail-product-single">
           <article class="product-single-product">
             <img src="/img/products/<%= product.image  %> " alt="product image"/>
-            <article class="single-product-quantity">
-              <div class="single-decrease-quantity">
-                <h2>-</h2>
-              </div>
-              <p>1</p>
-              <div class="single-increase-quantity">
-                <h2>+</h2>
-              </div>
-            </article>
           </article>
 
           <article class="product-single-description">
-            <h1><%= product.name %> </h1>
+            <h1><%= product.name.replace(/\b\w/g, l => l.toUpperCase()) %> </h1>
             <p>
               <%= product.description %> 
             </p>
             <p>
-              <%= product.Category.name %> 
+              <%= product.Category.name.replace(/\b\w/g, l => l.toUpperCase()) %> 
             </p>
             <h2>$<%= new Intl.NumberFormat("de-DE").format(product.price)%></h2>
             <% if(locals.isLogged && locals.userLogged.role == 1){ %>
               <div class="single-btn">
-                <a href="/shopping-cart"> <button>Add to Cart</button></a>
-                <a href="/products/edit/<%= product.id %>"><button>Edit</button></a>
+                <a href="/shopping-cart"> <button class="button-cart">Add to Cart</button></a>
+                <a href="/products/edit/<%= product.id %>"><button  class="button-cart">Edit</button></a>
                 <form action="/products/<%= product.id %>?_method=DELETE" method="POST"  style="display: inline-flex">
-                  <button type="submit" >Delete</button>
+                  <button  class="button-cart" type="submit" >Delete</button>
                 </form>
               </div>
              <% }else {%> 
-              <div class="single-btn">
-                <a href="/users/login"> <button>Add to Cart</button></a>
-                
+              <div class="single-btn" style="justify-content: center;">
+                <a  href="/shopping-cart"> <button  class="button-cart" >Add to Cart</button></a>
               </div>
              <% } %> 
             
@@ -72,7 +61,7 @@
                 <p><%= products[random].description %></p>
                 <h2>$ <%= new Intl.NumberFormat("de-DE").format(products[random].price)%></h2>
               </div>
-              <div class="other-products-single-btn">
+              <div class="other-products-single-btn ">
                 <button>+</button>
               </div>
             </article>
