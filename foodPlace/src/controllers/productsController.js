@@ -84,20 +84,27 @@ const controller = {
   },
 
   //Update a product
-  update: (req, res) => {
-    let id = req.params.id;
+  update: (req, res,next) => {
+    
+      let id = req.params.id;
     let product = ProductModel.findById(id);
     product.name = req.body.name;
     product.price = req.body.price;
     product.discount = req.body.discount;
     product.category = req.body.category;
+    
     product.description = req.body.description;
 
-    let jsonProducts = JSON.stringify(products, null, 4);
-    fs.writeFileSync(productsFilePath, jsonProducts);
-
-    res.redirect("/products");
+    const editProduct = ProductModel.update(id,product)
+    
+    editProduct.then(product =>{
+      console.log(product)
+      res.redirect("/products")
+    }).catch((err)=>{
+      next(err)
+    })
   },
+
   search: async  (req, res) => {
 		try {
 			let query = req.query.searchbar;

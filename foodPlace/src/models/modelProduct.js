@@ -49,6 +49,21 @@ const Product = {
             console.log(err)
         }
     },
+    update: async (id,product) =>{
+        try{
+            let editProduct= {
+                ...product
+            }
+            console.log(editProduct)
+            await db.Products.update(editProduct,{
+                where : {
+                    id:id
+                }
+            })
+        }catch(err) {
+            console.log(err)
+        }
+    },
     destroy: async (id) => {
         try{
              await db.Products.destroy({

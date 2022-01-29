@@ -38,7 +38,7 @@
 
             <div class="edit-form-element">
               <label for="product-image">Product Image</label>
-              <input  id="product-image" type="file"/>
+              <input  id="product-image" name="product-image" type="file" value="<%= product.Image  %> "/>
             </div>
 
             <div class="edit-form-element">
@@ -51,17 +51,17 @@
                 <option value="drinks">Drinks</option>
               </select>
             </div>
-
+            <div class="price-time">
             <div class="edit-form-element">
               <label for="product-price">Price</label>
-              <input id="product-price" name="price" type="number" value="<%= product.price  %>"/>
+              <input id="product-price" class="product-price" name="price" type="number" value="<%= product.price  %>"/>
             </div>
 
             <div class="edit-form-element">
               <label for="product-delay">Product Delay Time</label>
-              <input id="product-delay" name="productTime" type="text" value="<%= product.productTime %>"/>
+              <input id="product-delay" class="delay-time" name="productTime" type="text" value="<%= product.producttime %>"/>
             </div>
-
+          </div>
             <button type="submit">Update</button>
           </form>
         </section>
