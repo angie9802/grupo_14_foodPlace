@@ -11,8 +11,6 @@ async function userLoggedMiddleware(req, res, next) {
   let userFromCookie = await User.findByField('email', emailInCookie);
   if (userFromCookie) {
      req.session.userLogged = await userFromCookie;
-  } else {
-    req.session.userLogged = false
   }
 
   next()

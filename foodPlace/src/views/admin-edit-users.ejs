@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <%- include('./partials/head.ejs')  %> 
-    <link rel="stylesheet" href="/css/normalize.css">
+  <head>
+    <%- include('./partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/normalize.css" />
     <link rel="stylesheet" href="/css/header-footer.css" />
     <link rel="stylesheet" href="/css/profile.css" />
-    <title>User Profile</title>
+    <title>Edit User</title>
   </head>
   <body>
     <header><%- include('./partials/header')%></header>
     <main>
       <div class="container">
         <div class="int-1">
-          <form action="/users/edit-user/<%=locals.userLogged.id%>?_method=PUT" method="POST" class="form-edit" enctype="multipart/form-data">
+          <form
+            action="/users/admin/edit/<%= user.id%>?_method=PUT"
+            method="POST"
+            class="form-edit"
+            enctype="multipart/form-data"
+          >
             <div class="box">
-              <img src="/img/users/<%= locals.userLogged.userimage %> " />
+              <img src="/img/users/<%= user.userimage %> " />
             </div>
             <div class="container-form">
               <div>
@@ -22,7 +27,7 @@
                   type="text"
                   placeholder="Full name"
                   name="fullname"
-                  value="<%= locals.userLogged.fullname || null%>"
+                  value="<%= user.fullname || null%>"
                   required
                 />
               </div>
@@ -31,7 +36,7 @@
                   type="text"
                   placeholder="Email"
                   name="email"
-                  value="<%= locals.userLogged.email %>"
+                  value="<%= user.email %>"
                   required
                 />
               </div>
@@ -41,7 +46,7 @@
                     type="text"
                     placeholder="Telephone"
                     name="number"
-                    value="<%= locals.userLogged.number %>"
+                    value="<%= user.number %>"
                     required
                   />
                 </div>
@@ -50,12 +55,11 @@
                     type="text"
                     placeholder="Address"
                     name="address"
-                    value="<%= locals.userLogged.address %>"
+                    value="<%= user.address %>"
                     required
                   />
                 </div>
               </div>
-              <% if (locals.userLogged.Roles_id == 1) { %>
               <div class="radio-button">
                 <div>
                   <input type="radio" name="role" value="1" />
@@ -66,23 +70,14 @@
                   <label>Normal user </label>
                 </div>
               </div>
-              <% } %>
               <div>
                 <input type="file" name="userImage" />
               </div>
               <div>
                 <input
                   type="password"
-                  placeholder="Old password"
-                  name="password"
-                  required
-                />
-              </div>
-              <div>
-                <input
-                  type="password"
                   placeholder="New password"
-                  name="newpassword"
+                  name="confirmpassword"
                   required
                 />
               </div>
@@ -90,20 +85,20 @@
                 <input
                   type="password"
                   placeholder="Confirm new Password"
-                  name="confirmpassword"
+                  name="newpassword"
                   required
                 />
               </div>
-              <button class="button-edit" type="submit">Edit profile</button>
+              <button class="button-edit" type="submit">Edit User</button>
             </div>
           </form>
         </div>
         <hr />
         <div class="int-2">
           <h4>Role</h4>
-          <% if (locals.userLogged.Roles_id == 2) { %>
+          <% if (user.Roles_id == 2) { %>
           <div class="container-type">Normal user</div>
-          <% } else if (locals.userLogged.Roles_id == 1){ %>
+          <% } else if (user.Roles_id == 1){ %>
           <div class="container-type">Administrator</div>
           <% } %>
           <h4>Recent orders</h4>
@@ -116,6 +111,5 @@
         </div>
       </div>
     </main>
-    <footer class="f-profile"><%- include('./partials/footer.ejs') %></footer>
   </body>
 </html>
