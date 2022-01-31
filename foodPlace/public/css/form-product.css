@@ -22,7 +22,6 @@ main h2{
   display: block;
   color: whitesmoke;
   
-  
 }
 main section {
   display: flex;
@@ -34,6 +33,7 @@ main section form {
   max-width: 590px;
   display: flex;
   flex-direction: column;
+  
   gap: 15px;
 }
 
@@ -61,6 +61,7 @@ main section form button:hover {
   flex-direction: column;
   gap: 10px;
   width: 90%;
+  justify-content: center;
 }
 
 .edit-form-element label {
@@ -92,6 +93,21 @@ main section form button:hover {
 .edit-form-element select {
   outline: none;
   padding: 8px
+}
+.edit-image{
+  text-align: center;
+  justify-content: center;
+  
+  margin-bottom: 2px;
+}
+#productName {
+  margin-top: 0px;
+}
+.edit-image img{
+  width: 55%;
+  position: relative;
+  border-radius: 15px;
+  
 }
 
 #product-image{

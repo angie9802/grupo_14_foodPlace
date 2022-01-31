@@ -25,8 +25,11 @@
 
   
           <form action="/products/<%= product.id %>?_method=PUT" method="POST">
+            <div class="edit-image">
+              <img src="/img/products/<%= product.image %> " />
+            </div>
 
-            <div class="edit-form-element">
+            <div class="edit-form-element" id="productName">
               <label for="product-name">Product Name</label>
               <input type="text" name="name" placeholder="Ej : Hamburguesa" value="<%= product.name  %>"/>
             </div>
@@ -38,7 +41,7 @@
 
             <div class="edit-form-element">
               <label for="product-image">Product Image</label>
-              <input  id="product-image" name="product-image" type="file" value="<%= product.Image  %> "/>
+              <input  id="product-image" name="product-image" type="file" value="<%= product.image  %> "/>
             </div>
 
             <div class="edit-form-element">

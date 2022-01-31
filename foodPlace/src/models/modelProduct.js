@@ -18,6 +18,7 @@ const Product = {
                 include: ["Category"]
             })
             return product
+            
         }catch(err){
             console.log(err)
         }
@@ -77,4 +78,5 @@ const Product = {
     }
 }
 module.exports = Product
+
 
