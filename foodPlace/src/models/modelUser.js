@@ -1,8 +1,3 @@
-const fs = require('fs')
-const path = require('path')
-const usersFilePath = path.resolve(__dirname, '../data/users.json')
-const maxId = require('../utils/maxId')
-
 const db = require('../database/models')
 
 

@@ -1,17 +1,15 @@
-const fs = require("fs");
 const path = require("path");
 const pathView = require("../utils/pathViews");
 const maxId = require("../utils/maxId");
 const ProductModel = require("../models/modelProduct");
-const CategoryModel = require("../models/modelProduct");
-const productsFilePath = path.resolve(__dirname, "../data/products.json");
-const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+const CategoryModel = require("../models/modelCategory");
+
 
 const controller = {
   //Show all products
   
-  list: (req, res, next) => {
-    const Products = ProductModel.findAll();
+  list:  (req, res, next) => {
+    const Products =  ProductModel.findAll();
     Products.then((products) => {
       res.render("products.ejs", { products });
     }).catch((err) => {
@@ -84,6 +82,7 @@ const controller = {
   },
 
   //Update a product
+<<<<<<< HEAD
   update:  (req, res,next) => {
     
       let id = req.params.id;
@@ -105,6 +104,12 @@ const controller = {
     }).catch((err)=>{
       next(err)
     })
+=======
+  update: (req, res) => {
+    
+
+    res.redirect("/products");
+>>>>>>> c4021a32d6b105d1c0927a704a7609b6e03ad42f
   },
 
   search: async  (req, res) => {
@@ -114,7 +119,7 @@ const controller = {
      
         res.render("search-products.ejs", { products: products , query : query });
       
-	
+
 		} catch (err) {
 			console.log(err);
 		}
