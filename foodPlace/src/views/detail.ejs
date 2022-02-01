@@ -23,9 +23,9 @@
             <p>
               <%= product.description %> 
             </p>
-            <p>
+            <i>
               <%= product.Category.name.replace(/\b\w/g, l => l.toUpperCase()) %> 
-            </p>
+            </i>
             <h2>$<%= new Intl.NumberFormat("de-DE").format(product.price)%></h2>
             <% if(locals.isLogged && locals.userLogged.Roles_id == 1){ %>
               <div class="single-btn">

@@ -35,12 +35,12 @@
 
             <div class="edit-form-element">
               <label for="product-category">Category</label>
-              <select id='product-category' name='Categories_id' required>
-                <option value="1">Hamburguer</option>
-                <option value="2">Chinese</option>
-                <option value="3">Ice Cream</option>
-                <option value="4">Drinks</option>
-                <option value="5">Vegan</option>
+              <select id="product-category" name="category">
+                <% allCategories.forEach( category => { %>
+                  <option value="<%= category.id %> ">
+                    <%= category.name %> 
+                  </option>
+                <% }) %> 
               </select>
             </div>
 

@@ -46,8 +46,15 @@ const controller = {
 
   //Create - Form to create products
   create: (req, res) => {
-    res.render(path.resolve(__dirname, pathView("create-product")));
-  },
+    const Categories = CategoryModel.findAll();
+    Categories
+      .then(allCategories=>{
+        res.render("create-product.ejs", { allCategories: allCategories
+        });
+      }).catch((err) => {
+        next(err);
+      });
+   },
 
   //Create - Method to store
   store: (req, res, next) => {
@@ -71,10 +78,15 @@ const controller = {
   },
   edit: (req, res) => {
     let id = req.params.id;
-    let product = ProductModel.findById(id);
-    product
-      .then((product) => {
-        res.render("edit-product", { product: product });
+    const product = ProductModel.findById(id);
+    const Categories = CategoryModel.findAll();
+
+    Promise.all([product, Categories])
+      .then(([product, allCategories]) => {
+        res.render("edit-product.ejs", {
+          product: product,
+          allCategories: allCategories,
+        });
       })
       .catch((err) => {
         next(err);
