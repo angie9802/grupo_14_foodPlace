@@ -15,7 +15,7 @@ const controller = {
       Users.then((users)=>{
         res.render("manage-users.ejs", {users})
       }).catch((err) => {
-        res.send(err)
+        next(err);
       })
   },
   processRegister: async(req,res)=>{
@@ -130,16 +130,14 @@ const controller = {
         const userLogged = req.session.userLogged
 
         await UserModel.update(userLogged.id, user).then(result => {
-          console.log(result)
-          res.redirect('/')
-        }).catch(err => {
-            res.send(err)
-        } )
+          req.session.destroy()
+          return res.redirect('/users/login')
+        }).catch(err => console.log(err))
       } else {
         res.redirect('/users/profile')
       }
     } catch (err) {
-        res.send(err)
+      console.log(err)
       return err
     }
   },
@@ -158,14 +156,16 @@ const controller = {
         }
 
         await UserModel.update(User.id, user).then(result => {
+          console.log(result)
           res.redirect('/users/manage')
-        }).catch(err =>  res.send(err))
+        }).catch(err => console.log(err))
         res.send(user)
       } else {
         console.log('dont match')
       }
       
     } catch(err) {
+      console.log(err)
       res.send(err)
     }
   },
@@ -178,17 +178,17 @@ const controller = {
       .then(([user, allRoles])=>{
         res.render("user-detail.ejs",  { user:user , allRoles: allRoles })
       }).catch((err) => {
-        res.send(err)
+      next(err);
     })
   },
   adminUpdate: async (req, res, next) => {
     const User = await UserModel.findById(req.params.id)
-    console.log(User)
     res.render('admin-edit-users.ejs', {
       user: User
     })
   },
   profile: (req, res) => {
+    console.log(req.session)
 		return res.render('userProfile', {
       user: req.session.userLogged
     });
@@ -203,9 +203,19 @@ const controller = {
   delete:  async (req, res) => {
     try{ 
       UserModel.destroy(req.params.id);
-      res.redirect("/users/manage")
+      res.clearCookie("userEmail")
+      req.session.destroy()
+      res.redirect("/")
     }catch(err){
-      res.send(err)
+      console.log(err)
+    }
+  },
+  deleteUserAdmin: (req, res) => {
+    try {
+      UserModel.destroy(req.params.id);
+      res.redirect("/users/manage")
+    } catch (err) {
+      console.log(err)
     }
   }
 }

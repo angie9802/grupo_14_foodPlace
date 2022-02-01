@@ -80,5 +80,6 @@ router.put('/admin/edit/:id',uploadFile.single('userImage'), usersController.upd
 
 //delete
 router.delete('/delete/:id',usersController.delete)
+router.delete('/delete/admin/:id', usersController.deleteUserAdmin)
 
 module.exports = router
