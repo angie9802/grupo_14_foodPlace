@@ -82,7 +82,6 @@ const controller = {
       if (checkPassword){
         delete userToLogin.password;
         req.session.userLogged = userToLogin;
-        
         if(req.body.remember){
           res.cookie('userEmail', req.body.email, {
             maxAge: (10000 * 60) * 60
@@ -113,7 +112,7 @@ const controller = {
   },
   updateUser: async ( req, res ) => {
     try {
-      if (req.body.password === req.body.confirmpassword){
+      if (req.body.newpassword === req.body.confirmpassword){
         
         console.log("img", req.session.userLogged.userimage)
         let user = {
@@ -125,6 +124,8 @@ const controller = {
           userimage: req.file ? req.file.filename : req.session.userLogged.userimage,
           Roles_id: req.body.role
         }
+
+        console.log(user)
 
         const userLogged = req.session.userLogged
 
@@ -140,6 +141,34 @@ const controller = {
       return err
     }
   },
+  updateUserAdmin: async (req, res, next) => {
+    try {
+      if (req.body.newpassword === req.body.confirmpassword) {
+        const User = await UserModel.findById(req.params.id)
+        let user = {
+          fullname: req.body.fullname,
+          email: req.body.email,
+          number: req.body.number,
+          address: req.body.address,
+          password: bcryptjs.hashSync(req.body.newpassword, 10),
+          userimage: req.file ? req.file.filename : User.userimage,
+          Roles_id: req.body.role ? req.body.role : User.Roles_id
+        }
+
+        await UserModel.update(User.id, user).then(result => {
+          console.log(result)
+          res.redirect('/users/manage')
+        }).catch(err => console.log(err))
+        res.send(user)
+      } else {
+        console.log('dont match')
+      }
+      
+    } catch(err) {
+      console.log(err)
+      res.send(err)
+    }
+  },
   detail: (req, res, next) => {
 
     const User = UserModel.findById(req.params.id);
@@ -151,7 +180,14 @@ const controller = {
       }).catch((err) => {
       next(err);
     })
-     },
+  },
+  adminUpdate: async (req, res, next) => {
+    const User = await UserModel.findById(req.params.id)
+    console.log(User)
+    res.render('admin-edit-users.ejs', {
+      user: User
+    })
+  },
   profile: (req, res) => {
 		return res.render('userProfile', {
       user: req.session.userLogged

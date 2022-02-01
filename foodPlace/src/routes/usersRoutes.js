@@ -74,6 +74,9 @@ router.put('/edit-user/:id',uploadFile.single('userImage'), usersController.upda
 router.get('/logout', usersController.logout);
 
 router.get('/:id',authMiddleware, usersController.detail);
+router.get('/admin/edit/:id', usersController.adminUpdate)
+router.put('/admin/edit/:id',uploadFile.single('userImage'), usersController.updateUserAdmin)
+
 
 //delete
 router.delete('/delete/:id',usersController.delete)
