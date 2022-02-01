@@ -15,7 +15,7 @@ const controller = {
       Users.then((users)=>{
         res.render("manage-users.ejs", {users})
       }).catch((err) => {
-        next(err);
+        res.send(err)
       })
   },
   processRegister: async(req,res)=>{
@@ -132,12 +132,14 @@ const controller = {
         await UserModel.update(userLogged.id, user).then(result => {
           console.log(result)
           res.redirect('/')
-        }).catch(err => console.log(err))
+        }).catch(err => {
+            res.send(err)
+        } )
       } else {
         res.redirect('/users/profile')
       }
     } catch (err) {
-      console.log(err)
+        res.send(err)
       return err
     }
   },
@@ -156,16 +158,14 @@ const controller = {
         }
 
         await UserModel.update(User.id, user).then(result => {
-          console.log(result)
           res.redirect('/users/manage')
-        }).catch(err => console.log(err))
+        }).catch(err =>  res.send(err))
         res.send(user)
       } else {
         console.log('dont match')
       }
       
     } catch(err) {
-      console.log(err)
       res.send(err)
     }
   },
@@ -178,7 +178,7 @@ const controller = {
       .then(([user, allRoles])=>{
         res.render("user-detail.ejs",  { user:user , allRoles: allRoles })
       }).catch((err) => {
-      next(err);
+        res.send(err)
     })
   },
   adminUpdate: async (req, res, next) => {
@@ -205,7 +205,7 @@ const controller = {
       UserModel.destroy(req.params.id);
       res.redirect("/users/manage")
     }catch(err){
-      console.log(err)
+      res.send(err)
     }
   }
 }

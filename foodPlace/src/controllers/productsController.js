@@ -1,5 +1,3 @@
-const path = require("path");
-const pathView = require("../utils/pathViews");
 const maxId = require("../utils/maxId");
 const ProductModel = require("../models/modelProduct");
 const CategoryModel = require("../models/modelCategory");
@@ -13,7 +11,7 @@ const controller = {
     Products.then((products) => {
       res.render("products.ejs", { products });
     }).catch((err) => {
-      next(err);
+      res.send(err)
     });
   },
  
@@ -22,7 +20,7 @@ const controller = {
     Products.then((products) => {
       res.render("manage-products.ejs", { products });
     }).catch((err) => {
-      next(err);
+      res.send(err)
     });
   },
   //Detail Product
@@ -40,7 +38,7 @@ const controller = {
         });
       })
       .catch((err) => {
-        next(err);
+        res.send(err)
       });
   },
 
@@ -52,7 +50,7 @@ const controller = {
         res.render("create-product.ejs", { allCategories: allCategories
         });
       }).catch((err) => {
-        next(err);
+        res.send(err)
       });
    },
 
@@ -67,13 +65,10 @@ const controller = {
           ...req.body,
         };
         ProductModel.store(newProduct);
-        const newProducts = ProductModel.findAll();
-        newProducts.then((products) => {
-          res.render("products.ejs", { products });
-        });
+        res.redirect("/products/manage")
       })
       .catch((err) => {
-        next(err);
+        res.send(err)
       });
   },
   edit: (req, res) => {
@@ -111,9 +106,9 @@ const controller = {
 
     editProduct.then(product =>{
       // console.log(product)
-      res.redirect("/products")
+      res.redirect("/products/manage")
     }).catch((err)=>{
-      next(err)
+      res.send(err)
     })
   },
 
@@ -126,7 +121,7 @@ const controller = {
       
 
 		} catch (err) {
-			console.log(err);
+      res.send(err)
 		}
 	},
   //Delete a product
@@ -135,7 +130,7 @@ const controller = {
       ProductModel.destroy(req.params.id);
       res.redirect("/products/manage")
     }catch(err){
-      console.log(err)
+      res.send(err)
     }
   }
 };

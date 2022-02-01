@@ -35,9 +35,9 @@
 
             <div class="edit-form-element">
               <label for="product-category">Category</label>
-              <select id="product-category" name="category">
+              <select id="product-category" name="Categories_id">
                 <% allCategories.forEach( category => { %>
-                  <option value="<%= category.id %> ">
+                  <option value="<%= category.id %>">
                     <%= category.name %> 
                   </option>
                 <% }) %> 
