@@ -74,6 +74,9 @@
           <h1>Products</h1>
         </article>
          <section class="section-products">
+           <% if (locals.products == undefined) { %>
+            <p class="empty">Not found</p>
+           <% } else { %>
             <% products.forEach(product => {%> 
             <article class="container-product"> 
             <a href="/products/<%= product.id %> "> 
@@ -91,6 +94,7 @@
               </form>
             </article>
             <% }) %> 
+           <% } %>
          </section>
       
         <!----------->

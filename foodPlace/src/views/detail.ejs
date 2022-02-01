@@ -27,7 +27,7 @@
               <%= product.Category.name.replace(/\b\w/g, l => l.toUpperCase()) %> 
             </p>
             <h2>$<%= new Intl.NumberFormat("de-DE").format(product.price)%></h2>
-            <% if(locals.isLogged && locals.userLogged.role == 1){ %>
+            <% if(locals.isLogged && locals.userLogged.Roles_id == 1){ %>
               <div class="single-btn">
                 <a href="/shopping-cart"> <button class="button-cart">Add to Cart</button></a>
                 <a href="/products/edit/<%= product.id %>"><button  class="button-cart">Edit</button></a>
