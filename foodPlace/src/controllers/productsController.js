@@ -84,21 +84,23 @@ const controller = {
   },
 
   //Update a product
-  update: (req, res,next) => {
+  update:  (req, res,next) => {
     
       let id = req.params.id;
-    let product = ProductModel.findById(id);
+    let product =  ProductModel.findById(id);
     product.name = req.body.name;
     product.price = req.body.price;
     product.discount = req.body.discount;
     product.category = req.body.category;
-    
+    product.image = req.file ? req.file.filename : product.image;
     product.description = req.body.description;
-
+    
     const editProduct = ProductModel.update(id,product)
     
+    console.log(req.file)
+
     editProduct.then(product =>{
-      console.log(product)
+      // console.log(product)
       res.redirect("/products")
     }).catch((err)=>{
       next(err)

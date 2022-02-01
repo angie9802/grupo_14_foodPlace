@@ -24,7 +24,7 @@
         <section>
 
   
-          <form action="/products/<%= product.id %>?_method=PUT" method="POST">
+          <form action="/products/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
             <div class="edit-image">
               <img src="/img/products/<%= product.image %> " />
             </div>

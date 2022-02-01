@@ -22,7 +22,8 @@ router.get('/:id', productsController.detail);
 
 //Edit one product
 router.get('/edit/:id',authMiddleware, adminMiddleware, productsController.edit)
-router.put('/:id',productsController.update)
+router.put('/:id',uploadFile.single('product-image'),productsController.update)
+
 
 
 
