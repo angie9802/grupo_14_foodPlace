@@ -18,5 +18,15 @@
         "role": "1",
         "password": "$2a$10$4SsbKlyB7MOXhY2UXs20juE8WG8w7RiUzl9P2BxhaASmLa3h4X0Yy",
         "userImage": "1640213255167_img_.PNG"
+    },
+    {
+        "id": 3,
+        "fullname": "Jorge Aguilar ",
+        "email": "jorgeaguicon@gmail.com",
+        "number": "31698787",
+        "address": "Calle 31 #29-25",
+        "role": "1",
+        "password": "$2a$10$hAby7O8mbddTVat.iQoHf.SofswOE1SYTbNpHDjsufXVx.2OH/KW.",
+        "userImage": "1642889928578_img_.jpg"
     }
 ]

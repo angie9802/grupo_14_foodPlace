@@ -111,7 +111,11 @@
           <div class="container-order">Order 2 ...</div>
           <div class="container-order">Order 3 ...</div>
           <div class="delete">
-            <a href="#">Delete my account</a>
+            <form action="/users/delete/<%= user.id%>?_method=DELETE" method="POST">
+              <button>
+                <i class="far fa-trash-alt"></i>
+              </button>
+            </form>
           </div>
         </div>
       </div>

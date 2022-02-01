@@ -20,6 +20,8 @@ main .selector-edit {
 }
 main h2{
   display: block;
+  color: whitesmoke;
+  
 }
 main section {
   display: flex;
@@ -31,17 +33,18 @@ main section form {
   max-width: 590px;
   display: flex;
   flex-direction: column;
+  
   gap: 15px;
 }
 
 /*Form submit btn*/
 main section form button {
-  width: 100%;
+  width: 90%;
   padding: 12px 5px;
   background-color: #5E1EBE;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   margin-top: 25px;
   cursor: pointer;
   transition: all 450ms;
@@ -57,17 +60,21 @@ main section form button:hover {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 90%;
+  justify-content: center;
 }
 
 .edit-form-element label {
   font-size: 19px;
+  color: gainsboro
 }
 .edit-form-element input, textarea, select{
-  border-radius: 2px;
-  border: 1px solid black;
+  border-radius: 10px;
+  border: 1px solid whitesmoke;
   outline: none;
   padding: 10px;
   font-size: 15px;
+  background-color: rgba(239, 245, 248, 0.89);
 }
 .edit-form-element input {
   width: 100%;
@@ -79,17 +86,47 @@ main section form button:hover {
 }
 
 .edit-form-element input:focus, select:focus, textarea:focus {
-  border: 1px solid #5E1EBE;
-  border-radius: 2px;
+  border: 2px solid black;
+  border-radius: 10px;
 }
 
 .edit-form-element select {
   outline: none;
   padding: 8px
 }
+.edit-image{
+  text-align: center;
+  justify-content: center;
+  
+  margin-bottom: 2px;
+}
+#productName {
+  margin-top: 0px;
+}
+.edit-image img{
+  width: 55%;
+  position: relative;
+  border-radius: 15px;
+  
+}
 
 #product-image{
-  border-radius: 0;
+  border-radius: 10px;
+}
+
+.price-time {
+  
+  display: flex;
+}
+
+.price-time .product-price{
+  width: 80%;
+  
+}
+
+.price-time .delay-time {
+  width: 80%;
+  
 }
 
 /*Footer*/
