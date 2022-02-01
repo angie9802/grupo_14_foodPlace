@@ -94,7 +94,6 @@ const controller = {
   },
 
   //Update a product
-<<<<<<< HEAD
   update:  (req, res,next) => {
     
       let id = req.params.id;
@@ -116,12 +115,6 @@ const controller = {
     }).catch((err)=>{
       next(err)
     })
-=======
-  update: (req, res) => {
-    
-
-    res.redirect("/products");
->>>>>>> c4021a32d6b105d1c0927a704a7609b6e03ad42f
   },
 
   search: async  (req, res) => {
