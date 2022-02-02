@@ -96,7 +96,7 @@ const controller = {
     product.name = req.body.name;
     product.price = req.body.price;
     product.discount = req.body.discount;
-    product.category = req.body.category;
+    product.Categories_id = req.body.Categories_id;
     product.image = req.file ? req.file.filename : product.image;
     product.description = req.body.description;
     
