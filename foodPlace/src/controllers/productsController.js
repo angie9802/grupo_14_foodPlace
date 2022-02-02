@@ -2,29 +2,28 @@ const maxId = require("../utils/maxId");
 const ProductModel = require("../models/modelProduct");
 const CategoryModel = require("../models/modelCategory");
 
-
 const controller = {
   //Show all products
-  
-  list:  (req, res, next) => {
-    const Products =  ProductModel.findAll();
+
+  list: (req, res) => {
+    const Products = ProductModel.findAll();
     Products.then((products) => {
       res.render("products.ejs", { products });
     }).catch((err) => {
-      res.send(err)
+      res.send(err);
     });
   },
- 
-  show: (req, res, next) => {
+
+  show: (req, res) => {
     const Products = ProductModel.findAll();
     Products.then((products) => {
       res.render("manage-products.ejs", { products });
     }).catch((err) => {
-      res.send(err)
+      res.send(err);
     });
   },
   //Detail Product
-  detail: (req, res, next) => {
+  detail: (req, res) => {
     const products = ProductModel.findAll();
     const Product = ProductModel.findById(req.params.id);
     const Categories = CategoryModel.findAll();
@@ -38,24 +37,22 @@ const controller = {
         });
       })
       .catch((err) => {
-        res.send(err)
+        res.send(err);
       });
   },
 
   //Create - Form to create products
   create: (req, res) => {
     const Categories = CategoryModel.findAll();
-    Categories
-      .then(allCategories=>{
-        res.render("create-product.ejs", { allCategories: allCategories
-        });
-      }).catch((err) => {
-        res.send(err)
-      });
-   },
+    Categories.then((allCategories) => {
+      res.render("create-product.ejs", { allCategories: allCategories });
+    }).catch((err) => {
+      res.send(err);
+    });
+  },
 
   //Create - Method to store
-  store: (req, res, next) => {
+  store: (req, res) => {
     const products = ProductModel.findAll();
     products
       .then((products) => {
@@ -65,10 +62,10 @@ const controller = {
           ...req.body,
         };
         ProductModel.store(newProduct);
-        res.redirect("/products/manage")
+        res.redirect("/products/manage");
       })
       .catch((err) => {
-        res.send(err)
+        res.send(err);
       });
   },
   edit: (req, res) => {
@@ -89,50 +86,48 @@ const controller = {
   },
 
   //Update a product
-  update:  (req, res,next) => {
-    
-      let id = req.params.id;
-    let product =  ProductModel.findById(id);
+  update: (req, res) => {
+    let id = req.params.id;
+    let product = ProductModel.findById(id);
     product.name = req.body.name;
     product.price = req.body.price;
     product.discount = req.body.discount;
-    product.category = req.body.category;
+    product.Categories_id = req.body.Categories_id;
     product.image = req.file ? req.file.filename : product.image;
     product.description = req.body.description;
-    
-    const editProduct = ProductModel.update(id,product)
-    
-    console.log(req.file)
 
-    editProduct.then(product =>{
-      // console.log(product)
-      res.redirect("/products/manage")
-    }).catch((err)=>{
-      res.send(err)
-    })
+    const editProduct = ProductModel.update(id, product);
+
+    console.log(req.file);
+
+    editProduct
+      .then((product) => {
+        res.redirect("/products/manage");
+      })
+      .catch((err) => {
+        res.send(err);
+      });
   },
 
-  search: async  (req, res) => {
-		try {
-			let query = req.query.searchbar;
-			let products = await ProductModel.search(query)
-     
-        res.render("search-products.ejs", { products: products , query : query });
-      
+  search: async (req, res) => {
+    try {
+      let query = req.query.searchbar;
+      let products = await ProductModel.search(query);
 
-		} catch (err) {
-      res.send(err)
-		}
-	},
-  //Delete a product
-  delete:  async (req, res) => {
-    try{ 
-      ProductModel.destroy(req.params.id);
-      res.redirect("/products/manage")
-    }catch(err){
-      res.send(err)
+      res.render("search-products.ejs", { products: products, query: query });
+    } catch (err) {
+      res.send(err);
     }
-  }
+  },
+  //Delete a product
+  delete: async (req, res) => {
+    try {
+      ProductModel.destroy(req.params.id);
+      res.redirect("/products/manage");
+    } catch (err) {
+      res.send(err);
+    }
+  },
 };
 
 module.exports = controller;
