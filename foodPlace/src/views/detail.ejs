@@ -31,7 +31,7 @@
               <div class="single-btn">
                 <a href="/shopping-cart"> <button class="button-cart">Add to Cart</button></a>
                 <a href="/products/edit/<%= product.id %>"><button  class="button-cart">Edit</button></a>
-                <form action="/products/<%= product.id %>?_method=DELETE" method="POST"  style="display: inline-flex">
+                <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST"  style="display: inline-flex">
                   <button  class="button-cart" type="submit" >Delete</button>
                 </form>
               </div>
