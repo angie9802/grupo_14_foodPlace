@@ -2,29 +2,28 @@ const maxId = require("../utils/maxId");
 const ProductModel = require("../models/modelProduct");
 const CategoryModel = require("../models/modelCategory");
 const { validationResult } = require('express-validator');
-
 const controller = {
   //Show all products
-
-  list: (req, res) => {
-    const Products = ProductModel.findAll();
+  
+  list:  (req, res, next) => {
+    const Products =  ProductModel.findAll();
     Products.then((products) => {
       res.render("products.ejs", { products });
     }).catch((err) => {
-      res.send(err);
+      res.send(err)
     });
   },
-
-  show: (req, res) => {
+ 
+  show: (req, res, next) => {
     const Products = ProductModel.findAll();
     Products.then((products) => {
       res.render("manage-products.ejs", { products });
     }).catch((err) => {
-      res.send(err);
+      res.send(err)
     });
   },
   //Detail Product
-  detail: (req, res) => {
+  detail: (req, res, next) => {
     const products = ProductModel.findAll();
     const Product = ProductModel.findById(req.params.id);
     const Categories = CategoryModel.findAll();
@@ -38,19 +37,21 @@ const controller = {
         });
       })
       .catch((err) => {
-        res.send(err);
+        res.send(err)
       });
   },
 
   //Create - Form to create products
   create: (req, res) => {
     const Categories = CategoryModel.findAll();
-    Categories.then((allCategories) => {
-      res.render("create-product.ejs", { allCategories: allCategories });
-    }).catch((err) => {
-      res.send(err);
-    });
-  },
+    Categories
+      .then(allCategories=>{
+        res.render("create-product.ejs", { allCategories: allCategories
+        });
+      }).catch((err) => {
+        res.send(err)
+      });
+   },
 
   //Create - Method to store
   store: (req, res, next) => {
@@ -109,6 +110,7 @@ const controller = {
         Promise.all([product, Categories])
           .then(([product, allCategories]) => {
             const errors = resultValidation.mapped();
+            console.log(errors)
             const  oldData = {
                 image: (req.file==undefined || errors.image.msg=="Only these extensions are allowed: .jpg, .png, .PNG, .gif") ? product.image:req.file.image,
                 ...req.body,
@@ -141,25 +143,25 @@ const controller = {
   }
   },
 
-  search: async (req, res) => {
-    try {
-      let query = req.query.searchbar;
-      let products = await ProductModel.search(query);
-
-      res.render("search-products.ejs", { products: products, query: query });
-    } catch (err) {
-      res.send(err);
-    }
-  },
+  search: async  (req, res) => {
+		try {
+			let query = req.query.searchbar;
+			let products = await ProductModel.search(query)
+        res.render("search-products.ejs", { products: products , query : query });
+		} catch (err) {
+      res.send(err)
+		}
+	},
   //Delete a product
-  delete: async (req, res) => {
-    try {
+  delete:  async (req, res) => {
+    try{ 
       ProductModel.destroy(req.params.id);
-      res.redirect("/products/manage");
-    } catch (err) {
-      res.send(err);
+      res.redirect("/products/manage")
+    }catch(err){
+      res.send(err)
     }
-  },
+  }
 };
 
 module.exports = controller;
+

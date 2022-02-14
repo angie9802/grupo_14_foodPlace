@@ -35,7 +35,7 @@ router.get('/', productsController.list)
 
 //Create one product
 router.get('/create',authMiddleware, adminMiddleware, productsController.create)
-router.post('/', uploadFile.single('image'),validationsProducts, productsController.store)
+router.post('/create', uploadFile.single('image'),validationsProducts, productsController.store)
 
 router.get('/manage',authMiddleware, productsController.show);
 router.get('/search', productsController.search);
@@ -44,7 +44,7 @@ router.get('/:id', productsController.detail);
 
 //Edit one product
 router.get('/edit/:id',authMiddleware, adminMiddleware, productsController.edit)
-router.put('/:id',uploadFile.single('product-image'),validationsProducts, productsController.update)
+router.put('/:id',uploadFile.single('image'),validationsProducts, productsController.update)
 
 
 
