@@ -1,6 +1,7 @@
 const maxId = require("../utils/maxId");
 const ProductModel = require("../models/modelProduct");
 const CategoryModel = require("../models/modelCategory");
+const { validationResult } = require('express-validator');
 
 const controller = {
   //Show all products
@@ -52,7 +53,19 @@ const controller = {
   },
 
   //Create - Method to store
-  store: (req, res) => {
+  store: (req, res, next) => {
+    const Categories = CategoryModel.findAll();
+    const resultValidation = validationResult(req)
+    try{
+      if(resultValidation.errors.length > 0){
+        Categories.then(allCategories=>{
+              return res.render('create-product.ejs',{
+                errors :  resultValidation.mapped(),
+                oldData : req.body,
+                allCategories: allCategories,
+              })
+          })
+    }else{
     const products = ProductModel.findAll();
     products
       .then((products) => {
@@ -62,11 +75,11 @@ const controller = {
           ...req.body,
         };
         ProductModel.store(newProduct);
-        res.redirect("/products/manage");
-      })
-      .catch((err) => {
-        res.send(err);
-      });
+        res.redirect("/products/manage")
+      })}
+    }catch(err){
+      res.send(err)
+    }
   },
   edit: (req, res) => {
     let id = req.params.id;
@@ -86,27 +99,46 @@ const controller = {
   },
 
   //Update a product
-  update: (req, res) => {
-    let id = req.params.id;
-    let product = ProductModel.findById(id);
-    product.name = req.body.name;
-    product.price = req.body.price;
-    product.discount = req.body.discount;
-    product.Categories_id = req.body.Categories_id;
-    product.image = req.file ? req.file.filename : product.image;
-    product.description = req.body.description;
-
-    const editProduct = ProductModel.update(id, product);
-
-    console.log(req.file);
-
-    editProduct
-      .then((product) => {
-        res.redirect("/products/manage");
-      })
-      .catch((err) => {
-        res.send(err);
-      });
+  update:  (req, res, next) => {
+    const resultValidation = validationResult(req)
+    const id = req.params.id;
+    const product =  ProductModel.findById(id);
+    const Categories = CategoryModel.findAll();
+    try{
+      if(resultValidation.errors.length > 0){
+        Promise.all([product, Categories])
+          .then(([product, allCategories]) => {
+            const errors = resultValidation.mapped();
+            const  oldData = {
+                image: (req.file==undefined || errors.image.msg=="Only these extensions are allowed: .jpg, .png, .PNG, .gif") ? product.image:req.file.image,
+                ...req.body,
+              }
+              return res.render('edit-product.ejs',{
+                errors : errors,
+                oldData : oldData,
+                product: product,
+                allCategories: allCategories,
+              })
+            
+          })
+      }else{
+      product.name = req.body.name;
+      product.price = req.body.price;
+      product.producttime = req.body.producttime;
+      product.description = req.body.description;
+      product.image = req.file ? req.file.filename : product.image;
+      product.Categories_id = req.body.Categories_id;
+    
+      const editProduct = ProductModel.update(id,product)
+      
+      editProduct.then(product =>{
+        res.redirect("/products/manage")
+      }).catch((err)=>{
+        res.send(err)
+      })}
+  }catch(err){
+    res.send(err)
+  }
   },
 
   search: async (req, res) => {

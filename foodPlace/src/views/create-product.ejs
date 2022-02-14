@@ -1,66 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create Product</title>
-    <link rel="stylesheet" href="/css/form-product.css" />
+    <%- include('./partials/head.ejs')  %> 
+    <title>edit Product</title>
     <link rel="stylesheet" href="/css/normalize.css" />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-      rel="stylesheet"
-    />
+    
+    <link rel="stylesheet" href="/css/form-product.css" />
+  
   </head>
   <body>
     <div class="edit-product-box">
-      <header><%- include('./partials/header')%></header>
+      <header>
+        
+       <%- include('./partials/header') %>
+       
+
+      </header>
+      <% if (locals.product) { %>
       <main>
+        <div class="selector-edit" >
+          <h2 class="products-title">Estás editando: <p style="display: inline;"><%= product.name %></p></h2>
+        </div>
         <section>
-          <form method="post" action='/products' enctype="multipart/form-data">
-            <div class="edit-form-element">
-              <label for="product-name">Product Name:</label>
-              <input type="text" id='product-name' name='name' required />
+
+  
+          <form action="/products/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <div class="edit-image">
+              <img src="/img/products/<%= product.image %> " />
+            </div>
+
+            <div class="edit-form-element" id="productName">
+              <label for="product-name">Product Name</label>
+              <input type="text" 
+                     name="name" 
+                     placeholder="Ej : Hamburguesa" 
+                     value="<%= locals.oldData ? oldData.name : product.name  %>"/>
+                <% if (locals.errors && errors.name) { %>
+                  <div class="text-danger">
+                    <%= errors.name.msg %> 
+                  </div>
+                <% } %>
             </div>
 
             <div class="edit-form-element">
-              <label for="product-description">Description:</label>
-              <textarea rows="10" cols="50" id='product-description' name='description' required ></textarea>
+              <label for="product-description">Description</label>
+              <textarea rows="10" name="description"  cols="50"><%= locals.oldData ? oldData.description : product.description  %></textarea>
+              <% if (locals.errors && errors.description) { %>
+                <div class="text-danger">
+                  <%= errors.description.msg %> 
+                </div>
+              <% } %>
             </div>
 
             <div class="edit-form-element">
               <label for="product-image">Product Image</label>
-              <input type="file" name='image' id='product-image' required />
+              <input  id="product-image" name="image" type="file" value="<%= locals.oldData ? oldData.image : product.image  %> "/>
+              <% if (locals.errors && errors.image) { %>
+                <div class="text-danger">
+                  <%= errors.image.msg %>
+                </div>
+              <% } %>
             </div>
 
             <div class="edit-form-element">
               <label for="product-category">Category</label>
               <select id="product-category" name="Categories_id">
-                <% allCategories.forEach( category => { %>
-                  <option value="<%= category.id %>">
-                    <%= category.name %> 
-                  </option>
-                <% }) %> 
+                <% if (locals.oldData) { %>
+                  <% allCategories.forEach(category => { %>
+                      <option value="<%= category.id %>"
+                          <%= locals.oldData && (category.id === oldData.Categories_id) ? 'selected' : null %> 
+                          ><%= category.name %></option>
+                  <% }); %>
+                <% } else { %>
+                    <% allCategories.forEach(category => { %>
+                    <option value="<%= category.id %>" <% if (product.Category.id == category.id) { %><%= 'selected' %><% }; %>><%= category.name %></option>
+                    <% }); %>
+                <% } %> 
               </select>
+              <% if (locals.errors && errors.Categories_id) { %>
+                <div class="text-danger">
+                  <%= errors.Categories_id.msg %>
+                </div>
+              <% } %>
             </div>
             <div class="price-time">
             <div class="edit-form-element">
-              <label for="product-price">Price:</label>
-              <input id="product-price" class="product-price" type="number" name='price' required />
+              <label for="product-price">Price</label>
+              <input id="product-price" class="product-price" name="price" type="number" value="<%= locals.oldData ? oldData.price : product.price  %>"/>
+              <% if (locals.errors && errors.price) { %>
+                <div class="text-danger">
+                  <%= errors.price.msg %>
+                </div>
+              <% } %>
             </div>
-
             <div class="edit-form-element">
-              <label for="product-delay">Product Delay Time:</label>
-              <input id="product-delay" class="delay-time" type="text" name='producttime' required />
+              <label for="product-delay">Product Delay Time</label>
+              <input id="product-delay" class="delay-time" name="producttime" type="text" value="<%= locals.oldData ? oldData.producttime : product.producttime %>"/>
+              <% if (locals.errors && errors.producttime) { %>
+                <div class="text-danger">
+                  <%= errors.producttime.msg %>
+                </div>
+              <% } %>
             </div>
           </div>
-            <button type="submit">Create</button>
+            <button type="submit">Update</button>
           </form>
         </section>
       </main>
-
+      <% } else { %> 
+        <p> Este producto no existe</p>
+        <% } %> 
       <footer>
-        <%- include('./partials/footer')%>
+        <%- include('./partials/footer.ejs') %>
       </footer>
     </div>
   </body>

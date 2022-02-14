@@ -3,11 +3,11 @@ const env = process.env
 module.exports = {
   development: {
     username: "root",
-    password: "password",
+    password: "1234",
     database: "foodplace",
     host: "127.0.0.1",
     dialect: "mysql",
-    port: 3306
+    port: 3307
   },
   test: {
     username: "root",
@@ -17,10 +17,11 @@ module.exports = {
     dialect: "mysql"
   },
   production: {
-    username: env.username,
-    password: env.password,
-    database: env.database,
-    host: env.host,
+    username: "franAdmin",
+    password: "Adrian12234..",
+    database: "foodplace",
+    host: "45.79.201.214",
     dialect: "mysql"
   }
+ 
 }

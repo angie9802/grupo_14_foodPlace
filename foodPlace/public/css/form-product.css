@@ -54,6 +54,11 @@ main section form button:hover {
   background-color: #5811c4b9;
 }
 
+main .text-danger{
+  font-size : 11px;
+  color: rgb(255, 104, 104);
+  font-weight:bold
+}
 
 /*Single input container*/
 .edit-form-element{
