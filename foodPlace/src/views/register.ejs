@@ -6,8 +6,7 @@
     <link rel="stylesheet" href="/css/register.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap" rel="stylesheet">  
-   
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap" rel="stylesheet">   
 </head>
 <body>
     <main>
@@ -15,21 +14,21 @@
         <div class="register">
             <h1 class="title">Register</h1>
             <div>
-                <input type="text" placeholder="Full name" name="fullname" class="<%= locals.errors && errors.fullname ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.fullname : null %>">
+                <input type="text" placeholder="Full name" id="fullname" name="fullname" class="<%= locals.errors && errors.fullname ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.fullname : null %>">
             </div>
-            <% if (locals.errors && errors.fullname) { %>
-                <div class="text-danger">
-                    <%= errors.fullname.msg %> 
-                </div>
-            <% } %>
+            <div class="text-danger danger-name">
+              <% if (locals.errors && errors.fullname) { %>
+                <%= errors.fullname.msg %> 
+              <% } %> 
+            </div>
             <div>
-                <input type="text" placeholder="Email" name="email" class="<%= locals.errors && errors.email ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.email : null %>">
+                <input type="text" placeholder="Email" id='email' name="email" class="<%= locals.errors && errors.email ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.email : null %>">
             </div>
-            <% if (locals.errors && errors.email) { %>
-                <div class="text-danger">
-                    <%= errors.email.msg %> 
-                </div>
-            <% } %>
+            <div class="text-danger danger-email">
+              <% if (locals.errors && errors.email) { %>
+                <%= errors.email.msg %> 
+              <% } %>
+            </div>
             <div class="teladress">
                 <div>
                     <input type= "text" placeholder="Telephone" name="number" class="<%= locals.errors && errors.number ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.number : null %>">
@@ -59,13 +58,13 @@
                 </div>
             </div>
             <div>
-                <input type="password" placeholder="Password" name="password" class="<%= locals.errors && errors.password ? 'is-invalid' : null %>">
+                <input type="password" placeholder="Password" id="password" name="password" class="<%= locals.errors && errors.password ? 'is-invalid' : null %>">
             </div>
-            <% if (locals.errors && errors.password) { %>
-                <div class="text-danger">
-                    <%= errors.password.msg %> 
-                </div>
-            <% } %>
+            <div class="text-danger danger-password">
+              <% if (locals.errors && errors.password) { %>
+                <%= errors.password.msg %> 
+              <% } %>
+            </div>
             <div>
                 <input type="password" placeholder="Confirm Password" name="cpassword" class="<%= locals.errors && errors.cpassword ? 'is-invalid' : null %>">
             </div>
@@ -75,12 +74,13 @@
                 </div>
             <% } %>
             <div>
-                <input type="file"  name="userImage" >	
-                <% if (locals.errors && errors.userImage) { %>
-                    <div class="text-danger">
-                        <%= errors.userImage.msg %>
-                    </div>
-                <% } %>	
+                <input type="file" id="image" name="userImage" >
+                <div class="text-danger danger-image">
+                  <% if (locals.errors && errors.userImage) { %>     
+                    <%= errors.userImage.msg %>
+                  <% } %>	
+                </div>	
+                
             </div>
             <div class="botonok">
                <button type="submit">OK!</button>
@@ -91,6 +91,6 @@
         </div>
     </form>
     </main>
-    
+<script src="/js/register.js"></script>
 </body>
 </html>
