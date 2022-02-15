@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "sequelize-auto -h 127.0.0.1 -d foodplace -u root -x 1234 -p 3307  --dialect mysql",
-    "start": "echo ENV_NODE=production & nodemon app.js",
+    "start": "echo ENV_NODE=production & node app.js",
     "dev": "echo ENV_NODE=development & nodemon app.js"
   },
   "keywords": [],

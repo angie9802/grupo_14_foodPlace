@@ -17,41 +17,82 @@
       <header><%- include('./partials/header')%></header>
       <main>
         <section>
-          <form method="post" action='/products' enctype="multipart/form-data">
+          <form method="post" action='/products/create' enctype="multipart/form-data">
             <div class="edit-form-element">
               <label for="product-name">Product Name:</label>
-              <input type="text" id='product-name' name='name' required />
+              <input 
+                type="text" 
+                id='product-name' 
+                name='name'  
+                value="<%= locals.oldData ? oldData.name : null %>"
+              />
+              <% if (locals.errors && errors.name) { %>
+                <div class="text-danger">
+                  <%= errors.name.msg %> 
+                </div>
+              <% } %>
             </div>
 
             <div class="edit-form-element">
               <label for="product-description">Description:</label>
-              <textarea rows="10" cols="50" id='product-description' name='description' required ></textarea>
+              <textarea  rows="10" cols="50" id='product-description' name='description'  
+              ><%= locals.oldData ? oldData.description : null %></textarea>
+              <% if (locals.errors && errors.description) { %>
+                <div class="text-danger">
+                  <%= errors.description.msg %> 
+                </div>
+              <% } %>
             </div>
 
             <div class="edit-form-element">
               <label for="product-image">Product Image</label>
-              <input type="file" name='image' id='product-image' required />
+              <input type="file" name='image' id='product-image' />
+              <% if (locals.errors && errors.image) { %>
+                <div class="text-danger">
+                  <%= errors.image.msg %>
+                </div>
+              <% } %>
             </div>
 
             <div class="edit-form-element">
               <label for="product-category">Category</label>
               <select id="product-category" name="Categories_id">
+                <option value="" disabled selected>- select category - </option>
                 <% allCategories.forEach( category => { %>
-                  <option value="<%= category.id %>">
-                    <%= category.name %> 
+                  <option 
+                      value="<%= category.id %>"
+                      <%= locals.oldData && (category === oldData.Categories_id) ? 'selected' : null %> 
+                    ><%= category.name %> 
                   </option>
                 <% }) %> 
               </select>
+              <% if (locals.errors && errors.Categories_id) { %>
+                <div class="text-danger">
+                  <%= errors.Categories_id.msg %>
+                </div>
+              <% } %>
             </div>
             <div class="price-time">
             <div class="edit-form-element">
               <label for="product-price">Price:</label>
-              <input id="product-price" class="product-price" type="number" name='price' required />
+              <input id="product-price" class="product-price" type="number" name='price' 
+                  value="<%= locals.oldData ? oldData.price : null %>" />
+              <% if (locals.errors && errors.price) { %>
+                <div class="text-danger">
+                  <%= errors.price.msg %>
+                </div>
+              <% } %>
             </div>
 
             <div class="edit-form-element">
               <label for="product-delay">Product Delay Time:</label>
-              <input id="product-delay" class="delay-time" type="text" name='producttime' required />
+              <input id="product-delay" class="delay-time" type="text" name='producttime' 
+                  value="<%= locals.oldData ? oldData.producttime : null %>" />
+              <% if (locals.errors && errors.producttime) { %>
+                <div class="text-danger">
+                  <%= errors.producttime.msg %>
+                </div>
+              <% } %>
             </div>
           </div>
             <button type="submit">Create</button>
