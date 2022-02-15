@@ -42,10 +42,10 @@ const controller = {
       return res.render('register',{
         errors : {
           password :{
-            msg: 'Passwords do not match'
+            msg: 'Passwords dont match'
           },
           cpassword :{
-            msg: 'Passwords do not match'
+            msg: 'Passwords dont match'
           }
         },
         oldData : req.body
