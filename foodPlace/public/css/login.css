@@ -121,4 +121,8 @@ main .continuarg button:hover {
 main .text-danger{
     font-size : 11px;
     color: rgb(199, 2, 2);
-  }
+    margin-bottom: 0px;
+  } 
+.no-visible{
+    display: none;
+}

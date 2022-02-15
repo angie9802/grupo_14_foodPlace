@@ -110,7 +110,6 @@ const controller = {
         Promise.all([product, Categories])
           .then(([product, allCategories]) => {
             const errors = resultValidation.mapped();
-            console.log(errors)
             const  oldData = {
                 image: (req.file==undefined || errors.image.msg=="Only these extensions are allowed: .jpg, .png, .PNG, .gif") ? product.image:req.file.image,
                 ...req.body,

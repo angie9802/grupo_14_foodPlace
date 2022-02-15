@@ -16,20 +16,29 @@
             <h1 class="title">Login</h1>
             <h3 class="subtitle">Sign in to your account</h3>
             <div class="username">
-                <input type="text" name="email" placeholder="Email">
+                <input type="text" name="email" id="email" placeholder="Email">
                 <% if (locals.errors && errors.email) { %>
                   <div class="text-danger">
                     <%= errors.email.msg %>
                   </div>
                 <%} %>
+                <div class="text-danger no-visible" id="email-empty">
+                    Enter your email
+                </div>
+                <div class="text-danger no-visible" id="email-invalid">
+                    Invalid Email
+                </div>
             </div>
             <div class="password">
-                <input type="password" name="password" minlength="5" placeholder="Password">
+                <input type="password" name="password" id="password" placeholder="Password">
                 <% if (locals.errors && errors.password) { %>
                     <div class="text-danger">
                       <%= errors.password.msg %>
                     </div>
                   <%} %>
+                  <div class="text-danger no-visible" id="password-empty">
+                    Enter your password
+                </div>
                 <p><label for="password"> Do you forget your password? <a href="register">Click here</a></label></p>
             </div>
             <div class="remember">
@@ -47,4 +56,5 @@
     </form>
     </main>
 </body>
+<script src="/js/login.js"></script>
 </html>

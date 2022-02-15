@@ -3,6 +3,7 @@ const UserModel = require("../models/modelUser");
 const RoleModel = require("../models/modelRole");
 const bcryptjs = require("bcryptjs");
 
+
 const controller = {
   register: (req, res) => {
     res.render("register");
