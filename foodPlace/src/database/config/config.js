@@ -1,5 +1,4 @@
 const env = process.env
-
 module.exports = {
   development: {
     username: "root",

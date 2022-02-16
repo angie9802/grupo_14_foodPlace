@@ -6,9 +6,7 @@
     <link rel="stylesheet" href="/css/normalize.css" />
     
     <link rel="stylesheet" href="/css/form-product.css" />
-    <script src="./Validations/front-editproducts.js">
-
-    </script>
+ 
   </head>
   <body>
     <div class="edit-product-box">
@@ -22,51 +20,83 @@
       <main>
         <div class="selector-edit" >
           <h2 class="products-title">Estás editando: <p style="display: inline;"><%= product.name %></p></h2>
-         
         </div>
         <section>
-
   
-          <form action="/products/<%= product.id %>?_method=PUT" id="formEdit" method="POST" enctype="multipart/form-data">
+          <form action="/products/<%= product.id %>?_method=PUT" method="POST" id="formEdit" enctype="multipart/form-data">
             <div class="edit-image">
               <img src="/img/products/<%= product.image %> " />
             </div>
-
             <div class="edit-form-element" id="productName">
               <label for="product-name">Product Name</label>
-              <input type="text" class="productName" name="name" minlength="5" placeholder="Ej : Hamburguesa" value="<%= product.name  %>" required/>
-              <p id="respuesta"></p>
+              <input type="text" 
+                     name="name" 
+                     class="productName"
+                     placeholder="Ej : Hamburguesa" 
+                     value="<%= locals.oldData ? oldData.name : product.name  %>"/>
+                <% if (locals.errors && errors.name) { %>
+                  <div class="text-danger">
+                    <%= errors.name.msg %> 
+                  </div>
+                <% } %>
             </div>
-
             <div class="edit-form-element">
               <label for="product-description">Description</label>
-              <textarea rows="10" name="description" minlength="20" cols="50" required><%= product.description  %> </textarea>
+              <textarea rows="10" name="description" class="productDescription" cols="50"><%= locals.oldData ? oldData.description : product.description  %></textarea>
+              <% if (locals.errors && errors.description) { %>
+                <div class="text-danger">
+                  <%= errors.description.msg %> 
+                </div>
+              <% } %>
             </div>
-
             <div class="edit-form-element">
               <label for="product-image">Product Image</label>
-              <input  id="product-image" name="product-image" required type="file" value= "<%= product.image  %> "/>
+              <input  id="product-image" name="image" type="file" value="<%= locals.oldData ? oldData.image : product.image  %> "/>
+              <% if (locals.errors && errors.image) { %>
+                <div class="text-danger">
+                  <%= errors.image.msg %>
+                </div>
+              <% } %>
             </div>
-
             <div class="edit-form-element">
               <label for="product-category">Category</label>
-              <select id="product-category" name="category">
-                <option value="hamburguer">Hamburguer</option>
-                <option value="vegan">Vegan</option>
-                <option value="chinese">Chinese</option>
-                <option value="icecream">Ice Cream</option>
-                <option value="drinks">Drinks</option>
+              <select id="product-category" name="Categories_id">
+                <% if (locals.oldData) { %>
+                  <% allCategories.forEach(category => { %>
+                      <option value="<%= category.id %>"
+                          <%= locals.oldData && (category.id === oldData.Categories_id) ? 'selected' : null %> 
+                          ><%= category.name %></option>
+                  <% }); %>
+                <% } else { %>
+                    <% allCategories.forEach(category => { %>
+                    <option value="<%= category.id %>" <% if (product.Category.id == category.id) { %><%= 'selected' %><% }; %>><%= category.name %></option>
+                    <% }); %>
+                <% } %> 
               </select>
+              <% if (locals.errors && errors.Categories_id) { %>
+                <div class="text-danger">
+                  <%= errors.Categories_id.msg %>
+                </div>
+              <% } %>
             </div>
             <div class="price-time">
             <div class="edit-form-element">
               <label for="product-price">Price</label>
-              <input id="product-price" class="product-price" name="price" type="number" value="<%= product.price  %>"/>
+              <input id="product-price" class="product-price" name="price" type="number" value="<%= locals.oldData ? oldData.price : product.price  %>"/>
+              <% if (locals.errors && errors.price) { %>
+                <div class="text-danger">
+                  <%= errors.price.msg %>
+                </div>
+              <% } %>
             </div>
-
             <div class="edit-form-element">
               <label for="product-delay">Product Delay Time</label>
-              <input id="product-delay" class="delay-time" name="productTime" type="text" value="<%= product.producttime %>"/>
+              <input id="product-delay" class="delay-time" name="producttime" type="text" value="<%= locals.oldData ? oldData.producttime : product.producttime %>"/>
+              <% if (locals.errors && errors.producttime) { %>
+                <div class="text-danger">
+                  <%= errors.producttime.msg %>
+                </div>
+              <% } %>
             </div>
           </div>
             <button type="submit">Update</button>
@@ -76,10 +106,12 @@
       <% } else { %> 
         <p> Este producto no existe</p>
         <% } %> 
-       
       <footer>
         <%- include('./partials/footer.ejs') %>
       </footer>
     </div>
+    <script src="/validations/front-editproducts.js">
+    
+    </script>
   </body>
 </html>
