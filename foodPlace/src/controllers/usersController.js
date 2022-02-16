@@ -38,15 +38,15 @@ const controller = {
         oldData: req.body,
       });
     }
-    if (req.body.password !== req.body.cpassword) {
-      return res.render("register", {
-        errors: {
-          password: {
-            msg: "Passwords do not match",
+    if (req.body.password !== req.body.cpassword){
+      return res.render('register',{
+        errors : {
+          password :{
+            msg: 'Passwords dont match'
           },
-          cpassword: {
-            msg: "Passwords do not match",
-          },
+          cpassword :{
+            msg: 'Passwords dont match'
+          }
         },
         oldData: req.body,
       });
