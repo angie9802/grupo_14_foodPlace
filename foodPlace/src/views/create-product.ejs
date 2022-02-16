@@ -17,15 +17,17 @@
       <header><%- include('./partials/header')%></header>
       <main>
         <section>
-          <form method="post" action='/products/create' enctype="multipart/form-data">
-            <div class="edit-form-element">
+          <form method="post" action='/products/create' enctype="multipart/form-data" id="formEdit">
+            <div class="edit-form-element" id="productName">
               <label for="product-name">Product Name:</label>
               <input 
                 type="text" 
-                id='product-name' 
-                name='name'  
+                id="product-name"
+                class="productName"
+                name="name"  
                 value="<%= locals.oldData ? oldData.name : null %>"
               />
+              <span></span>
               <% if (locals.errors && errors.name) { %>
                 <div class="text-danger">
                   <%= errors.name.msg %> 
@@ -33,10 +35,10 @@
               <% } %>
             </div>
 
-            <div class="edit-form-element">
+            <div class="edit-form-element" id="productDes">
               <label for="product-description">Description:</label>
-              <textarea  rows="10" cols="50" id='product-description' name='description'  
-              ><%= locals.oldData ? oldData.description : null %></textarea>
+              <textarea  rows="10" cols="50" id="product-description" name="description" class="productDescription"><%= locals.oldData ? oldData.description : null %></textarea>
+              <span></span>
               <% if (locals.errors && errors.description) { %>
                 <div class="text-danger">
                   <%= errors.description.msg %> 
@@ -44,9 +46,10 @@
               <% } %>
             </div>
 
-            <div class="edit-form-element">
+            <div class="edit-form-element" id="productIma">
               <label for="product-image">Product Image</label>
-              <input type="file" name='image' id='product-image' />
+              <input type="file" name="image" id="product-image" />
+              <span></span>
               <% if (locals.errors && errors.image) { %>
                 <div class="text-danger">
                   <%= errors.image.msg %>
@@ -104,5 +107,6 @@
         <%- include('./partials/footer')%>
       </footer>
     </div>
+    <script src="/validations/front-editproducts.js"></script>
   </body>
 </html>

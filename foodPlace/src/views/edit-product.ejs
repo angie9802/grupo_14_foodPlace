@@ -34,26 +34,29 @@
                      class="productName"
                      placeholder="Ej : Hamburguesa" 
                      value="<%= locals.oldData ? oldData.name : product.name  %>"/>
+                     <span class="errorName"></span>
                 <% if (locals.errors && errors.name) { %>
-                  <div class="text-danger">
+                  <div class="text-danger danger-productName" id="danger-productName">
                     <%= errors.name.msg %> 
                   </div>
                 <% } %>
             </div>
-            <div class="edit-form-element">
+            <div class="edit-form-element" id="productDes">
               <label for="product-description">Description</label>
               <textarea rows="10" name="description" class="productDescription" cols="50"><%= locals.oldData ? oldData.description : product.description  %></textarea>
+              <span ></span>
               <% if (locals.errors && errors.description) { %>
-                <div class="text-danger">
+                <div class="text-danger ">
                   <%= errors.description.msg %> 
                 </div>
               <% } %>
             </div>
-            <div class="edit-form-element">
+            <div class="edit-form-element" id="productIma">
               <label for="product-image">Product Image</label>
               <input  id="product-image" name="image" type="file" value="<%= locals.oldData ? oldData.image : product.image  %> "/>
+              <span></span>
               <% if (locals.errors && errors.image) { %>
-                <div class="text-danger">
+                <div class="text-danger danger-productImage">
                   <%= errors.image.msg %>
                 </div>
               <% } %>

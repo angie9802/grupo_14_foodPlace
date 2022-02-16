@@ -3,7 +3,7 @@
     
         formulario.addEventListener("submit", function(e){
             
-            console.log("se espicho")
+           
            
             const productName = document.querySelector(".productName")
             const productDescription = document.querySelector(".productDescription")
@@ -23,33 +23,38 @@
 
 
             if (!(/\.(jpg|png|gif|jpeg)$/i).test(productImage.value)) {
-                errors.push('image')
+                errors.push('productImage')
                 
               }
             
             
 
+           
+
+            if (errors.includes('productName')) {
+                document.querySelector("#productName span").innerText = "Please use a valid product name (min 5 characters)"
+              } else {
+                document.querySelector("#productName span").innerHTML = ""
+              }
+            if (errors.includes("productDescription")){
+                document.querySelector("#productDes span").innerHTML = "Please use a valid description (min 20 characters)"
+            }else {
+                document.querySelector("#productDes span").innerHTML = ""
+              }
+            
+              if (errors.includes('productImage')) {
+                document.querySelector("#productIma span").innerHTML = "Please use a valid image (JPEG,JPG,GIF,PNG)"
+              } else {
+                document.querySelector("#productIma span").innerHTML = ""
+              }
+            
             if (errors.length > 0){
-                console.log(errors)
-                e.preventDefault()
-               
                 
+                e.preventDefault()
+            
             }
 
-
-              
-
-            // console.log("se espicho")
-            // // e.preventDefault()
-            // let nombre = document.querySelector(".productName")
-        
-            // if (nombre.value == ""){
-                
-            //     document.querySelector("#respuesta").innerHTML += "debe tener al menos 5 caracteres"
-            // }else if (nombre.value.length < 5){
-            //     alert("el campo de nombre debe tener al menos 5 caracteres")
-            // }
-        
+            
         
         })
 
