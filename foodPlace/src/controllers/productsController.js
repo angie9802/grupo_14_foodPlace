@@ -2,8 +2,9 @@ const maxId = require("../utils/maxId");
 const ProductModel = require("../models/modelProduct");
 const CategoryModel = require("../models/modelCategory");
 const { validationResult } = require('express-validator');
+const path= require("path")
+const acceptedExtensions = [".jpg", ".png", ".PNG", "gif"]
 const controller = {
-  //Show all products
   
   list:  (req, res, next) => {
     const Products =  ProductModel.findAll();
@@ -22,11 +23,12 @@ const controller = {
       res.send(err)
     });
   },
+
   //Detail Product
   detail: (req, res, next) => {
-    const products = ProductModel.findAll();
+    const products = ProductModel.findAll()
     const Product = ProductModel.findById(req.params.id);
-    const Categories = CategoryModel.findAll();
+    const Categories = CategoryModel.findAll()
 
     Promise.all([Product, Categories, products])
       .then(([product, allCategories, products]) => {
@@ -94,9 +96,9 @@ const controller = {
           allCategories: allCategories,
         });
       })
-      .catch((err) => {
-        next(err);
-      });
+    .catch((err) => {
+      next(err);
+    })
   },
 
   //Update a product
@@ -160,7 +162,7 @@ const controller = {
       res.send(err)
     }
   }
-};
+}
 
 module.exports = controller;
 

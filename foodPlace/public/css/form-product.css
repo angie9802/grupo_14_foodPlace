@@ -134,6 +134,11 @@ main .text-danger{
   
 }
 
+ span {
+  font-size : 11px;
+  color: rgb(199, 2, 2);
+}
+
 /*Footer*/
 footer {
   max-width: 100%;
