@@ -48,7 +48,8 @@ form.addEventListener("submit", function (e) {
     document.querySelector(".danger-password").innerHTML = "Please use a valid password (min 8 characters)"
   } else {
     document.querySelector(".danger-password").innerHTML = ""
-  }
+  } 
+  
 
   if (errors.includes('image')) {
     document.querySelector(".danger-image").innerHTML = "Please use a valid image (JPEG,JPG,GIF,PNG)"

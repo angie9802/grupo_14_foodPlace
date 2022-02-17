@@ -111,7 +111,7 @@ const controller = {
           .then(([product, allCategories]) => {
             const errors = resultValidation.mapped();
             const  oldData = {
-                image: (req.file==undefined || errors.image.msg=="Only these extensions are allowed: .jpg, .png, .PNG, .gif") ? product.image:req.file.image,
+                image: (req.file==undefined || errors.image.msg=="Only these extensions are allowed: .jpg, .jpe  g, .png, .PNG, .gif") ? product.image:req.file.image,
                 ...req.body,
               }
               return res.render('edit-product.ejs',{

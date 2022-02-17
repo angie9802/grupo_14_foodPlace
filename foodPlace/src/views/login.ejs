@@ -11,34 +11,37 @@
 </head>
 <body>
     <main>
-        <form action="/users/login" class="iniciosesion" method="POST">
+        <form action="/users/login" class="iniciosesion" method="POST" id="form">
         <div class="login">
             <h1 class="title">Login</h1>
             <h3 class="subtitle">Sign in to your account</h3>
-            <div class="username">
-                <input type="text" name="email" id="email" placeholder="Email">
+            <div class="username" >
+                <div class="form-input" id="group__email">
+                    <input type="text" name="email" id="email" placeholder="Email">
+                    <i class="far fa-times-circle state-validation"></i>
+                </div>
+                <p class="input-error-email">
+                    Invalid Email
+                </p>
                 <% if (locals.errors && errors.email) { %>
                   <div class="text-danger">
                     <%= errors.email.msg %>
                   </div>
                 <%} %>
-                <div class="text-danger no-visible" id="email-empty">
-                    Enter your email
-                </div>
-                <div class="text-danger no-visible" id="email-invalid">
-                    Invalid Email
-                </div>
             </div>
-            <div class="password">
-                <input type="password" name="password" id="password" placeholder="Password">
+            <div class="password" >
+                <div class="form-input" id="group__password">
+                    <input type="password" name="password" id="password" placeholder="Password">
+                    <i class="far fa-times-circle state-validation"></i>
+                </div>
+                <p class="input-error-password">
+                    Enter your password
+                </p>
                 <% if (locals.errors && errors.password) { %>
-                    <div class="text-danger">
+                    <div class="text-danger" >
                       <%= errors.password.msg %>
                     </div>
                   <%} %>
-                  <div class="text-danger no-visible" id="password-empty">
-                    Enter your password
-                </div>
                 <p><label for="password"> Do you forget your password? <a href="register">Click here</a></label></p>
             </div>
             <div class="remember">
@@ -51,6 +54,9 @@
             </div>
             <div class="backhome">
                 <a href="/"><i class="fas fa-caret-left"></i></a>
+            </div>
+            <div class="form-message" id="form-message">  
+                <p><i class="fas fa-exclamation-triangle"></i> Fill in the inputs correctly</p>
             </div>
         </div>
     </form>

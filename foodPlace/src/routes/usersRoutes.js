@@ -24,7 +24,7 @@ const validationsRegister = [
   body("fullname")
     .notEmpty()
     .isLength({ min: 2 })
-    .withMessage("Enter a name with at least two characters"),
+    .withMessage("Enter a name with at least 2 characters"),
   body("email")
     .notEmpty()
     .withMessage("Enter an email")
@@ -42,7 +42,10 @@ const validationsRegister = [
     .withMessage("Enter a password")
     .bail()
     .isLength({ min: 8 })
-    .withMessage("Minimum length is 8"),
+    .withMessage("Minimum length is 8")
+    .bail()
+    .isStrongPassword({ minSymbols: 1 })
+    .withMessage("Use numbers, capital letters and at least one symbol"),
   body("cpassword")
     .notEmpty()
     .withMessage("Confirm the password"),
