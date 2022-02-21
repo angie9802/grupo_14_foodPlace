@@ -8,7 +8,9 @@
             const productName = document.querySelector(".productName")
             const productDescription = document.querySelector(".productDescription")
             const productImage = document.querySelector("#product-image")
-
+            const productPrice = document.querySelector(".product-price")
+            const productCategory = document.querySelector("#product-category")
+          
             let errors = []
 
             if (productName.value.length < 5 || productName.value == ""){
@@ -20,6 +22,17 @@
                 errors.push("productDescription")
                 
             }
+
+            if (productPrice.value == ""){
+              errors.push("productPrice")
+              
+            }
+
+            if (productCategory.value == ""){
+              errors.push("productCategory")
+              
+            }
+
 
 
             if (!(/\.(jpg|png|gif|jpeg)$/i).test(productImage.value)) {
@@ -41,7 +54,20 @@
             }else {
                 document.querySelector("#productDes span").innerHTML = ""
               }
+
+              if (errors.includes("productPrice")){
+                document.querySelector("#productPri span").innerHTML = "Please add a price"
+            }else {
+                document.querySelector("#productPri span").innerHTML = ""
+              }
             
+              if (errors.includes("productCategory")){
+                document.querySelector("#productCate span").innerHTML = "Please choose a Category"
+            }else {
+                document.querySelector("#productCate span").innerHTML = ""
+              }
+
+
               if (errors.includes('productImage')) {
                 document.querySelector("#productIma span").innerHTML = "Please use a valid image (JPEG,JPG,GIF,PNG)"
               } else {

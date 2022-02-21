@@ -61,7 +61,7 @@
                 </div>
               <% } %>
             </div>
-            <div class="edit-form-element">
+            <div class="edit-form-element" id="productCate">
               <label for="product-category">Category</label>
               <select id="product-category" name="Categories_id">
                 <% if (locals.oldData) { %>
@@ -76,6 +76,7 @@
                     <% }); %>
                 <% } %> 
               </select>
+              <span></span>
               <% if (locals.errors && errors.Categories_id) { %>
                 <div class="text-danger">
                   <%= errors.Categories_id.msg %>
@@ -83,9 +84,10 @@
               <% } %>
             </div>
             <div class="price-time">
-            <div class="edit-form-element">
+            <div class="edit-form-element" id="productPri">
               <label for="product-price">Price</label>
               <input id="product-price" class="product-price" name="price" type="number" value="<%= locals.oldData ? oldData.price : product.price  %>"/>
+              <span></span>
               <% if (locals.errors && errors.price) { %>
                 <div class="text-danger">
                   <%= errors.price.msg %>
