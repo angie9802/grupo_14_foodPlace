@@ -57,7 +57,7 @@ main section form button:hover {
 main .text-danger{
   font-size : 11px;
   color: rgb(255, 104, 104);
-  font-weight:bold
+ 
 }
 
 /*Single input container*/
@@ -136,7 +136,7 @@ main .text-danger{
 
  span {
   font-size : 11px;
-  color: rgb(199, 2, 2);
+  color: rgb(255, 104, 104);
 }
 
 /*Footer*/

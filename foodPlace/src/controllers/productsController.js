@@ -2,8 +2,8 @@ const maxId = require("../utils/maxId");
 const ProductModel = require("../models/modelProduct");
 const CategoryModel = require("../models/modelCategory");
 const { validationResult } = require('express-validator');
-const path= require("path")
-const acceptedExtensions = [".jpg", ".png", ".PNG", "gif"]
+
+
 const controller = {
   
   list:  (req, res, next) => {

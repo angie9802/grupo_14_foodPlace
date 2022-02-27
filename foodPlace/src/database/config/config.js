@@ -2,7 +2,7 @@ const env = process.env
 module.exports = {
   development: {
     username: "root",
-    password: "password",
+    password: "1234",
     database: "foodplace",
     host: "127.0.0.1",
     dialect: "mysql",

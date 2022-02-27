@@ -159,7 +159,6 @@ const controller = {
 
         await UserModel.update(User.id, user)
           .then((result) => {
-            console.log(result);
             res.redirect("/users/manage");
           })
           .catch((err) => console.log(err));
@@ -191,7 +190,6 @@ const controller = {
     });
   },
   profile: (req, res) => {
-    console.log(req.session);
     return res.render("userProfile", {
       user: req.session.userLogged,
     });

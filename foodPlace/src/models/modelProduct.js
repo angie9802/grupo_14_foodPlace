@@ -55,7 +55,6 @@ const Product = {
             let editProduct= {
                 ...product
             }
-            console.log(editProduct)
             await db.Products.update(editProduct,{
                 where : {
                     id:id

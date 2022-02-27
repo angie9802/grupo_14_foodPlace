@@ -57,7 +57,7 @@
               <% } %>
             </div>
 
-            <div class="edit-form-element">
+            <div class="edit-form-element" id="productCategory">
               <label for="product-category">Category</label>
               <select id="product-category" name="Categories_id">
                 <option value="" disabled selected>- select category - </option>
@@ -69,6 +69,7 @@
                   </option>
                 <% }) %> 
               </select>
+              <span></span>
               <% if (locals.errors && errors.Categories_id) { %>
                 <div class="text-danger">
                   <%= errors.Categories_id.msg %>
@@ -76,10 +77,11 @@
               <% } %>
             </div>
             <div class="price-time">
-            <div class="edit-form-element">
+            <div class="edit-form-element" id="productPrice">
               <label for="product-price">Price:</label>
               <input id="product-price" class="product-price" type="number" name='price' 
                   value="<%= locals.oldData ? oldData.price : null %>" />
+              <span></span>
               <% if (locals.errors && errors.price) { %>
                 <div class="text-danger">
                   <%= errors.price.msg %>
@@ -87,10 +89,11 @@
               <% } %>
             </div>
 
-            <div class="edit-form-element">
+            <div class="edit-form-element" id="productDelay">
               <label for="product-delay">Product Delay Time:</label>
               <input id="product-delay" class="delay-time" type="text" name='producttime' 
                   value="<%= locals.oldData ? oldData.producttime : null %>" />
+              <span></span>
               <% if (locals.errors && errors.producttime) { %>
                 <div class="text-danger">
                   <%= errors.producttime.msg %>

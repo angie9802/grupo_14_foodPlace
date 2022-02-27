@@ -38,7 +38,6 @@ const User = {
           Roles_id: userData.role,
           ...userData
         })
-        console.log(newUser)
       } catch(err) {
         console.log(err)
       }
@@ -48,7 +47,6 @@ const User = {
         let userUpdate = {
           ...user
         }
-        console.log(userUpdate)
         await db.Users.update(userUpdate, {
           where: {
             id: id
