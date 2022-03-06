@@ -60,6 +60,31 @@ const controller = {
     
   })
 
+<<<<<<< HEAD
+=======
+    
+    // categories.map(Category => {
+    //   let product = Category.dataValues;
+    //   Categories.push(product);
+    
+    // })
+
+  
+
+    
+    //  dbProductByCate.map(item1 => {
+    //     let id = item1.dataValues.Categories_id;
+    //     let count = item1.dataValues.Count;
+    //     let Cat = Categories.find(cat => cat.id === id)
+    //     let nameCat = Cat.Category
+    //     let objeto = {idCategory: id, Category: nameCat, Count:count};
+    //     Catego.push(objeto);
+
+    //         })
+
+
+
+>>>>>>> 534ca4af6f65f785600a1f5fd22775378408c7bd
     products.then(products => {
       return res.json({
         count: products.length,
