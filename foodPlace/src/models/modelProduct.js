@@ -1,5 +1,6 @@
 const db = require('../database/models')
 const { Op } = require("sequelize");
+const { sequelize } = require('../database/models')
 
 const Product = {
     findAll : async ()=>{
@@ -74,7 +75,30 @@ const Product = {
         }catch(err){
             console.log(err)
         }
-    }
+    },
+    findAllApi: async ()=>{
+        try{
+            let products = await db.Products.findAll({
+                include: ["Category"]
+            })
+            return products
+        }catch(err){
+            console.log(err)
+        }
+    },
+    countByCategory: async function () {
+        try {
+            return await db.Products.findAll({
+                attributes: [
+                    'Categories_id',
+                    [sequelize.fn('COUNT', sequelize.col('Categories_id')), 'Count']
+                ],
+                group: ['Categories_id']
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    },
 }
 module.exports = Product
 

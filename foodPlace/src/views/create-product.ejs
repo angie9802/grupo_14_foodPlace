@@ -57,7 +57,10 @@
               <% } %>
             </div>
 
-            <div class="edit-form-element" id="productCategory">
+
+
+            <div class="edit-form-element" id="productCate">
+
               <label for="product-category">Category</label>
               <select id="product-category" name="Categories_id">
                 <option value="" disabled selected>- select category - </option>
@@ -76,8 +79,10 @@
                 </div>
               <% } %>
             </div>
-            <div class="price-time">
-            <div class="edit-form-element" id="productPrice">
+
+            <div class="price-time" id="productPri">
+            <div class="edit-form-element">
+
               <label for="product-price">Price:</label>
               <input id="product-price" class="product-price" type="number" name='price' 
                   value="<%= locals.oldData ? oldData.price : null %>" />
