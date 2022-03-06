@@ -20,16 +20,21 @@ app.use(session({
 app.use(cookies())
 app.use(userLoggedMiddleware)
 
+
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'src/views'))
 
 const mainRouter = require('./src/routes/main');
 const productsRouter = require('./src/routes/productsRoutes')
 const usersRouter = require('./src/routes/usersRoutes')
+const apiRouter = require('./src/routes/apiRoutes/indexApiRoutes')
+const imagesApiRouter = require('./src/routes/apiRoutes/imagesApi')
 
+app.use('/api', apiRouter)
 app.use('/', mainRouter)
 app.use('/products', productsRouter)
 app.use('/users', usersRouter)
+app.use('/images', imagesApiRouter )
 
 
 app.listen(port, () => console.log("server running on port " + port));

@@ -221,6 +221,6 @@ const controller = {
       console.log(err);
     }
   },
-};
+}
 
 module.exports = controller;
