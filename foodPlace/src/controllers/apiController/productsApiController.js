@@ -60,8 +60,6 @@ const controller = {
     
   })
 
-<<<<<<< HEAD
-=======
     
     // categories.map(Category => {
     //   let product = Category.dataValues;
@@ -84,7 +82,6 @@ const controller = {
 
 
 
->>>>>>> 534ca4af6f65f785600a1f5fd22775378408c7bd
     products.then(products => {
       return res.json({
         count: products.length,
