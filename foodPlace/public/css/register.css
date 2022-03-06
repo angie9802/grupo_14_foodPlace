@@ -21,10 +21,19 @@ main {
     background-image: url("/img/407.jpg");
     background-size:contain;
 }
+
 main .text-danger{
-    font-size : 11px;
+    font-size : 12px;
     color: rgb(199, 2, 2);
-  }
+    margin-bottom: 0px;
+}
+main .input-error-email, main .input-error-password, main .input-error-cpassword,
+main .input-error-fullname, main .input-error-number,  main .input-error-address,  main .input-error-role{
+    font-size : 12px;
+    color: rgb(199, 2, 2);
+    margin-bottom: 0px;
+    display:none;
+}
 main .is-invalid{
     transition: all 450ms;
 }
@@ -118,4 +127,78 @@ main .continuarg button {
 
 main .continuarg button:hover {
     background-color:rgba(13, 13, 226, 0.452) ;
+}
+main .no-visible{
+    display:none
+}
+
+main .form-input{
+    position: relative;
+}
+
+main .input-error-active{
+    display:block;
+}
+main .state-validation{
+    position:absolute;
+    right:10px;
+    top: 7px;
+    z-index: 100;
+    opacity: 0;
+}
+main .form-message{
+    margin-top: 20%;
+    font-size: 11px;
+    height: 30px;
+    line-height: 30px;
+    background:rgba(128, 128, 128, 0.6);
+    padding: 0 15px;
+    border-radius: 10px;
+    display: none;
+}
+main .form-message-active{
+    display: block
+}
+main .no-visible{
+    display:none
+}
+
+main .form-input{
+    position: relative;
+}
+
+main .input-error-active{
+    display:block;
+}
+main .state-validation{
+    position:absolute;
+    right:10px;
+    top: 11px;
+    z-index: 100;
+    opacity: 0;
+}
+main .form-message{
+    margin-top: 20%;
+    font-size: 11px;
+    height: 30px;
+    line-height: 30px;
+    background:rgba(128, 128, 128, 0.6);
+    padding: 0 15px;
+    border-radius: 10px;
+    display: none;
+}
+main .form-message-active{
+    display: block
+}
+/*validations style*/
+main .form-input-correct .state-validation{
+    color:rgb(108, 155, 15);
+    opacity: 1;
+}
+main .form-input-incorrect .state-validation{
+    color:rgb(199, 2, 2);
+    opacity: 1;
+}
+main .form-input-incorrect input{
+    border: 2px solid rgb(199, 2, 2);
 }

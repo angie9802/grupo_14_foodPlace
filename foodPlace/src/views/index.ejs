@@ -2,13 +2,105 @@
 <html lang="en">
   <head>
     <%- include('./partials/head.ejs')  %> 
+
+    <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="/css/normalize.css" />
     <link rel="stylesheet" href="/css/home.css" />
-    <title>Home</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+    <!-- Demo styles -->
+    <style>
+      html,
+      body{
+        background-image: url(../img/fast-food.jpg);
+        background-size: cover;
+        padding-top: 8px;
+      }
+      .welcome-style{
+        background-color: rgba(0, 0, 0, 0.116);
+        background-repeat:repeat-y;
+        background-size:100vw;
+        max-width:100%;
+        height: 48%;
+        padding:50px 20px 20px 20px ;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        bottom:0px
+      }
+      .container-swiper{
+        background-color: #ffffff80;
+        border-top: 3px solid white;
+        border-bottom: 3px solid white;
+      }
+      .swiper {
+        width: 100%;
+        
+      }
+      .swiper-wrapper{
+        padding: 10px;
+        width: 100%;
+      }
+      .swiper-slide {
+        background-image: url(../img/fast-food.jpg);
+        position:relative;
+        text-align: center;
+        font-size: 18px;
+        background:  rgba(238, 238, 238, 0);
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        bottom:0px;
+        max-width: 170px;
+        min-width: 165px;
+        margin:0 20px;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+      
+        object-fit: cover;
+      }
+      footer{
+        width: 100%;
+        height: 50px;
+        background-color: #FFFFFF;
+        padding: 10px 20px;
+        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+      }
+      .f-home{
+        position: absolute;
+        bottom:0px;
+      }
+      .f-home a{
+        color: white;
+      }
+      .f-home a li i{
+        color: black;
+      }
+
+    </style>
   </head>
+
   <body>
-      <%- include('./partials/header')%>
-    <main class="m-home">
+    <%- include('./partials/header')%>
+    <!-- Swiper -->
+    
       <section class="welcome-style">
         <h1>¡Welcome to Food Place!</h1>
         <p>
@@ -16,26 +108,44 @@
           aut numquam officiis
         </p>
       </section>
-
-      <section class="carousel-style">
-        <i class="fas fa-arrow-circle-left"></i>
-        <article>
-          <img id="img-1" src="./img/banner1.jpg" alt="banner1" />
-        </article>
-        <article>
-          <img id="img-2" src="./img/banner2.jpg" alt="banner2" />
-        </article>
-        <article>
-          <img id="img-3" src="./img/banner3.jpg" alt="banner3" />
-        </article>
-        <article>
-          <img id="img-4" src="./img/banner4.jpg" alt="banner4" />
-        </article>
-        <i class="fas fa-arrow-circle-right"></i>
-      </section>
-    </main>
+      <div class="container-swiper">
+        <section class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="img/banner1.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="img/banner2.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="img/banner3.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="img/banner4.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="img/banner1.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="img/banner2.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="img/banner3.jpg" alt="">
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </section>
+      </div>
+  
     <footer class="f-home">
-    <%- include('./partials/footer.ejs') %> 
-  </footer>
-  </body>  
+      <%- include('./partials/footer.ejs') %> 
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script src="/js/index.js"></script>
+  </body>
 </html>

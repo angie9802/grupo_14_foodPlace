@@ -10,36 +10,52 @@
 </head>
 <body>
     <main>
-        <form action="/users/register" class="registro" method="POST" enctype="multipart/form-data">
+        <form action="/users/register" class="registro" method="POST" enctype="multipart/form-data" id="form">
         <div class="register">
             <h1 class="title">Register</h1>
-            <div>
+            <div class="form-input" id="group__fullname">
                 <input type="text" placeholder="Full name" id="fullname" name="fullname" class="<%= locals.errors && errors.fullname ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.fullname : null %>">
+                <i class="far fa-times-circle state-validation"></i>
             </div>
-            <div class="text-danger danger-name">
-              <% if (locals.errors && errors.fullname) { %>
-                <%= errors.fullname.msg %> 
-              <% } %> 
-            </div>
-            <div>
+            <p class="input-error-fullname">
+                Invalid name 
+            </p>
+            <% if (locals.errors && errors.fullname) { %>
+                <div class="text-danger danger-name">
+                    <%= errors.fullname.msg %> 
+                </div>
+            <% } %> 
+            <div class="form-input" id="group__email">
                 <input type="text" placeholder="Email" id='email' name="email" class="<%= locals.errors && errors.email ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.email : null %>">
+                <i class="far fa-times-circle state-validation"></i>
             </div>
-            <div class="text-danger danger-email">
-              <% if (locals.errors && errors.email) { %>
-                <%= errors.email.msg %> 
-              <% } %>
-            </div>
+            <p class="input-error-email">
+                Invalid Email
+            </p>
+            <% if (locals.errors && errors.email) { %>
+                <div class="text-danger danger-email">
+                    <%= errors.email.msg %> 
+                </div>
+            <% } %>
             <div class="teladress">
-                <div>
+                <div class="form-input" id="group__number">
                     <input type= "text" placeholder="Telephone" name="number" class="<%= locals.errors && errors.number ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.number : null %>">
+                    <i class="far fa-times-circle state-validation"></i>
+                    <p class="input-error-number">
+                        Invalid number
+                    </p>
                     <% if (locals.errors && errors.number) { %>
                         <div class="text-danger">
                             <%= errors.number.msg %> 
                         </div>
                     <% } %>
                 </div>
-                <div>
+                <div class="form-input" id="group__address">
                     <input type ="text" placeholder="Address" name="address" class="<%= locals.errors && errors.address ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.address : null %>">
+                    <i class="far fa-times-circle state-validation"></i>
+                    <p class="input-error-address">
+                        Invalid address
+                    </p>
                     <% if (locals.errors && errors.address) { %>
                         <div class="text-danger">
                             <%= errors.address.msg %> 
@@ -47,7 +63,7 @@
                     <% } %>
                 </div>
             </div>
-            <div class="radio-button">
+            <div class="radio-button" id="group__role">
                 <div>
                     <input type="radio" name="role" value="1">
                     <label>Administrator </label>
@@ -57,36 +73,55 @@
                     <label>Normal user </label>
                 </div>
             </div>
-            <div>
+            <p class="input-error-role">
+                Invalid address
+            </p>
+            <div class="form-input" id="group__password">
                 <input type="password" placeholder="Password" id="password" name="password" class="<%= locals.errors && errors.password ? 'is-invalid' : null %>">
+                <i class="far fa-times-circle state-validation"></i>
             </div>
-            <div class="text-danger danger-password">
+            <p class="input-error-password">
+                Use numbers, capital letters and a symbol
+            </p>
               <% if (locals.errors && errors.password) { %>
-                <%= errors.password.msg %> 
+                <div class="text-danger danger-password"></div>
+                    <%= errors.password.msg %> 
+                </div>
               <% } %>
+            
+            <div class="form-input" id="group__cpassword">
+                <input type="password" placeholder="Confirm Password" id="cpassword" name="cpassword" class="<%= locals.errors && errors.cpassword ? 'is-invalid' : null %>">
+                <i class="far fa-times-circle state-validation"></i>
             </div>
-            <div>
-                <input type="password" placeholder="Confirm Password" name="cpassword" class="<%= locals.errors && errors.cpassword ? 'is-invalid' : null %>">
-            </div>
+            <p class="input-error-cpassword">
+                Passwords do not match
+            </p>
             <% if (locals.errors && errors.cpassword) { %>
                 <div class="text-danger">
                     <%= errors.cpassword.msg %> 
                 </div>
             <% } %>
-            <div>
-                <input type="file" id="image" name="userImage" >
-                <div class="text-danger danger-image">
-                  <% if (locals.errors && errors.userImage) { %>     
-                    <%= errors.userImage.msg %>
-                  <% } %>	
-                </div>	
-                
+            <div class="form-input" id="group__image">
+                <input type="file" id="image" name="userImage">
             </div>
+            <p class="input-error-password">
+                Invalid file
+            </p>
+            <% if (locals.errors && errors.userImage) { %>    
+                <div class="text-danger danger-image"> 
+                    <%= errors.userImage.msg %>
+                </div>
+            <% } %>	
+            	
+            
             <div class="botonok">
                <button type="submit">OK!</button>
             </div>
             <div class="backhome">
                 <a href="/"><i class="fas fa-caret-left"></i></a>
+            </div>
+            <div class="form-message" id="form-message">  
+                <p><i class="fas fa-exclamation-triangle"></i> Fill in all the inputs correctly</p>
             </div>
         </div>
     </form>

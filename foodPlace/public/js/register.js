@@ -1,63 +1,103 @@
-let form = document.querySelector("form.registro");
+window.addEventListener("load", function(){
 
-form.addEventListener("submit", function (e) {
-  let errors = [];
+const RegEx = {
+    fullname : /^[a-zA-ZÀ-ÿ\s]{3,20}$/,
+    email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+    password: /^(?=.*[a-zA-Z0-9!@#$&*])(?=.*[!@#$&*]).{8,50}$/, 
+    address: /^[a-zA-Z1-9À-ÖØ-öø-ÿ]+\.?(( |\-)[a-zA-Z1-9À-ÖØ-öø-ÿ]+\.?)*/,
+    number:  /^\d{7,14}$/,
+    image: /(.jpg|.jpeg|.png|.gif)$/i
+}
+const fields = {
+    fullname: false,
+    email: false,
+    password: false,
+    address: false,
+    number : false
+}
 
-  const userName = document.getElementById("fullname");
-  const userEmail = document.getElementById("email");
-  const userPassword = document.getElementById("password");
-  const userImage = document.getElementById("image");
 
-  //Validate img format
-  if (!/\.(jpg|png|gif|jpeg)$/i.test(userImage.value)) {
-    errors.push("image");
+  const form  = document.getElementById("form")
+  const inputs = this.document.querySelectorAll("#form input")
+
+  const validateForm = (e)=>{
+   
+    switch (e.target.name){
+        case "fullname":
+          validateField(RegEx.fullname,e.target,"fullname")
+        break;
+        case "email":
+            validateField(RegEx.email,e.target,"email")
+        break;
+        case "number":
+            validateField(RegEx.number,e.target,"number")
+        break;
+        case "address":
+            validateField(RegEx.address,e.target,"address")
+        break;
+        case "password":
+            validateField(RegEx.password,e.target,"password")
+            validateCPassword()
+        break;
+        case "cpassword":
+            validateCPassword()
+        break;
+    }
+    
+}
+const validateField = (expression, input, field)=>{
+  if(expression.test(input.value)){
+      document.getElementById(`group__${field}`).classList.remove("form-input-incorrect")
+      document.getElementById(`group__${field}`).classList.add("form-input-correct")
+      document.querySelector(`#group__${field} i`).classList.add("fa-check-circle")
+      document.querySelector(`#group__${field} i`).classList.remove("fa-times-circle")
+      document.querySelector(`.input-error-${field}`).classList.remove("input-error-active")
+      document.getElementById("form-message").classList.remove("form-message-active")
+      fields[field]=true;
+  }else{
+      document.getElementById(`group__${field}`).classList.add("form-input-incorrect")
+      document.getElementById(`group__${field}`).classList.remove("form-input-correct")
+      document.querySelector(`#group__${field} i`).classList.add("fa-times-circle")
+      document.querySelector(`#group__${field} i`).classList.remove("fa-check-circle")
+      document.querySelector(`.input-error-${field}`).classList.add("input-error-active")
+      document.getElementById("form-message").classList.remove("form-message-active")
+      fields[field]=false;
   }
-
-  //Validate username
-  if (userName.value.length < 2) {
-    errors.push("username");
+}
+const validateCPassword = ()=>{
+  const inputPassword = document.getElementById("password")
+  const inputCPassword = document.getElementById("cpassword")
+  if(inputPassword.value !== inputCPassword.value){
+      document.getElementById("group__cpassword").classList.add("form-input-incorrect")
+      document.getElementById("group__cpassword").classList.remove("form-input-correct")
+      document.querySelector("#group__cpassword i").classList.add("fa-times-circle")
+      document.querySelector("#group__cpassword i").classList.remove("fa-check-circle")
+      document.querySelector(".input-error-cpassword").classList.add("input-error-active")
+      document.getElementById("form-message").classList.remove("form-message-active")
+  }else if(inputPassword.value!==""){
+    document.getElementById("group__cpassword").classList.remove("form-input-incorrect")
+    document.getElementById("group__cpassword").classList.add("form-input-correct")
+    document.querySelector("#group__cpassword i").classList.remove("fa-times-circle")
+    document.querySelector("#group__cpassword i").classList.add("fa-check-circle")
+    document.querySelector(".input-error-cpassword").classList.remove("input-error-active")
+    document.getElementById("form-message").classList.remove("form-message-active")
   }
+}
+ 
+  inputs.forEach((input)=>{
+      input.addEventListener('keyup', validateForm)
+      input.addEventListener('click', validateForm)
+    
+  })
 
-  //Validate email
-  let regex = new RegExp("[a-z0-9]+@[a-z]+.[a-z]{2,3}");
-  let validationEmail = regex.test(userEmail.value);
-
-  if (validationEmail === false) {
-    errors.push("email");
-  }
-
-  //Validate password
-  if (userPassword.value.length < 8) {
-    errors.push("password");
-  }
-
-  //Set errors
-  if (errors.includes('username')) {
-    document.querySelector(".danger-name").innerHTML = "Please use a valid username (min 2 characters)"
-  } else {
-    document.querySelector(".danger-name").innerHTML = ""
-  }
-
-  if (errors.includes('email')) {
-    document.querySelector(".danger-email").innerHTML = "Please use a valid email"
-  } else {
-    document.querySelector(".danger-email").innerHTML = ""
-  }
-
-  if (errors.includes('password')) {
-    document.querySelector(".danger-password").innerHTML = "Please use a valid password (min 8 characters)"
-  } else {
-    document.querySelector(".danger-password").innerHTML = ""
-  } 
+  form.addEventListener("submit", function(e){
+    if(fields.fullname=="" || fields.email=="" || fields.password=="" || fields.number==""  || fields.address=="" || fields.role==""){
+      document.getElementById("form-message").classList.add("form-message-active")
+      e.preventDefault();  
+    }else{
+      document.getElementById("form-message").classList.remove("form-message-active")
+    }  
+    	
+  })
   
-
-  if (errors.includes('image')) {
-    document.querySelector(".danger-image").innerHTML = "Please use a valid image (JPEG,JPG,GIF,PNG)"
-  } else {
-    document.querySelector(".danger-image").innerHTML = ""
-  }
-
-  if (errors.length > 0) {
-    e.preventDefault();
-  }
-});
+})
