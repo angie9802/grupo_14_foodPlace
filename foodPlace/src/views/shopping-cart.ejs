@@ -11,43 +11,7 @@
     <main class="m-cart">
         <section class="container-ext">
             <section class="container-int">
-                <article>
-                    <img src="./img/1.jpg" alt="food1">
-                    <div>
-                        <ul>
-                            <li class="description">Crispi french fries</li>
-                            <li class="price">$50.000 COP</li>
-                            <li class="cantity"><input type="number" id="quantity" name="quantity" min="1" max="5"></li>
-                            <li class="subtotal">SubTotal: $50.000 COP</li>
-                        </ul>
-                    </div>
-                    <i class="fas fa-trash-alt"></i>
-                </article>
-                <article>
-                    <img src="./img/2.jpg" alt="food2">
-                    <div>
-                        <ul>
-                            <li class="description">Super hot dog</li>
-                            <li class="price">$50.000 COP</li>
-                            <li class="cantity"><input type="number" name="quantity" min="1" max="5"></li>
-                            <li class="subtotal">SubTotal: $50.000 COP</li>
-                        </ul>
-                    </div>
-                    <i class="fas fa-trash-alt"></i>
-                </article>
-                <article>
-                    <img src="./img/3.jpg" alt="food2">
-                    <div>
-                        <ul>
-                            <li class="description">Mojito coctel</li>
-                            <li class="price">$50.000 COP</li>
-                            <li class="cantity"><input type="number"  name="quantity" min="1" max="5"></li>
-                            <li class="subtotal">SubTotal: $50.000 COP</li>
-                        </ul>
-                    </div>
-                    <i class="fas fa-trash-alt"></i>
-                </article>
-                
+             
             </section> 
         </section>
         <div class="out-cart">
@@ -59,5 +23,25 @@
     <footer class="f-cart">
     <%- include('./partials/footer.ejs') %>
     </footer>
+    <script>
+      let products = JSON.parse(localStorage.getItem('products'))
+      console.log(products)
+      let containerInit = document.querySelector('.container-int')
+      for (let i = 0; i < products.length; i++) {
+        let container = document.createElement('article')
+        let text = document.createElement('h2')
+        let img = document.createElement('img')
+        let text2 = document.createElement('p')
+        container.classList.add('flex')
+        img.classList.add('image')
+        img.src = `/img/products/${products[i].image}`
+        text.append(products[i].name)
+        text2.append(`$ ${products[i].price}`)
+        container.appendChild(img)
+        container.appendChild(text)
+        container.appendChild(text2)
+        containerInit.appendChild(container)
+      }
+    </script>
 </body>
 </html>

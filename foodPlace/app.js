@@ -2,7 +2,7 @@ require('dotenv').config()
 const express = require("express")
 const session = require('express-session')
 const path = require("path")
-const port = process.env.PORT || 3500
+const port = process.env.PORT || 3200
 const methodOverride = require('method-override')
 const cookies = require('cookie-parser')
 const cors = require('cors')

@@ -9,6 +9,12 @@ body{
    background-size: cover;
    padding-top: 8px;
  }
+ .flex {
+    display: flex;
+ }
+ .image {
+    width: 50px;
+ }
 /*-------------------------------------------Cart-----------------------------------------*/
 .m-cart{
     width:100%;
@@ -23,7 +29,7 @@ body{
     border-radius: 10px;
     padding: 25px 3px 3px 3px;
     max-height: 400px;
-    overflow-y:scroll
+    overflow-y:scroll;
  }
  main .container-ext::-webkit-scrollbar{
     width: 7px;
@@ -98,7 +104,13 @@ body{
     background-color:#fffffff5 ;
     font-weight: bold;
     color: #000000;
- }                           
+ }  
+ 
+ .img-card {
+    border: 2px solid red;
+    width: 100px;
+    height: 100px;
+ }
  
 @media screen and (max-width: 600px){
    main .container-int article img{
