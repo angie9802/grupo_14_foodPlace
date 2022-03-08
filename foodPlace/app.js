@@ -2,12 +2,14 @@ require('dotenv').config()
 const express = require("express")
 const session = require('express-session')
 const path = require("path")
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3500
 const methodOverride = require('method-override')
 const cookies = require('cookie-parser')
+const cors = require('cors')
 const userLoggedMiddleware = require('./src/middlewares/userLoggedMiddleware')
 const app = express();
 
+app.use(cors())
 app.use(express.static(path.resolve(__dirname, "public")));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json())

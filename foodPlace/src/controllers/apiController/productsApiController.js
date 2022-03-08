@@ -14,6 +14,7 @@ function dataProduct (products, protocol, host){
       category: product.Category.name,
       productTime : product.producttime,
       description :  product.description,
+      image : protocol +"://"+host+"/images/products/"+ product.image,
       detail : protocol + "://"+ host+ "/api/products/"+ product.id,
     })
   })

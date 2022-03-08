@@ -7,6 +7,7 @@ function dataUser (users, protocol, host){
       id: user.id,
       fullname : user.fullname,
       email : user.email,
+      userImage: protocol +"://"+host+"/images/users/"+ user.userimage,
       detail :  protocol +"://"+host+"/api/users/"+ user.id,
     })
   })
@@ -17,6 +18,7 @@ const controller = {
   listUser:  (req, res, next) => {
     const users =  UserModel.findAll()
     users.then(users =>{
+      console.log(users)
       return res.json({
           count : users.length,
           users : dataUser(users, req.protocol, req.headers.host),
