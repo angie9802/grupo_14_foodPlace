@@ -29,7 +29,7 @@
             <h2>$<%= new Intl.NumberFormat("de-DE").format(product.price)%></h2>
             <% if(locals.isLogged && locals.userLogged.Roles_id == 1){ %>
               <div class="single-btn">
-                <a href="/shopping-cart"> <button class="button-cart">Add to Cart</button></a>
+                <a href="/shopping-cart"> <button class="button-cart" onclick="addLocalStorage('<%= product.name %>','<%= product.image %>','<%= product.price %>')">Add to Cart</button></a>
                 <a href="/products/edit/<%= product.id %>"><button  class="button-cart">Edit</button></a>
                 <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST"  style="display: inline-flex">
                   <button  class="button-cart" type="submit" >Delete</button>
@@ -74,4 +74,22 @@
     </footer>
     </div>
   </body>
+  <script>
+    function addLocalStorage(name, image, price) {
+      let allData = []
+      let productData = {
+        name,
+        image,
+        price
+      }
+      allData.push(productData)
+      if(localStorage.getItem('products')) {
+        let tempData = JSON.parse(localStorage.getItem('products'))
+        tempData = tempData.concat(productData)
+        localStorage.setItem('products', JSON.stringify(tempData))
+      } else {
+        localStorage.setItem('products', JSON.stringify(allData))
+      }
+    }
+  </script>
 </html>
