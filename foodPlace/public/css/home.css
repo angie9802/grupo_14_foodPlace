@@ -4,7 +4,7 @@ body{
    background-size: cover;
    padding-top: 8px;
  }
-main .welcome-style{
+ .welcome-style{
    
   background-color: rgba(0, 0, 0, 0.116);
    background-repeat:repeat-y;
@@ -18,13 +18,8 @@ main .welcome-style{
    justify-content: center;
 }
 
-main .welcome-style h1{
-   font-size: 35px;
-}
-main .welcome-style p{
-  max-width: 70%;
-  
-}
+
+
 
 
 
@@ -73,16 +68,16 @@ footer{
  @media (min-width: 480px) {
    
 
-   main .container-int article div li{
+    .container-int article div li{
       margin:  10px 10px;
    }
-   main .container-int article img{
+    .container-int article img{
       max-width: 250px;
    }
-   main .container-int article div{
+    .container-int article div{
       margin: 0 20px
    }
-   main .container-int article .fa-trash-alt{
+    .container-int article .fa-trash-alt{
       margin: 0 20px;
       font-size: 25px
    }
@@ -139,14 +134,14 @@ footer{
       max-width: 50%;  
    }
 /*-------------------------------------------home-----------------------------------------*/
-   main .container-int article div{
+    .container-int article div{
       margin: 0;
    }   
-   main .container-int article div ul{
+    .container-int article div ul{
       display: flex;
       align-items:center;
    }
-   main .container-int  article ul li{
+    .container-int  article ul li{
       margin: 0 25px
    } 
 }
@@ -155,11 +150,11 @@ footer{
 
 @media (min-width: 1200px) {
 /*-------------------------------------------home-----------------------------------------*/
-   main .carousel-style i{
+    .carousel-style i{
       display:block;
       font-size: 40px;
    }
-   main .carousel-style{
+    .carousel-style{
       justify-content: space-between;
    }
 
@@ -169,17 +164,19 @@ footer{
 .container-swipper{
    width: 100%;
    padding-bottom: 100px;
-   margin-top: 50px;
+   margin-top: 0px;
  }
  .swiper {
    width: 100%;
-   background-image: url(../img/fast-food.jpg);
+   background:#ffffff79;
+   border-top: 3px solid #ffffffe1;
+   border-bottom: 3px solid #ffffffe1;
  }
  .swiper-wrapper{
    width: 100%;
  }
  .swiper-slide {
-   background-image: url(../img/fast-food.jpg);
+  
    position:relative;
    width: 100%;
    text-align: center;
@@ -217,3 +214,12 @@ footer{
  .f-home a li i{
    color: black;
  }
+
+ .p-title{
+    font-size: 3em;
+    margin: 0px; 
+    font-weight: bold;
+    position: relative;
+   
+ }
+ 

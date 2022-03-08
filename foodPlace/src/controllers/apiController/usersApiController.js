@@ -1,13 +1,13 @@
 const UserModel = require("../../models/modelUser");
 
-function dataUser (users){
+function dataUser (users, protocol, host){
   let dataUser = []
   users.map(user =>{
     dataUser.push({
       id: user.id,
       fullname : user.fullname,
       email : user.email,
-      detail : "http://localhost:3000/api/users/"+ user.id,
+      detail :  protocol +"://"+host+"/api/users/"+ user.id,
     })
   })
   return (dataUser)
@@ -19,7 +19,7 @@ const controller = {
     users.then(users =>{
       return res.json({
           count : users.length,
-          users : dataUser(users),
+          users : dataUser(users, req.protocol, req.headers.host),
         }) 
     })
   },
@@ -32,7 +32,8 @@ const controller = {
         email : user.email,
         number : user.number,
         address : user.address,
-        image : "http://localhost:3000/images/users/"+user.userimage
+        image : req.protocol +"://"+req.headers.host+"/images/users/"+ user.userimage
+        
       })
     })
 

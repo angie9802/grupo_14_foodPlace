@@ -1,9 +1,10 @@
 const ProductModel = require("../../models/modelProduct");
 const CategoryModel = require("../../models/modelCategory");
+const res = require("express/lib/response");
 
 
 
-function dataProduct (products){
+function dataProduct (products, protocol, host){
   let dataProduct = []
   products.map(product => {
     dataProduct.push({
@@ -13,85 +14,48 @@ function dataProduct (products){
       category: product.Category.name,
       productTime : product.producttime,
       description :  product.description,
-      detail : "http://localhost:3000/api/products/"+ product.id,
+      detail : protocol + "://"+ host+ "/api/products/"+ product.id,
     })
   })
   return (dataProduct)
 }
-  
-
 
 const controller = {
   
 
   
   listApi: (req, res,next) => {
+    let quantityCategory = [];
+    let categoriesArray = [];
     const products =  ProductModel.findAllApi()
-    const categories =  CategoryModel.findAll();
-    
-    let Categories = [];
-    console.log(categories)
-    categories.then(items => {
-      items.map(category =>{
-        let product = category.dataValues
-        Categories.push(product)
+    const allCategories =  CategoryModel.findAll();
+    console.log(req.protocol)
+    allCategories.then(item => {
+      item.map(category =>{
+        let categoryValues  = category.dataValues
+        categoriesArray.push(categoryValues)
       })
     })
-    const dbProductByCate = ProductModel.countByCategory()
-
-
-  let Catego = [];
+    const countByCategory = ProductModel.countByCategory()
    
-    dbProductByCate.then(items =>{
-    items.map(item1 =>{
-      let id = item1.dataValues.Categories_id;
-      
-      let count = item1.dataValues.Count;
-      
-      let Cat = Categories.find(cat => cat.id === id)
-      
-      let nameCat = Cat.name
-      
-      
-      
-      Catego.push({idCategory: id, Category: nameCat, Count:count})
-     
+    countByCategory.then(counts =>{
+      counts.map(item =>{
+        const categoryData = categoriesArray.find(cat => cat.id === item.dataValues.Categories_id)
+        quantityCategory.push({ category: categoryData.name , quantity: item.dataValues.Count })
     })
     
-  })
-
-    
-    // categories.map(Category => {
-    //   let product = Category.dataValues;
-    //   Categories.push(product);
-    
-    // })
-
-  
-
-    
-    //  dbProductByCate.map(item1 => {
-    //     let id = item1.dataValues.Categories_id;
-    //     let count = item1.dataValues.Count;
-    //     let Cat = Categories.find(cat => cat.id === id)
-    //     let nameCat = Cat.Category
-    //     let objeto = {idCategory: id, Category: nameCat, Count:count};
-    //     Catego.push(objeto);
-
-    //         })
-
-
-
     products.then(products => {
       return res.json({
         count: products.length,
-        countByCategory: Catego,
-        products : dataProduct(products),
+        countByCategory: quantityCategory,
+        products : dataProduct(products, req.protocol, req.headers.host),
       }) 
     })
   .catch((err) => {
     next(err);
   })
+  })
+
 
   },
   detailApi: (req, res, next) => {
@@ -104,7 +68,8 @@ const controller = {
         producttime: product.producttime,
         description: product.description,
         category: product.Category.name,
-        image : "http://localhost:3000/images/products/"+ product.image
+        image : req.protocol +"://"+req.headers.host+"/images/products/"+ product.image
+       
       })
     })
 
